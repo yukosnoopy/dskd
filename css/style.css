@@ -1,0 +1,481 @@
+/*
+ * dskd.jp Stylesheet
+ *
+ *  @author  oti(@o_ti)
+ *  @version 5.0.0 (2015.12~)
+ *  @browser IE11+, Chrome 42+, Firefox 37+, Safari 8.0+,
+ */
+@font-face {
+  font-family: "Vegur-Regular";
+  src: local("Vegur Regular"), local("Vegur Regular"), url("/font/Vegur-Regular.woff") format("woff"); }
+
+@font-face {
+  font-family: "Vegur-Light";
+  src: local("Vegur Light"), local("Vegur Light"), url("/font/Vegur-Light.woff") format("woff"); }
+
+@font-face {
+  font-family: "Vegur-Bold";
+  src: local("Vegur Bold"), local("Vegur Bold"), url("/font/Vegur-Bold.woff") format("woff"); }
+
+:root {
+  font-size: 10px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+  *, *:before, *:after {
+    box-sizing: border-box; }
+
+html {
+  -webkit-font-feature-settings: "kern" 1,"liga" 1,"lnum" 1,"pnum" 1;
+          font-feature-settings: "kern" 1,"liga" 1,"lnum" 1,"pnum" 1; }
+
+body {
+  margin: 0;
+  padding: 0;
+  border-top: 5px solid rgba(0, 0, 0, 0.15);
+  color: #263540;
+  font-size: 1.6rem;
+  font-family: "Vegur-Regular", sans-serif;
+  line-height: 1;
+  background: url(/img/bg.png) repeat fixed #d0d8dd; }
+
+main {
+  display: block; }
+
+img {
+  -ms-interpolation-mode: bicubic;
+  border: 0 none;
+  text-decoration: none;
+  vertical-align: top;
+  background: transparent; }
+
+mark {
+  background-color: transparent; }
+
+a:link {
+  color: #0075a9;
+  text-decoration: none; }
+
+a:visited {
+  color: #ca176e; }
+
+a:hover {
+  color: #629a00;
+  text-decoration: underline; }
+
+a:active {
+  color: #ca176e; }
+
+a:focus {
+  color: #629a00; }
+
+.global-header {
+  position: relative;
+  margin: auto;
+  padding: 30px 0;
+  min-width: 320px;
+  max-width: 640px;
+  text-align: center; }
+
+.logo {
+  margin: auto;
+  width: 100px;
+  height: 60px; }
+
+.logo + .site-nav {
+  margin-top: 20px; }
+
+.logo-link {
+  display: block; }
+
+.lede {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  color: rgba(0, 0, 0, 0.75);
+  font-family: "Vegur-Light"; }
+
+.site-nav-list {
+  padding: 0;
+  font-size: 0;
+  display: block; }
+  .site-nav-list__item {
+    display: inline; }
+  .site-nav-list__item {
+    font-size: 1.4rem; }
+    .site-nav-list__item + .site-nav-list__item:before {
+      content: "";
+      box-sizing: content-box;
+      display: inline-block;
+      margin: 0 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      width: 0.5rem;
+      height: 0.5rem;
+      vertical-align: 1px; }
+  .site-nav-list-current {
+    font-family: "Vegur-Bold";
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5) 7px, rgba(255, 255, 255, 0) 7px); }
+  .site-nav-list-link--current {
+    pointer-events: none;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5) 7px, rgba(255, 255, 255, 0) 7px); }
+    .site-nav-list-link--current:link, .site-nav-list-link--current:visited {
+      color: #263540; }
+
+.global-footer {
+  margin: auto;
+  padding: 0 15px;
+  min-width: 320px;
+  max-width: 640px;
+  font-size: 1.4rem; }
+  .global-footer:after {
+    content: "";
+    clear: both;
+    display: block; }
+  .subinfo {
+    padding: 0;
+    font-size: 0;
+    display: block; }
+    .subinfo__item {
+      display: inline; }
+    .subinfo__item {
+      font-size: 1.4rem; }
+      .subinfo__item + .subinfo__item:before {
+        content: "";
+        box-sizing: content-box;
+        display: inline-block;
+        margin: 0 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        width: 0.5rem;
+        height: 0.5rem;
+        vertical-align: 1px; }
+  .subinfo-license {
+    font-size: inherit; }
+  .contents + .global-footer {
+    margin-bottom: 3.2rem;
+    margin-top: 3.2rem;
+    padding-top: 3.2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.15); }
+  .global-footer .author {
+    float: left; }
+  .global-footer .subinfo {
+    float: right; }
+
+.contents {
+  margin: auto;
+  padding: 0 15px;
+  min-width: 320px;
+  max-width: 640px; }
+
+.contents .post-list + .tag,
+.contents .post-list + .year {
+  margin-top: 3.2rem;
+  padding-top: 3.2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.15); }
+
+.post-link {
+  display: block; }
+  .post-link + .post-link {
+    margin-top: 45px; }
+
+.post-list .post-link + .post-more {
+  margin-top: 30px; }
+
+.post__title {
+  font-family: "Vegur-Bold";
+  font-size: 2rem;
+  line-height: 1.4; }
+  .post__footer + .post__title {
+    clear: both; }
+
+.post__footer + .post__title {
+  margin-top: 1rem; }
+
+.post__footer {
+  font-size: 1.4rem;
+  line-height: 1; }
+  .post__footer:after {
+    content: "";
+    clear: both;
+    display: block; }
+  a .post__footer {
+    color: #263540; }
+  a:hover .post__footer .post-timestamp,
+  a:hover .post__footer .post-tag {
+    text-decoration: none; }
+  .post__footer .post-timestamp,
+  .post__footer .post-tag {
+    float: left; }
+  .post__footer .post-timestamp + .post-tag:before {
+    content: "";
+    display: inline-block;
+    margin: 0 0.5rem;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    width: 0.6rem;
+    height: 3px;
+    vertical-align: 3px; }
+
+.post__body {
+  margin-top: 2rem; }
+  .post__body h2 {
+    margin-top: 2.8rem;
+    margin-bottom: 1.4rem;
+    font-family: "Vegur-Bold";
+    font-size: 1.8rem; }
+  .post__body p {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+    line-height: 1.6; }
+    .post__body p > code {
+      padding: 0 2px;
+      border-radius: 3px;
+      font-size: inherit;
+      background-color: rgba(255, 255, 255, 0.3); }
+    .post__body p > .demo-link {
+      padding-left: 1.8rem;
+      background-image: url("/img/hyperlink.svg");
+      background-repeat: no-repeat;
+      background-size: 1.8rem auto; }
+  .post__body img {
+    max-width: 100%; }
+  .post__body strong {
+    color: #dd0000;
+    font-weight: bold; }
+  .post__body em {
+    font-weight: bold;
+    font-style: normal; }
+  .post__body pre {
+    padding: 0.66667rem;
+    border-radius: 3px;
+    font-size: 1.4rem;
+    font-family: Consolas, monospace;
+    background-image: url("/img/bg2.png");
+    overflow-x: auto; }
+    .post__body pre mark {
+      padding-left: 2px;
+      padding-right: 2px;
+      background-color: rgba(255, 242, 0, 0.9); }
+  .post__body ins {
+    text-decoration: none; }
+  .post__body hr {
+    margin: 1.875em auto;
+    height: 1em;
+    border: none;
+    line-height: 0;
+    background: url("/img/dash.svg") no-repeat center center; }
+  .post__body ul, .post__body ol {
+    list-style-position: inside;
+    line-height: 1.6; }
+    .post__body ul ul, .post__body ul ol, .post__body ol ul, .post__body ol ol {
+      margin-left: 1.6rem; }
+  .post__body table {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.6; }
+  .post__body caption {
+    font-family: "Vegur-Bold";
+    font-weight: bold;
+    background-image: url("/img/bg2.png"); }
+  .post__body tr {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  .post__body tr:nth-child(2n) {
+    background-color: rgba(255, 255, 255, 0.1); }
+  .post__body th {
+    font-family: "Vegur-Bold"; }
+
+.post blockquote {
+  padding: 0.66667rem;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.2); }
+  .post blockquote footer {
+    font-size: 1.4rem;
+    text-align: right; }
+
+.post .post__social {
+  display: block; }
+  .post .post__social:after {
+    content: "";
+    clear: both;
+    display: block; }
+
+.tag {
+  font-size: 0; }
+  .tag__heading {
+    font-family: "Vegur-Bold";
+    font-size: 1.8rem;
+    font-weight: bold; }
+  .tag-list {
+    padding: 0;
+    font-size: 0;
+    display: block; }
+    .tag-list__item {
+      display: inline; }
+    .tag-list__item {
+      font-size: 1.6rem; }
+      .tag-list__item + .tag-list__item:before {
+        content: "";
+        display: inline-block;
+        margin: 0 0.5rem;
+        border-radius: 3px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        width: 0.6rem;
+        height: 3px;
+        vertical-align: 3px; }
+  .tag .tag__heading {
+    float: left;
+    padding-right: 15px;
+    width: 100px; }
+  .tag .tag-list {
+    overflow: hidden; }
+
+.year {
+  font-size: 0; }
+  .year__heading {
+    font-family: "Vegur-Bold";
+    font-size: 1.8rem;
+    font-weight: bold; }
+  .year-list {
+    padding: 0;
+    font-size: 0;
+    display: block; }
+    .year-list__item {
+      display: inline; }
+    .year-list__item {
+      font-size: 1.6rem; }
+      .year-list__item + .year-list__item:before {
+        content: "";
+        display: inline-block;
+        margin: 0 0.5rem;
+        border-radius: 3px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        width: 0.6rem;
+        height: 3px;
+        vertical-align: 3px; }
+  .year .year__heading {
+    float: left;
+    padding-right: 15px;
+    width: 100px; }
+  .year .year-list {
+    overflow: hidden; }
+  .contents .year {
+    padding-top: 15px; }
+
+.subscribe {
+  font-size: 0; }
+  .subscribe__heading {
+    font-family: "Vegur-Bold";
+    font-size: 1.8rem;
+    font-weight: bold; }
+  .subscribe-list {
+    padding: 0;
+    font-size: 0;
+    display: block; }
+    .subscribe-list__item {
+      display: inline; }
+    .subscribe-list__item {
+      font-size: 1.6rem; }
+      .subscribe-list__item + .subscribe-list__item:before {
+        content: "";
+        display: inline-block;
+        margin: 0 0.5rem;
+        border-radius: 3px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        width: 0.6rem;
+        height: 3px;
+        vertical-align: 3px; }
+  .subscribe .subscribe__heading {
+    float: left;
+    padding-right: 15px;
+    width: 100px; }
+  .subscribe .subscribe-list {
+    overflow: hidden; }
+  .contents .subscribe {
+    padding-top: 15px; }
+
+.social-list {
+  display: block; }
+  .social-list:after {
+    content: "";
+    clear: both;
+    display: block; }
+  .social-list__item {
+    float: left;
+    display: block; }
+    .social-list__item + .social-list__item {
+      margin-left: 1.5rem; }
+  .post .social-list {
+    margin-top: 15px;
+    float: right; }
+
+.social-link {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: no-repeat center center;
+  background-size: 3rem 3rem; }
+  .social-list__item--twitter .social-link {
+    background-image: url("/img/twitter.svg"); }
+  .social-list__item--facebook .social-link {
+    background-image: url("/img/facebook.svg"); }
+  .social-list__item--gplus .social-link {
+    background-image: url("/img/googleplus.svg"); }
+  .social-list__item--hatebu .social-link {
+    background-image: url("/img/hatena-bookmark.svg"); }
+
+.neighbor-list {
+  list-style-type: none;
+  line-height: 1.4; }
+  .neighbor-list__item {
+    clear: left;
+    margin-left: 6rem; }
+    .neighbor-list__item:before {
+      float: left;
+      display: block;
+      width: 5rem;
+      margin-left: -6rem;
+      color: rgba(0, 0, 0, 0.5);
+      text-align: right; }
+    .neighbor-list__item--newer:before {
+      content: "newer:"; }
+    .neighbor-list__item--older:before {
+      content: " older:"; }
+    .neighbor-list__item + .neighbor-list__item {
+      margin-top: 15px; }
+
+.post + .neighbor {
+  margin-top: 3.2rem;
+  padding-top: 3.2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.15); }
+
+.archives-heading {
+  margin-bottom: 2.2rem;
+  font-family: "Vegur-Bold";
+  font-size: 2.2rem;
+  line-height: 2; }
+
+@media screen and (max-width: 414px) {
+  .global-header {
+    margin: auto;
+    padding: 30px 0;
+    min-width: 320px;
+    max-width: 414px; }
+  .contents,
+  .global-footer {
+    margin: auto;
+    padding: 0 15px;
+    min-width: 320px;
+    max-width: 414px; } }
+
+/*# sourceMappingURL=style.css.map */

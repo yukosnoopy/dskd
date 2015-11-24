@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width" name="viewport">
+    <title>style属性でzoomを指定すると特定の状況でzoomが無効になる - dskd</title>
+    <meta content="/img/blog-cover.png" itemprop="image">
+    <meta content="zoomこわい。" name="description">
+    <link href="http://dskd.jp/archives/50.html" rel="canonical" itemprop="url">
+    <link href="/img/blog-icon.png" rel="apple-touch-icon-precomposed">
+    <link href="/feed" rel="alternate" type="application/atom+xml">
+    <link href="/css/style.css" rel="stylesheet" media="only screen">
+  </head>
+
+  <body>
+    <header role="banner" class="global-header">
+      <h1 class="logo"><a href="/" class="logo-link"><img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img"></a></h1>
+      <nav role="navigation" class="site-nav">
+        <ul class="site-nav-list">
+          <li class="site-nav-list__item"><a href="/archives/" class="site-nav-list-link">ARCHIVES</a></li>
+          <li class="site-nav-list__item"><a href="/demo/" class="site-nav-list-link">DEMO</a></li>
+          <li class="site-nav-list__item"><a href="/about.html" class="site-nav-list-link">ABOUT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="contents">
+      <article class="post">
+        <footer class="post__footer">
+          <time datetime="2014-12-05T13:34:00+09:00" class="post-timestamp">2014-12-05</time>
+          <p class="post-tag"><a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar, </a><a href="/archives/css.html" class="tag-link">CSS</a></p>
+        </footer>
+        <h1 itemprop="name" class="post__title">style属性でzoomを指定すると特定の状況でzoomが無効になる</h1>
+        <div itemprop="articleBody" class="post__body">
+          <p><a href="http://www.adventar.org/calendars/341">CSS 珍百景 Advent Calendar 2014</a>５日目のエントリ。</p>
+          <p>こちらでの再現ブラウザはGoogle Chrome 39.0.2171.71とiOS 7.1.2 Mobile Safari。状況を詳しく説明すると、外部CSSファイル、及びstyleタグでzoomプロパティがすでに設定してある要素に対して、<strong>CSSで指定されているzoom値と同じ値をstyle属性で指定するとzoomが効かなくなる</strong>というもの。</p>
+          <p>style属性で指定するzoom値を変更できる<a href="/demo/51.html">デモを用意した。</a>テキストエリアに数字を入れて隣のaddボタンを押すとその下の要素に<code>style=&quot;zoom: N&quot;</code>が付与されるようになっている。背景に50pxごとのグリッドになっている画像を敷いたので、倍率が少しわかりやすいと思う。ページを開いた時の初期表示ではCSS側の<code>zoom: 2;</code>が効いているはず。</p>
+          <p>DevToolsを開いて要素のstyle属性を確認しながら、まずは数値を2にしてaddボタンとremoveボタンを押してみて欲しい。zoomがstyle属性でつくと拡大が無効になり、消すと拡大されるのがわかると思う。addしたのに大きくならない。removeしたのに大きくなる。同値での上書きなので表示サイズは変化しないでそのままになるはずだ。数値を2以外（2.0001なども可）にすれば動作は期待通りになる。同じ値の操作の時のみ、珍事が起きる。</p>
+          <p>少々重いが<a href="/img/double-zoom-bug/use-zoom.gif">Gifアニメを用意した</a>ので、再現できない人はこちらを見てほしい。</p>
+          <p>そもそも同じ値をstyle属性で指定するシチュエーションなんてほぼない。業務で端末の画面サイズから倍率を算出して上書きする必要があって、JS実装のミスで必要がない端末でも上書きがかかったところ、拡大されなくなっているのを見てこのバグに気づいた。IE11では再現しなかったし、zoomプロパティ未実装のFirefoxでも当然起こらない。</p>
+          <p>気づいたのは2つか3つバージョンが前のChromeでだけど、iOS 7.1.2 Mobile Safariでも再現するのを見るに、もしかしたらChromeがBlinkになる前からWebkitの珍挙動として存在していたかもしれない。ちなみに、<a href="/demo/52.html"><code>transform: scale();</code>なら問題ない</a>。</p>
+          <p>zoomこわい。</p>
+        </div>
+        <aside role="complementary" class="post__social">
+          <ul class="social-list">
+            <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=style%E5%B1%9E%E6%80%A7%E3%81%A7zoom%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E3%81%A8%E7%89%B9%E5%AE%9A%E3%81%AE%E7%8A%B6%E6%B3%81%E3%81%A7zoom%E3%81%8C%E7%84%A1%E5%8A%B9%E3%81%AB%E3%81%AA%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F50.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
+              class="social-link">Tweet</a></li>
+            <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F50.html" class="social-link">Share on Facebook</a></li>
+            <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=style%E5%B1%9E%E6%80%A7%E3%81%A7zoom%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B%E3%81%A8%E7%89%B9%E5%AE%9A%E3%81%AE%E7%8A%B6%E6%B3%81%E3%81%A7zoom%E3%81%8C%E7%84%A1%E5%8A%B9%E3%81%AB%E3%81%AA%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F50.html"
+              class="social-link">Bookmark on Hatena</a></li>
+          </ul>
+        </aside>
+      </article>
+      <nav class="neighbor">
+        <ul class="neighbor-list">
+          <li class="neighbor-list__item neighbor-list__item--newer"><a href="/archives/54.html" class="neighbor-link">僕はCSSを見殺しにした</a></li>
+          <li class="neighbor-list__item neighbor-list__item--older"><a href="/archives/49.html" class="neighbor-link">適当とテキトー</a></li>
+        </ul>
+      </nav>
+    </main>
+    <footer class="global-footer">
+      <p class="author">Made by
+        <adress class="author__address"><a href="mailto:otiext@gmail.com">oti</a></adress>.</p>
+      <ul class="subinfo">
+        <li class="subinfo__item"><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link"><small class="subinfo-license">CC BY-NC</small></a></li>
+        <li class="subinfo__item"><a href="feed" alternate="application/rss+xml" class="subinfo-link">RSS</a></li>
+      </ul>
+    </footer>
+  </body>
+
+</html>

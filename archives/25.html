@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width" name="viewport">
+    <title>CSS Programming HTML5 Template Generator - dskd</title>
+    <meta content="/img/blog-cover.png" itemprop="image">
+    <meta content="CSS Programming" name="description">
+    <link href="http://dskd.jp/archives/25.html" rel="canonical" itemprop="url">
+    <link href="/img/blog-icon.png" rel="apple-touch-icon-precomposed">
+    <link href="/feed" rel="alternate" type="application/atom+xml">
+    <link href="/css/style.css" rel="stylesheet" media="only screen">
+  </head>
+
+  <body>
+    <header role="banner" class="global-header">
+      <h1 class="logo"><a href="/" class="logo-link"><img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img"></a></h1>
+      <nav role="navigation" class="site-nav">
+        <ul class="site-nav-list">
+          <li class="site-nav-list__item"><a href="/archives/" class="site-nav-list-link">ARCHIVES</a></li>
+          <li class="site-nav-list__item"><a href="/demo/" class="site-nav-list-link">DEMO</a></li>
+          <li class="site-nav-list__item"><a href="/about.html" class="site-nav-list-link">ABOUT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="contents">
+      <article class="post">
+        <footer class="post__footer">
+          <time datetime="2012-12-03T10:00:15+09:00" class="post-timestamp">2012-12-03</time>
+          <p class="post-tag"><a href="/archives/css.html" class="tag-link">CSS, </a><a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar</a></p>
+        </footer>
+        <h1 itemprop="name" class="post__title">CSS Programming HTML5 Template Generator</h1>
+        <div itemprop="articleBody" class="post__body">
+          <p>この記事は<a href="http://www.adventar.org/calendars/2">CSS Programming Advent Calendar 2012</a> ３日目のエントリです。</p>
+          <p>CSS Programmingという、JSやPHPを使わずにCSSだけでプログラムチックな処理を実装しようとう試みがあります。それをお題に、クリスマスのアドベントカレンダーのように１日ずつネタを書きましょう、というのが CSS Programming Advent Calendar 2012の概要です。CSS Programmingの考え方とか作り方は今回の発起人である<a href="http://geckotang.tumblr.com/post/36885315563/1-css-programming-advent-calendar-2012">げこたんさんが１日目で説明しています</a>のでそちらをどうぞ。</p>
+          <p>僕は今までCSS Programmingは作ったことはなかったのですが、年に一度のイベントなので力試しも兼ねて作ってみました。</p>
+          <p>Advent Calendar ３日目のこのエントリではウェブに腐るほど転がっている「HTMLテンプレートジェネレーター」をCSS Programming化したものを紹介します。デモを作成したので、以下からどうぞ。</p>
+          <p><a href="http://lab.dskd.jp/cphtg/">CSS Programming HTML5 Template Generator</a></p>
+          <p>......とまぁこんな感じで一応できました。どの要素がどういう役目で、どの属性を付けるとどうなるのとかの説明は省かせてください。</p>
+          <p>head内の要素に改行を入れてそれっぽくグルーピングするオプションもつけようかと思ったのですが、<code>:checked</code>と<code>:not(:checked)</code>の組み合わせ地獄だったので諦めました。その代わりと言ってはなんですが、インデントのオプションを付けてあります。</p>
+          <p>ネタを説明するほど複雑な作りはなくて、生成してるように見える要素は予め全部書いて<code>dipslay: none;</code>で隠してあるものを<code>:checked</code>の擬似属性指定で<code>display: inline;</code>にしてるだけです。一般的にスタイルシートは要素の親子関係性で対象をより絞り込んで装飾しますが、間接セレクタを使って離れた位置にマークアップした要素と関連付けてます。チェックに使うinput要素も<code>display: none;</code>で隠していますが、label要素にfor属性をつけているので見えてなくても動作します。label要素は文字列を入れられるのでボタンにしやすいですね。</p>
+          <p>これを製作中、クラス名やID名を変更したり非効率なことが何回かありました。通常のウェブ製作でもそうですが、作りたいものがどの程度の規模であるかを正確に把握し、追加や変更が起きても吸収できる命名即やスタイルを用意しておくことが、スピードアップのコツですね。自分は仕事ではスピードを要求されることが多いので、図らずもその大事さを再確認することができてよかったと思いました。</p>
+          <p>次があるならもうちょっと遊びがいのある楽しいものを作りたいですね。４日目は<a href="http://tenderfeel.xsrv.jp/">WebTecNote</a>の<a href="https://twitter.com/Tenderfeel">@Tenderfeel</a>さんです。よろしくお願いします。</p>
+        </div>
+        <aside role="complementary" class="post__social">
+          <ul class="social-list">
+            <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=CSS%20Programming%20HTML5%20Template%20Generator&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F25.html&amp;via=dskd_jp&amp;related=o_ti&quot;" class="social-link">Tweet</a></li>
+            <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F25.html" class="social-link">Share on Facebook</a></li>
+            <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=CSS%20Programming%20HTML5%20Template%20Generator&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F25.html" class="social-link">Bookmark on Hatena</a></li>
+          </ul>
+        </aside>
+      </article>
+      <nav class="neighbor">
+        <ul class="neighbor-list">
+          <li class="neighbor-list__item neighbor-list__item--newer"><a href="/archives/27.html" class="neighbor-link">次へ前ヘのボタンのどっちがどっちなのか試させないデザイン</a></li>
+          <li class="neighbor-list__item neighbor-list__item--older"><a href="/archives/24.html" class="neighbor-link">@mediaのorientationはviewportの縦横がどっちが長いかであって、デバイスが縦か横かじゃないですよ</a></li>
+        </ul>
+      </nav>
+    </main>
+    <footer class="global-footer">
+      <p class="author">Made by
+        <adress class="author__address"><a href="mailto:otiext@gmail.com">oti</a></adress>.</p>
+      <ul class="subinfo">
+        <li class="subinfo__item"><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link"><small class="subinfo-license">CC BY-NC</small></a></li>
+        <li class="subinfo__item"><a href="feed" alternate="application/rss+xml" class="subinfo-link">RSS</a></li>
+      </ul>
+    </footer>
+  </body>
+
+</html>
