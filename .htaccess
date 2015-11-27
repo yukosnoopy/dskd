@@ -1,6 +1,10 @@
 RewriteEngine on
+
+# feed.xmlは拡張子なしでアクセス可能にする
 <FilesMatch "feed$">
-ForceType text/xml
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.xml -f
+RewriteRule ^(.*)$ $1.xml
 </FilesMatch>
 
 
