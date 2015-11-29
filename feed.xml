@@ -5,14 +5,21 @@
       <link>http://dskd.jp/</link>
       <description>&lt;![CDATA[dskd.jp is a memorandum of simple front-end technology.]]&gt;</description>
       <language>ja-JP</language>
-      <pubdate>Sat Nov 28 2015 02:15:43 GMT+0900 (JST)</pubdate>
-      <lastbuilddate>Sat Nov 28 2015 02:15:43 GMT+0900 (JST)</lastbuilddate>
+      <pubdate>Mon Nov 30 2015 00:49:30 GMT+0900 (JST)</pubdate>
+      <lastbuilddate>Mon Nov 30 2015 00:49:30 GMT+0900 (JST)</lastbuilddate>
       <docs>http://blogs.law.harvard.edu/tech/rss</docs>
       <generator>Node.js v4.2.2</generator>
       <managingeditor>otiext@gmail.com (oti)</managingeditor>
       <webmaster>otiext@gmail.com (oti)</webmaster>
       <atom:link href="http://dskd.jp/feed" rel="self" type="application/rss+xml" />
       <creativeCommons:license>http://creativecommons.org/licenses/by-nc/4.0/</creativeCommons:license>
+      <item>
+        <title>outlineプロパティで作った枠線は角丸にすることができない</title>
+        <link>http://dskd.jp/archives/73.html</link>
+        <description>CSSで出来そうで出来ないことシリーズ1</description>
+        <pubdate>Mon Nov 30 2015 09:49:15 GMT+0900 (JST)</pubdate>
+        <guid isPermaLink="true">http://dskd.jp/archives/73.html</guid>
+      </item>
       <item>
         <title>Launch dskd v5</title>
         <link>http://dskd.jp/archives/72.html</link>
