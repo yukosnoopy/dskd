@@ -67,7 +67,7 @@
     outline: 10px solid skyblue;
     <mark>outline-offset: 10px;</mark>
 }</code></pre>
-          <p><code>box-shadow</code>ではborderと自信の間に隙間をつくることはできないので、こういうのは<code>outline-offset</code>しかないかなぁと一瞬思ったけど、擬似要素で完璧に代替できた。またTRBLか。</p>
+          <p><code>box-shadow</code>ではborderと自身の間に隙間をつくることはできないので、こういうのは<code>outline-offset</code>しかないかなぁと一瞬思ったけど、擬似要素で完璧に代替できた。またTRBLか。</p>
           <iframe width="100%" height="270" src="http://jsfiddle.net/o_ti/tkrs6eva/3/embedded/result,css,html/" allowfullscreen="allowfullscreen"
           frameborder="0"></iframe>
           <p><code>outline-offset</code>は負の値も指定できるので<a href="http://jsfiddle.net/o_ti/w86s3fL8/2/">こういう表現も可能</a>だけど、<a href="http://www.w3.org/TR/2015/CR-css-ui-3-20150707/#outline-offset">2015/7/7時点のCR版</a>だと負の値の指定はat-riskであり、今後どうなるかわからない。</p>
