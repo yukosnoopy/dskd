@@ -271,6 +271,12 @@ a:focus {
       background-color: rgba(255, 242, 0, 0.9); }
   .post__body ins {
     text-decoration: none; }
+  .post__body aside {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+    margin-left: 25%;
+    font-size: 1.4rem;
+    line-height: 1.4; }
   .post__body hr {
     margin: 1.875em auto;
     height: 1em;
