@@ -243,6 +243,15 @@ a:focus {
       background-size: 1.8rem auto; }
   .post__body img {
     max-width: 100%; }
+  .post__body .post-image.is-alignCenter {
+    text-align: center; }
+  .post__body .post-image.is-alignRight {
+    text-align: right; }
+  .post__body .post-image .is-framed {
+    padding: 10px;
+    border-radius: 3px; }
+  .post__body .post-image .is-whitefill {
+    background-color: #fff; }
   .post__body strong {
     color: #dd0000;
     font-weight: bold; }
