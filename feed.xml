@@ -5,14 +5,21 @@
       <link>http://dskd.jp/</link>
       <description>&lt;![CDATA[dskd.jp is a memorandum of simple front-end technology.]]&gt;</description>
       <language>ja-JP</language>
-      <pubdate>Tue Dec 01 2015 13:33:39 GMT+0900 (JST)</pubdate>
-      <lastbuilddate>Tue Dec 01 2015 13:33:39 GMT+0900 (JST)</lastbuilddate>
+      <pubdate>Fri Dec 04 2015 01:57:46 GMT+0900 (JST)</pubdate>
+      <lastbuilddate>Fri Dec 04 2015 01:57:46 GMT+0900 (JST)</lastbuilddate>
       <docs>http://blogs.law.harvard.edu/tech/rss</docs>
       <generator>Node.js v4.2.2</generator>
       <managingeditor>otiext@gmail.com (oti)</managingeditor>
       <webmaster>otiext@gmail.com (oti)</webmaster>
       <atom:link href="http://dskd.jp/feed" rel="self" type="application/rss+xml" />
       <creativeCommons:license>http://creativecommons.org/licenses/by-nc/4.0/</creativeCommons:license>
+      <item>
+        <title>@importトリックの回顧</title>
+        <link>http://dskd.jp/archives/75.html</link>
+        <description>ブラウザの@importの解釈の違いを利用したCSSハック回顧会場</description>
+        <pubdate>Fri Dec 04 2015 10:57:32 GMT+0900 (JST)</pubdate>
+        <guid isPermaLink="true">http://dskd.jp/archives/75.html</guid>
+      </item>
       <item>
         <title>My Life, My TKG</title>
         <link>http://dskd.jp/archives/74.html</link>
