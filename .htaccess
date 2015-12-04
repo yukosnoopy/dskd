@@ -13,7 +13,7 @@ RewriteCond %{THE_REQUEST} ^.*/index.html
 RewriteRule ^(.*)index.html$ http://dskd.jp/$1 [R=301,L]
 
 # 旧feedアドレスのリダイレクト
-RewriteRule ^/feed/atom.xml$ http://dskd.jp/feed [R=301,L]
+RewriteRule ^feed/atom.xml$ http://dskd.jp/feed [R=301,L]
 
 # BtBイベント発表資料のリダイレクト
-RewriteRule ^/events/btbcss/fixing-fixed.pdf$ http://www.slideshare.net/o_ti/position-fixed-52224889 [R=301,L]
+RewriteRule ^events/btbcss/fixing-fixed.pdf$ http://www.slideshare.net/o_ti/position-fixed-52224889 [R=301,L]
