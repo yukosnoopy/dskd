@@ -315,6 +315,10 @@ a:focus {
     font-size: 1.4rem;
     text-align: right; }
 
+.post .post__contribute {
+  display: block;
+  float: left; }
+
 .post .post__social {
   display: block; }
   .post .post__social:after {
@@ -415,6 +419,18 @@ a:focus {
     overflow: hidden; }
   .contents .subscribe {
     padding-top: 15px; }
+
+.contribute {
+  margin-top: 15px;
+  display: block;
+  width: 3.6rem;
+  height: 3.6rem;
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: no-repeat center center;
+  background-size: 3.6rem 3.6rem;
+  background-image: url("/img/github.svg"); }
 
 .social-list {
   display: block; }
