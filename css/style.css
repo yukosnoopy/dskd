@@ -35,7 +35,7 @@ body {
   padding: 0;
   border-top: 5px solid rgba(0, 0, 0, 0.15);
   color: #263540;
-  font-size: 1.6rem;
+  font-size: 1.6em;
   font-family: "Vegur-Regular", sans-serif;
   line-height: 1;
   background: url(/img/bg.png) repeat fixed #d0d8dd; }
