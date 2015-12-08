@@ -231,12 +231,12 @@ a:focus {
     margin-top: 1.6rem;
     margin-bottom: 1.6rem;
     line-height: 1.6; }
-    .post__body p > code {
+    .post__body p code {
       padding: 0 2px;
       border-radius: 3px;
       font-size: inherit;
       background-color: rgba(255, 255, 255, 0.3); }
-    .post__body p > .demo-link {
+    .post__body p .demo-link {
       padding-left: 1.8rem;
       background-image: url("/img/hyperlink.svg");
       background-repeat: no-repeat;

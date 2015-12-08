@@ -5,14 +5,21 @@
       <link>http://dskd.jp/</link>
       <description>&lt;![CDATA[dskd.jp is a memorandum of simple front-end technology.]]&gt;</description>
       <language>ja-JP</language>
-      <pubdate>Tue Dec 08 2015 01:00:48 GMT+0900 (JST)</pubdate>
-      <lastbuilddate>Tue Dec 08 2015 01:00:48 GMT+0900 (JST)</lastbuilddate>
+      <pubdate>Tue Dec 08 2015 14:53:26 GMT+0900 (JST)</pubdate>
+      <lastbuilddate>Tue Dec 08 2015 14:53:26 GMT+0900 (JST)</lastbuilddate>
       <docs>http://blogs.law.harvard.edu/tech/rss</docs>
       <generator>Node.js v4.2.2</generator>
       <managingeditor>otiext@gmail.com (oti)</managingeditor>
       <webmaster>otiext@gmail.com (oti)</webmaster>
       <atom:link href="http://dskd.jp/feed" rel="self" type="application/rss+xml" />
       <creativeCommons:license>http://creativecommons.org/licenses/by-nc/4.0/</creativeCommons:license>
+      <item>
+        <title>IE6の疑似min-heightは奇跡のCSSトリック</title>
+        <link>http://dskd.jp/archives/76.html</link>
+        <description>みんなよく使ってたであろうあのスニペット</description>
+        <pubdate>Tue Dec 08 2015 23:45:18 GMT+0900 (JST)</pubdate>
+        <guid isPermaLink="true">http://dskd.jp/archives/76.html</guid>
+      </item>
       <item>
         <title>@importトリックの回顧</title>
         <link>http://dskd.jp/archives/75.html</link>

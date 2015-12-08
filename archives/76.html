@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width" name="viewport">
+    <title>IE6の疑似min-heightは奇跡のCSSトリック - dskd</title>
+    <meta content="/img/blog-cover.png" itemprop="image">
+    <meta content="みんなよく使ってたであろうあのスニペット" name="description">
+    <meta content="http://dskd.jp/archives/76.html" property="og:url">
+    <meta content="IE6の疑似min-heightは奇跡のCSSトリック" property="og:title">
+    <meta content="みんなよく使ってたであろうあのスニペット" property="og:description">
+    <meta content="/img/blog-cover.png" property="og:image">
+    <meta content="article" property="og:type">
+    <meta content="ja_JP" property="og:locale">
+    <meta content="dskd" property="og:site_name">
+    <link href="http://dskd.jp/archives/76.html" rel="canonical" itemprop="url">
+    <link href="/img/blog-icon.png" rel="apple-touch-icon-precomposed">
+    <link href="/feed" rel="alternate" type="application/rss+xml">
+    <link href="/css/style.css" rel="stylesheet" media="only screen">
+  </head>
+
+  <body>
+    <header role="banner" class="global-header">
+      <h1 class="logo"><a href="/" class="logo-link"><img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img"></a></h1>
+      <nav role="navigation" class="site-nav">
+        <ul class="site-nav-list">
+          <li class="site-nav-list__item"><a href="/archives/" class="site-nav-list-link">ARCHIVES</a></li>
+          <li class="site-nav-list__item"><a href="/demo/" class="site-nav-list-link">DEMO</a></li>
+          <li class="site-nav-list__item"><a href="/about.html" class="site-nav-list-link">ABOUT</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="contents">
+      <article class="post">
+        <footer class="post__footer">
+          <time datetime="2015-12-08T14:45:18+09:00" class="post-timestamp">2015-12-08</time>
+          <p class="post-tag"><a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar, </a><a href="/archives/css.html" class="tag-link">CSS</a></p>
+        </footer>
+        <h1 itemprop="name" class="post__title">IE6の疑似min-heightは奇跡のCSSトリック</h1>
+        <div itemprop="articleBody" class="post__body">
+          <p>“昔々あるところに……。” <a href="http://www.adventar.org/calendars/723">CSS昔話 Advent Calendar</a>の8日目。</p>
+          <p>IE6ではmin-width/max-width/min-height/max-heightのCSSプロパティーに対応していないが、min-heightに限ってはIE6でも疑似的に同じ表現をすることができた。</p> <pre data-language="css"><code>.box {
+  min-height: 100px;
+  height: auto<mark>!important</mark>;
+  height: 100px;
+}</code></pre>
+          <p><a href="http://makezine.com/2008/03/21/easiest-crossbrowser-css-minhe/">Easiest cross-browser CSS min-height
+</a></p>
+          <p><code>min-height</code>に対応しているモダンブラウザでは<code>.box</code>は<code>min-height: 100px</code>によって100px以上の高さが保証されるとともに、<code>height: 100px</code>はその前の行の<code>height: auto!important</code>によって上書きされ、コンテンツが100pxに収まらない場合はコンテンツ量に応じたボックスサイズとなる。</p>
+          <p>IE6ではまず未対応プロパティーの<code>min-height: 100px</code>は無視される。さらにIE6では、<em>同一の宣言ブロック内に同じプロパティーが指定された上で先に書かれたプロパティーに<code>!important</code>がついている場合、<code>!important</code>を無視する</em>。つまり<code>auto: 100px</code>のみが適用された状態になる。この<code>!important</code>を無視する挙動は<code>height</code>に限らず他のどんなプロパティーでも同じだったと思う。</p>
+          <pre data-language="css"><code>/* IE6での解釈 */
+.box {
+  min-height: 100px; /* 無効 */
+  height: auto!important; /* 無効 */
+  height: 100px; /* 有効 */
+}</code></pre>
+          <p>宣言ブロックが分かれていればIE6でも<code>!important</code>は仕様通りに解釈される。</p> <pre data-language="css"><code>/* 宣言ブロックが分かれていればIE6でも期待通り */
+.box {
+  height: auto!important; /* 有効 */
+}
+...
+.box {
+  height: 100px; /* !importantによって上書きされる */
+}
+</code></pre>
+          <p>CSSの仕様上、<code>height</code>プロパティーに固定値が指定されるとボックスの高さはその値で動かなくなり、コンテンツがその値に収まらなければ<code>overflow: visible</code>の初期値に従い下方向へはみ出して表示される。</p>
+          <p>しかしIE6ではそうならない。コンテンツが<code>.box</code>の高さに収まらなくなると、コンテンツ量に応じて<code>.box</code>の高さが伸びていく。コンテンツが収まるときは<code>.box</code>は100px未満にはならない。あたかも<em><code>min-height</code>と<code>height: auto</code></em>が指定されているかのように振る舞う。</p>
+          <p>この「同一宣言ブロック内の同一プロパティーの<code>!important</code>が無視されるバグ」と「<code>height</code>のサイズ算出のバグ」の併せ技によって、IE6とモダンブラウザで同じ表現が可能になるというわけだ。</p>
+          <p>これは奇跡の組み合わせだと感じる。ボックスのサイズ算出のバグが起こるのは<code>height</code>だけで、<code>width</code>ではそのようなことは起きなかった。IE6でheightだから可能だったのだ。</p>
+          <p>このスニペットが日本のブログで紹介されると瞬く間に広まったが、IE7やIE8でどう解釈されるのかを懸念する人もいくらかいた。IE7以上は<code>min-height</code>に対応しているので、<code>!important</code>がIE6同様に無視されると<code>height: 100px</code>が適用されて<code>min-height</code>の記述が無意味になるのでは？という懸念だ。</p>
+          <p>しかし実際はこの<code>!important</code>のバグはIE7で解消され、モダンブラウザと同じく<code>min-height: 100px</code>と<code>height: auto!important</code>が解釈されて期待通りの表示となるのであった。</p>
+          <p>CSSの文法としてvalidで、IE6のみにターゲットをしぼり、他のブラウザに影響を与えず、記述も非常にシンプル。このスニペットも「CSSハック」ではなく「CSSトリック」と呼びたい。まるで初めからそこにあったかのような、かつ手のひらにちょうど収まる感じがする、そんな存在感のあるスニペット。今では全く使わなくなったが、あの頃を思い出すと暖かい気持ちになれる気がするのだ。気がするだけだが。</p>
+          <hr>
+          <p>特定の条件で<code>!important</code>をなかったことにできるIE6ってやっぱりやばかったなと思う。HTMLコメントを地のテキストに勝手に変換したりするし、なかなかの逸材だったと認めざるを得ない。</p>
+          <p>CSS昔話 Advent Calendarでは今日以後のエントリでも、IE6のような10年以上前のブラウザ達がいかに奇妙なレンダリングをしていたかを振り返ることができるだろう。CSSハックとして紹介していた頃と決定的に違うのは、それらがモダンブラウザ時代の目線で語られることだ。単なる苦労話の共有におさまらない、時世を反映した回顧録。今後どんな話が出てくるのか、本当に楽しみにしている。</p>
+          <p>前回のエントリでは<a href="https://twitter.com/neotag/with_replies?max_position=672723522959970305&amp;_source_id=672602727004770305">人の古傷をえぐってしまって</a>申し訳ないと思った。だけど人は過去を乗り越えていける……強い生き物だと思うから……。</p>
+          <p>9日目は<a href="http://www.adventar.org/users/1744">@ksk1015</a>さんです。</p>
+        </div>
+        <aside class="post__contribute"><a href="https://github.com/oti/dskd/blob/master/src/md/post/76.md" class="contribute">Patches welcome!</a></aside>
+        <aside role="complementary" class="post__social">
+          <ul class="social-list">
+            <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=IE6%E3%81%AE%E7%96%91%E4%BC%BCmin-height%E3%81%AF%E5%A5%87%E8%B7%A1%E3%81%AECSS%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F76.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
+              class="social-link">Tweet</a></li>
+            <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F76.html" class="social-link">Share on Facebook</a></li>
+            <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=IE6%E3%81%AE%E7%96%91%E4%BC%BCmin-height%E3%81%AF%E5%A5%87%E8%B7%A1%E3%81%AECSS%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F76.html" class="social-link">Bookmark on Hatena</a></li>
+          </ul>
+        </aside>
+      </article>
+      <nav class="neighbor">
+        <ul class="neighbor-list">
+          <li class="neighbor-list__item neighbor-list__item--older"><a href="/archives/75.html" class="neighbor-link">@importトリックの回顧</a></li>
+        </ul>
+      </nav>
+    </main>
+    <footer class="global-footer">
+      <p class="author">Made by
+        <adress class="author__address"><a href="mailto:otiext@gmail.com">oti</a></adress>.</p>
+      <ul class="subinfo">
+        <li class="subinfo__item"><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link"><small class="subinfo-license">CC BY-NC</small></a></li>
+        <li class="subinfo__item"><a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a></li>
+      </ul>
+    </footer>
+  </body>
+
+</html>
