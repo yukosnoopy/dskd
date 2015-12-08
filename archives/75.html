@@ -66,7 +66,7 @@
             <li>IE4では読み込まれず、MacIE4.5とIE5以上で読み込subまれるsub.css</li>
             <li>MacIE4.5では読み込まれず、IE5以上で読み込まれるmain.css</li>
           </ul>
-          <p>import.cssは、HTML側でlink要素で指定する。</p> <pre data-language="html"><code>&lt;link rel="stylesheet" href="/css/import.css" media="screen"&gt;</code></pre>
+          <p>import.cssは、HTML側でlink要素で指定する。</p> <pre data-language="html"><code>&lt;link rel="stylesheet" href="/css/import.css" media="screen"&gt;</code></pre>
           <p>sub.cssはimport.css内の@importルールで読み込む。</p> <pre data-language="css"><code>/* import.css */
 @import "/css/sub.css"; /* url()でないのでIE4で読み込まれない */</code></pre>
           <p>main.cssはsub.css内で同じく@importルールで読み込む。</p> <pre data-language="css"><code>/* sub.css */
