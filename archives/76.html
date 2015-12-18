@@ -48,7 +48,7 @@
           <p><a href="http://makezine.com/2008/03/21/easiest-crossbrowser-css-minhe/">Easiest cross-browser CSS min-height
 </a></p>
           <p><code>min-height</code>に対応しているモダンブラウザでは<code>.box</code>は<code>min-height: 100px</code>によって100px以上の高さが保証されるとともに、<code>height: 100px</code>はその前の行の<code>height: auto!important</code>によって上書きされ、コンテンツが100pxに収まらない場合はコンテンツ量に応じたボックスサイズとなる。</p>
-          <p>IE6ではまず未対応プロパティーの<code>min-height: 100px</code>は無視される。さらにIE6では、<em>同一の宣言ブロック内に同じプロパティーが指定された上で先に書かれたプロパティーに<code>!important</code>がついている場合、<code>!important</code>を無視する</em>。つまり<code>auto: 100px</code>のみが適用された状態になる。この<code>!important</code>を無視する挙動は<code>height</code>に限らず他のどんなプロパティーでも同じだったと思う。</p>
+          <p>IE6ではまず未対応プロパティーの<code>min-height: 100px</code>は無視される。さらにIE6では、<em>同一の宣言ブロック内に同じプロパティーが指定された上で先に書かれたプロパティーに<code>!important</code>がついている場合、<code>!important</code>を無視する</em>。つまり<code>height: 100px</code>のみが適用された状態になる。この<code>!important</code>を無視する挙動は<code>height</code>に限らず他のどんなプロパティーでも同じだったと思う。</p>
           <pre data-language="css"><code>/* IE6での解釈 */
 .box {
   min-height: 100px; /* 無効 */
