@@ -5,14 +5,21 @@
       <link>http://dskd.jp/</link>
       <description>&lt;![CDATA[dskd.jp is a memorandum of simple front-end technology.]]&gt;</description>
       <language>ja-JP</language>
-      <pubdate>Sun Jan 17 2016 22:58:26 GMT+0900 (JST)</pubdate>
-      <lastbuilddate>Sun Jan 17 2016 22:58:26 GMT+0900 (JST)</lastbuilddate>
+      <pubdate>Tue Mar 15 2016 16:21:44 GMT+0900 (JST)</pubdate>
+      <lastbuilddate>Tue Mar 15 2016 16:21:44 GMT+0900 (JST)</lastbuilddate>
       <docs>http://blogs.law.harvard.edu/tech/rss</docs>
       <generator>Node.js v4.2.2</generator>
       <managingeditor>otiext@gmail.com (oti)</managingeditor>
       <webmaster>otiext@gmail.com (oti)</webmaster>
       <atom:link href="http://dskd.jp/feed" rel="self" type="application/rss+xml" />
       <creativeCommons:license>http://creativecommons.org/licenses/by-nc/4.0/</creativeCommons:license>
+      <item>
+        <title>CSSでは背景画像のリピート間隔を任意に設定できない</title>
+        <link>http://dskd.jp/archives/79.html</link>
+        <description>CSSで出来そうで出来ないことシリーズ2</description>
+        <pubdate>Wed Mar 16 2016 01:21:25 GMT+0900 (JST)</pubdate>
+        <guid isPermaLink="true">http://dskd.jp/archives/79.html</guid>
+      </item>
       <item>
         <title>TKGスロット</title>
         <link>http://dskd.jp/archives/78.html</link>
