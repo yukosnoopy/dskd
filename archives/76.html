@@ -42,37 +42,37 @@
           <p>“昔々あるところに……。” <a href="http://www.adventar.org/calendars/723">CSS昔話 Advent Calendar</a>の8日目。</p>
           <p>IE6ではmin-width/max-width/min-height/max-heightのCSSプロパティーに対応していないが、min-heightに限ってはIE6でも疑似的に同じ表現をすることができた。</p> <pre data-language="css"><code>.box {
   min-height: 100px;
-  height: auto<mark>!important</mark>;
+  height: auto <mark>!important</mark>;
   height: 100px;
 }</code></pre>
           <p><a href="http://makezine.com/2008/03/21/easiest-crossbrowser-css-minhe/">Easiest cross-browser CSS min-height
 </a></p>
           <p><code>min-height</code>に対応しているモダンブラウザでは<code>.box</code>は<code>min-height: 100px</code>によって100px以上の高さが保証されるとともに、<code>height: 100px</code>はその前の行の<code>height: auto!important</code>によって上書きされ、コンテンツが100pxに収まらない場合はコンテンツ量に応じたボックスサイズとなる。</p>
-          <p>IE6ではまず未対応プロパティーの<code>min-height: 100px</code>は無視される。さらにIE6では、<em>同一の宣言ブロック内に同じプロパティーが指定された上で先に書かれたプロパティーに<code>!important</code>がついている場合、<code>!important</code>を無視する</em>。つまり<code>height: 100px</code>のみが適用された状態になる。この<code>!important</code>を無視する挙動は<code>height</code>に限らず他のどんなプロパティーでも同じだったと思う。</p>
+          <p>IE6ではまず未対応プロパティーの<code>min-height: 100px</code>は無視される。さらにIE6では、<em>同一の宣言ブロック内に同じプロパティーが指定された上で、先に書かれたプロパティーに<code>!important</code>がついている場合、<code>!important</code>を無視してあとに書いた値で上書きする</em>。つまり<code>height: 100px</code>のみが適用された状態になる。この<code>!important</code>を無視する挙動は<code>height</code>に限らず他のどんなプロパティーでも同じだったと思う。</p>
           <pre data-language="css"><code>/* IE6での解釈 */
 .box {
   min-height: 100px; /* 無効 */
-  height: auto!important; /* 無効 */
+  height: auto !important; /* 無効 */
   height: 100px; /* 有効 */
 }</code></pre>
           <p>宣言ブロックが分かれていればIE6でも<code>!important</code>は仕様通りに解釈される。</p> <pre data-language="css"><code>/* 宣言ブロックが分かれていればIE6でも期待通り */
 .box {
-  height: auto!important; /* 有効 */
+  height: auto !important; /* 有効 */
 }
 ...
 .box {
-  height: 100px; /* !importantによって上書きされる */
+  height: 100px; /* !importantによって上書きされるので100pxの指定は無効になる */
 }
 </code></pre>
           <p>CSSの仕様上、<code>height</code>プロパティーに固定値が指定されるとボックスの高さはその値で動かなくなり、コンテンツがその値に収まらなければ<code>overflow: visible</code>の初期値に従い下方向へはみ出して表示される。</p>
-          <p>しかしIE6ではそうならない。コンテンツが<code>.box</code>の高さに収まらなくなると、コンテンツ量に応じて<code>.box</code>の高さが伸びていく。コンテンツが収まるときは<code>.box</code>は100px未満にはならない。あたかも<em><code>min-height</code>と<code>height: auto</code></em>が指定されているかのように振る舞う。</p>
+          <p>しかしIE6ではそうならない。コンテンツが<code>.box</code>の高さに収まらなくなると、<code>.box</code>の高さに固定値が指定されていたとしてもコンテンツ量に応じて<code>.box</code>の高さが伸びていく。コンテンツが収まるときは<code>.box</code>は100px未満にはならない。あたかも<em><code>min-height</code>と<code>height: auto</code></em>が指定されているかのように振る舞う。</p>
           <p>この「同一宣言ブロック内の同一プロパティーの<code>!important</code>が無視されるバグ」と「<code>height</code>のサイズ算出のバグ」の併せ技によって、IE6とモダンブラウザで同じ表現が可能になるというわけだ。</p>
           <p>これは奇跡の組み合わせだと感じる。ボックスのサイズ算出のバグが起こるのは<code>height</code>だけで、<code>width</code>ではそのようなことは起きなかった。IE6でheightだから可能だったのだ。</p>
           <p>このスニペットが日本のブログで紹介されると瞬く間に広まったが、IE7やIE8でどう解釈されるのかを懸念する人もいくらかいた。IE7以上は<code>min-height</code>に対応しているので、<code>!important</code>がIE6同様に無視されると<code>height: 100px</code>が適用されて<code>min-height</code>の記述が無意味になるのでは？という懸念だ。</p>
           <p>しかし実際はこの<code>!important</code>のバグはIE7で解消され、モダンブラウザと同じく<code>min-height: 100px</code>と<code>height: auto!important</code>が解釈されて期待通りの表示となるのであった。</p>
           <p>CSSの文法としてvalidで、IE6のみにターゲットをしぼり、他のブラウザに影響を与えず、記述も非常にシンプル。このスニペットも「CSSハック」ではなく「CSSトリック」と呼びたい。まるで初めからそこにあったかのような、かつ手のひらにちょうど収まる感じがする、そんな存在感のあるスニペット。今では全く使わなくなったが、あの頃を思い出すと暖かい気持ちになれる気がするのだ。気がするだけだが。</p>
           <hr>
-          <p>特定の条件で<code>!important</code>をなかったことにできるIE6ってやっぱりやばかったなと思う。HTMLコメントを地のテキストに勝手に変換したりするし、なかなかの逸材だったと認めざるを得ない。</p>
+          <p>特定の条件で<code>!important</code>をなかったことにできるIE6ってやっぱりやばかったなと思う。<a href="http://geckotang.tumblr.com/post/134334733431/ac2015-css-1">HTMLコメントを地のテキストに勝手に変換するバグ</a>といい、なかなかの逸材だったと認めざるを得ない。</p>
           <p>CSS昔話 Advent Calendarでは今日以後のエントリでも、IE6のような10年以上前のブラウザ達がいかに奇妙なレンダリングをしていたかを振り返ることができるだろう。CSSハックとして紹介していた頃と決定的に違うのは、それらがモダンブラウザ時代の目線で語られることだ。単なる苦労話の共有におさまらない、時世を反映した回顧録。今後どんな話が出てくるのか、本当に楽しみにしている。</p>
           <p>前回のエントリでは<a href="https://twitter.com/neotag/status/672601431472345088">人</a>の<a href="https://twitter.com/neotag/status/672602727004770305">古傷</a>を<a href="https://twitter.com/neotag/status/672602945142153216">えぐってしまって</a>申し訳ないと思った。だけど人は過去を乗り越えていける……強い生き物だと思うから……。</p>
           <p>9日目は<a href="http://www.adventar.org/users/1744">@ksk1015</a>さんです。</p>
