@@ -53,32 +53,61 @@
           <iframe width="100%" height="150" style="margin-bottom: 1em" src="http://jsfiddle.net/rNxgD/18/embedded/result,css,html"
           allowfullscreen="allowfullscreen" frameborder="0"></iframe>
           <p>
-            <a href="dskd.jp/img/overflow-overlay/mac_safari_7_0_5.png" title="Mac / Safari 7.0.5"><img src="/img/overflow-overlay/mac_safari_7_0_5.png" alt="Mac / Safari 7.0.5でのキャプチャ"></a>
+            <style>
+              .table--post48 td {
+                padding-top: 10px;
+                padding-bottom: 10px;
+              }
+            </style>
           </p>
-          <p>
-            <a href="/img/overflow-overlay/mac_chrome_35.png" title="Mac / Google Chrome 35"><img src="/img/overflow-overlay/mac_chrome_35.png" alt="Mac / Google Chrome 35でのキャプチャ"></a>
-          </p>
-          <p>
-            <a href="/img/overflow-overlay/mac_firefox_30.png" title="Mac / Firefox 30"><img src="/img/overflow-overlay/mac_firefox_30.png" alt="Mac / Firefox 30でのキャプチャ"></a>
-          </p>
-          <p>
-            <a href="/img/overflow-overlay/win_ie_11.png" title="Win / IE11"><img src="/img/overflow-overlay/win_ie_11.png" alt="Win / IE11でのキャプチャ"></a>
-          </p>
-          <p>
-            <a href="/img/overflow-overlay/win_chrome_35.png" title="Win / Google Chrome 35"><img src="/img/overflow-overlay/win_chrome_35.png" alt="Win / Google Chrome35でのキャプチャ"></a>
-          </p>
-          <p>
-            <a href="/img/overflow-overlay/win_firefox_30.png" title="Win / Firefox 30"><img src="/img/overflow-overlay/win_firefox_30.png" alt="Win / Firefox 30でのキャプチャ"></a>
-          </p>
-          <p>Mac Chrome 35のキャプチャが一番わかりやすい。通常、overflowのスクロールバーはその要素幅の内側に表示されて、コンテンツ部分の幅が狭まる。しかしoverlay値を指定するとスクロールバーがコンテンツにかぶさるようになる。SafariやWin Chromeのキャプチャではわかりにくいが、改行された数字が１つ飛んでいる。上記に埋め込んだjsfiddleのデモではresizeをつけているので、左右に動かしてみるとコンテンツにスクロールバーがかぶさる様子がわかると思う。</p>
+          <table class="table--post48">
+            <caption>OS / ブラウザ別の様子。左のボックスがoverflow: overlay、右はoverflow: autoを指定している。</caption>
+            <tr>
+              <th>Mac / Safari 7.0.5</th>
+              <td>
+                <a href="/img/overflow-overlay/mac_safari_7_0_5.png" title="Mac / Safari 7.0.5"><img src="/img/overflow-overlay/mac_safari_7_0_5.png" alt="Mac / Safari 7.0.5でのキャプチャ"></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Mac / Google Chrome 35</th>
+              <td>
+                <a href="/img/overflow-overlay/mac_chrome_35.png" title="Mac / Google Chrome 35"><img src="/img/overflow-overlay/mac_chrome_35.png" alt="Mac / Google Chrome 35でのキャプチャ"></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Mac / Firefox 30</th>
+              <td>
+                <a href="/img/overflow-overlay/mac_firefox_30.png" title="Mac / Firefox 30"><img src="/img/overflow-overlay/mac_firefox_30.png" alt="Mac / Firefox 30でのキャプチャ"></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Win / IE11</th>
+              <td>
+                <a href="/img/overflow-overlay/win_ie_11.png" title="Win / IE11"><img src="/img/overflow-overlay/win_ie_11.png" alt="Win / IE11でのキャプチャ"></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Win / Google Chrome 35</th>
+              <td>
+                <a href="/img/overflow-overlay/win_chrome_35.png" title="Win / Google Chrome 35"><img src="/img/overflow-overlay/win_chrome_35.png" alt="Win / Google Chrome 35でのキャプチャ"></a>
+              </td>
+            </tr>
+            <tr>
+              <th>Win / Firefox 30</th>
+              <td>
+                <a href="/img/overflow-overlay/win_firefox_30.png" title="Win / Firefox 30"><img src="/img/overflow-overlay/win_firefox_30.png" alt="Win / Firefox 30でのキャプチャ"></a>
+              </td>
+            </tr>
+          </table>
+          <p>Mac Chrome 35のキャプチャが一番わかりやすい。通常、overflowのスクロールバーはその要素幅の内側に表示されて、コンテンツ部分の幅が狭まる。しかしoverlay値を指定するとスクロールバーがコンテンツにかぶさるようになる。SafariやWin Chromeのキャプチャでは一見わかりにくいが、<em>改行された数字が１つ飛んでいる</em>ので、スクロールバーにかぶさった分が隠れていると推測できる。上記に埋め込んだjsfiddleのデモではresizeをつけているので、左右に動かしてみるとコンテンツにスクロールバーがかぶさる様子がわかると思う。</p>
           <p>FirefoxとIEでは適応されていないが、その場合の挙動はautoではなくvisibleのようだ。overflowの初期値になるのではなく、無効なプロパティと解釈されてoverflowが宣言されていない状態かつ高さは100pxなのでコンテンツは下にはみ出る状態になる。規定のレンダリング。</p>
-          <p>ついでに<a href="http://jsfiddle.net/rNxgD/21/">-ms-autohiding-scrollbarも書いてみた</a>。IE11で見たキャプチャは割愛するが、スクロールバーは出ずにvisible値と同じように表示されているように思う。これが正しい描画なのかわからない...。</p>
+          <p>ついでに<a href="http://jsfiddle.net/rNxgD/21/">-ms-autohiding-scrollbarも書いてみた</a>。IE11で見たキャプチャは割愛するが、スクロールバーは出ずにvisible値と同じように表示されているように思う。これが正しい描画なのかわからない……。</p>
           <h2 id="-">イベントをトリガーしない？</h2>
           <p>イベントの件はどうだろうか。そもそも何のイベントについてなのかわからない。おそらくresizeだろうとあたりをつけてコードを書いたけどresizeイベントはwindow（viewport）しか持てないようで検出できなかった。そこでoverflowしているdivの中にもう１つdivを用意してDeveloper Toolsで確認したところ、auto値の方はスクロールバーが出現すると内包しているdivのwidthは小さくなり、overlay値の方はoverlayがない時とwidthが変わらなかった。</p>
           <p>となれば、overlayを指定した要素は内包物の変化でwidthとheightが変わらないことになり、ブラウザレンダーのレベルで描画コストが低いと言えるような気がする。</p>
           <p>任意の要素でresizeイベントが取れれば検証も簡単なのに。都度サイズを調査する関数を呼んでもいいけどなんか微妙な感じがするので書くのをやめた。</p>
           <h2 id="-webkit-">そもそもWebkit系のみ</h2>
-          <p>overflow: overlay;があって嬉しい人はあまりいない気がする。現状ではすでにデフォルト設定のMac、iPhoneやAndroidではすでにスクロールバーは非表示だし、スクロールバーが表示される環境のChromeやSafariでもコンテンツ幅が狭まらないとは言え、要素がその分だけ隠れてしまう。さらに横スクロールも発生しないし、領域をドラッグしても隠れている部分を見ることはできず、閲覧者に優しくない。いったいどういう理由でこの値は生まれたんだろうか。</p>
+          <p>overflow: overlay;があって嬉しい人はあまりいない気がする。現状ではすでにデフォルト設定のMac、iPhoneやAndroidではすでにスクロールバーは非表示だし、スクロールバーが表示される環境のChromeやSafariでもコンテンツ幅が狭まらないとは言え、要素がその分だけ隠れてしまう。隠れていても<em>横スクロールも発生しない</em>し、領域をマウスデバイスなどでドラッグしても隠れている部分を見ることはできず、閲覧者に優しくない。いったいどういう理由でこの値は生まれたんだろうか。</p>
           <p>overlay値は2006年にすでに使用可能だったわけだが、その頃はMacもまだスクロールバーはオーバーレイ表示ではなかった頃だったと思う。となるとスクロールバーを表示しなければならなくたった時にコンテンツ幅に不都合が生じる状況に対応するために都合主義的に実装されたのかもしれない。</p>
           <hr>
           <p>効果と現状から言ってoverlay値がW3Cで標準化されることはなさそう。今回ふとしたきっかけでプロパティの値についての議論を追ってみたが、けっこう面白かったので何かでまたやりたい。</p>
