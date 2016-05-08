@@ -5,8 +5,8 @@
       <link>http://dskd.jp/</link>
       <description>&lt;![CDATA[dskd.jp is a memorandum of simple front-end technology.]]&gt;</description>
       <language>ja-JP</language>
-      <pubdate>Sun May 08 2016 23:53:27 GMT+0900 (JST)</pubdate>
-      <lastbuilddate>Sun May 08 2016 23:53:27 GMT+0900 (JST)</lastbuilddate>
+      <pubdate>Mon May 09 2016 00:05:04 GMT+0900 (JST)</pubdate>
+      <lastbuilddate>Mon May 09 2016 00:05:04 GMT+0900 (JST)</lastbuilddate>
       <docs>http://blogs.law.harvard.edu/tech/rss</docs>
       <generator>Node.js v4.2.2</generator>
       <managingeditor>otiext@gmail.com (oti)</managingeditor>
@@ -17,7 +17,7 @@
         <title>続・CSSだけでviewportに常に対角線を引く</title>
         <link>http://dskd.jp/archives/82.html</link>
         <description>結論から言うとCSSを知らなすぎて死にたい</description>
-        <pubdate>Mon May 09 2016 08:51:05 GMT+0900 (JST)</pubdate>
+        <pubdate>Mon May 09 2016 09:03:22 GMT+0900 (JST)</pubdate>
         <guid isPermaLink="true">http://dskd.jp/archives/82.html</guid>
       </item>
       <item>
