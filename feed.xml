@@ -5,14 +5,21 @@
       <link>http://dskd.jp/</link>
       <description>&lt;![CDATA[dskd.jp is a memorandum of simple front-end technology.]]&gt;</description>
       <language>ja-JP</language>
-      <pubdate>Wed Apr 13 2016 22:45:59 GMT+0900 (JST)</pubdate>
-      <lastbuilddate>Wed Apr 13 2016 22:45:59 GMT+0900 (JST)</lastbuilddate>
+      <pubdate>Sun May 08 2016 22:30:54 GMT+0900 (JST)</pubdate>
+      <lastbuilddate>Sun May 08 2016 22:30:54 GMT+0900 (JST)</lastbuilddate>
       <docs>http://blogs.law.harvard.edu/tech/rss</docs>
       <generator>Node.js v4.2.2</generator>
       <managingeditor>otiext@gmail.com (oti)</managingeditor>
       <webmaster>otiext@gmail.com (oti)</webmaster>
       <atom:link href="http://dskd.jp/feed" rel="self" type="application/rss+xml" />
       <creativeCommons:license>http://creativecommons.org/licenses/by-nc/4.0/</creativeCommons:license>
+      <item>
+        <title>CSSだけでviewportに常に対角線を引く</title>
+        <link>http://dskd.jp/archives/81.html</link>
+        <description>結論から言うとCSSだけでは無理</description>
+        <pubdate>Mon May 09 2016 07:28:45 GMT+0900 (JST)</pubdate>
+        <guid isPermaLink="true">http://dskd.jp/archives/81.html</guid>
+      </item>
       <item>
         <title>夢</title>
         <link>http://dskd.jp/archives/80.html</link>
