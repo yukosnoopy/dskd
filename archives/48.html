@@ -33,8 +33,7 @@
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer">
-          <time datetime="2014-07-17T18:42:00+09:00" class="post-timestamp">2014-07-17</time>
+        <footer class="post__footer"><time datetime="2014-07-17T18:42:00+09:00" class="post-timestamp">2014-07-17</time>
           <p class="post-tag"><a href="/archives/css.html" class="tag-link">CSS</a></p>
         </footer>
         <h1 itemprop="name" class="post__title">overflow: overlay;</h1>
@@ -49,9 +48,8 @@
           <p>W3Cのフォーラムではなかなか盛り上がっていたようで<a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh441298.aspx">マイクロソフトの独自実装</a>のことも紹介されている（これも知らなかった！）。イベントのトリガーの件も議論されそうになったものの、overflowプロパティだけじゃなく他の仕様のことも併せて考えたほうがいいのではみたいな流れになって、最後にスクロールバーの計算方法についての提案のリンクが貼られてスレッドは終わっている。それから１年半ほど経つが、結局overlay値が標準化するでもなく、Webkitから削除されるでもリネームされるでもなく、現在も指定可能になっているという状況のようだ。</p>
           <h2 id="-">ブラウザで確認</h2>
           <p>さっそく一通りのブラウザで表示確認する。前提として、標準設定のMac OSとモバイルブラウザはスクロールバーがデフォルトで非表示であり、コンテンツがスクロール可能な場合はスクロールするとオーバーレイでスクロールバーが表示される。なのでそちらのキャプチャは撮っていない。Macで確認したい場合は<a href="/img/overflow-overlay/mac_preferences.png">環境設定 -&gt; 一般からスクロールバーを「常に表示」にする</a>と良い。</p>
-          <p>JSFiddleの最初のデモはあまり見やすくないので、フォークしたもので確認した。左のボックスがoverlay、右はauto値が指定されている。JSFiddleの埋め込みが何も表示されていない場合はResultのタブを押せば出てくるはず。</p>
-          <iframe width="100%" height="150" style="margin-bottom: 1em" src="http://jsfiddle.net/rNxgD/18/embedded/result,css,html"
-          allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+          <p>JSFiddleの最初のデモはあまり見やすくないので、フォークしたもので確認した。左のボックスがoverlay、右はauto値が指定されている。JSFiddleの埋め込みが何も表示されていない場合はResultのタブを押せば出てくるはず。</p> <iframe width="100%" height="150" style="margin-bottom: 1em" src="http://jsfiddle.net/rNxgD/18/embedded/result,css,html"
+            allowfullscreen="allowfullscreen" frameborder="0"></iframe>
           <p>
             <style>
               .table--post48 td {

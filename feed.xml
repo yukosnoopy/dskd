@@ -1,381 +1,381 @@
 <?xml version="1.0" encoding="utf-8" ?>
-  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:creativeCommons="http://blogs.law.harvard.edu/tech/creativeCommonsRssModule">
-    <channel>
-      <title>dskd</title>
-      <link>http://dskd.jp/</link>
-      <description>&lt;![CDATA[dskd.jp is a memorandum of simple front-end technology.]]&gt;</description>
-      <language>ja-JP</language>
-      <pubdate>Mon May 09 2016 00:05:04 GMT+0900 (JST)</pubdate>
-      <lastbuilddate>Mon May 09 2016 00:05:04 GMT+0900 (JST)</lastbuilddate>
-      <docs>http://blogs.law.harvard.edu/tech/rss</docs>
-      <generator>Node.js v4.2.2</generator>
-      <managingeditor>otiext@gmail.com (oti)</managingeditor>
-      <webmaster>otiext@gmail.com (oti)</webmaster>
-      <atom:link href="http://dskd.jp/feed" rel="self" type="application/rss+xml" />
-      <creativeCommons:license>http://creativecommons.org/licenses/by-nc/4.0/</creativeCommons:license>
-      <item>
-        <title>続・CSSだけでviewportに常に対角線を引く</title>
-        <link>http://dskd.jp/archives/82.html</link>
-        <description>結論から言うとCSSを知らなすぎて死にたい</description>
-        <pubdate>Mon May 09 2016 09:03:22 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/82.html</guid>
-      </item>
-      <item>
-        <title>CSSだけでviewportに常に対角線を引く</title>
-        <link>http://dskd.jp/archives/81.html</link>
-        <description>結論から言うとCSSだけでは無理</description>
-        <pubdate>Mon May 09 2016 07:28:45 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/81.html</guid>
-      </item>
-      <item>
-        <title>夢</title>
-        <link>http://dskd.jp/archives/80.html</link>
-        <description>2016年3月23日の夢</description>
-        <pubdate>Fri Mar 25 2016 07:15:19 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/80.html</guid>
-      </item>
-      <item>
-        <title>CSSでは背景画像のリピート間隔を任意に設定できない</title>
-        <link>http://dskd.jp/archives/79.html</link>
-        <description>CSSで出来そうで出来ないことシリーズ2</description>
-        <pubdate>Wed Mar 16 2016 01:21:25 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/79.html</guid>
-      </item>
-      <item>
-        <title>TKGスロット</title>
-        <link>http://dskd.jp/archives/78.html</link>
-        <description>TKG Advent Calendar 2015、25日目</description>
-        <pubdate>Mon Jan 18 2016 07:52:17 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/78.html</guid>
-      </item>
-      <item>
-        <title>レゴ</title>
-        <link>http://dskd.jp/archives/77.html</link>
-        <description>30歳でもおもちゃは楽しい</description>
-        <pubdate>Mon Jan 11 2016 19:38:32 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/77.html</guid>
-      </item>
-      <item>
-        <title>IE6の疑似min-heightは奇跡のCSSトリック</title>
-        <link>http://dskd.jp/archives/76.html</link>
-        <description>みんなよく使ってたであろうあのスニペット</description>
-        <pubdate>Tue Dec 08 2015 23:45:18 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/76.html</guid>
-      </item>
-      <item>
-        <title>@importトリックの回顧</title>
-        <link>http://dskd.jp/archives/75.html</link>
-        <description>ブラウザの@importの解釈の違いを利用したCSSハック回顧会場</description>
-        <pubdate>Fri Dec 04 2015 10:57:32 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/75.html</guid>
-      </item>
-      <item>
-        <title>My Life, My TKG</title>
-        <link>http://dskd.jp/archives/74.html</link>
-        <description>僕のTKGオリジン</description>
-        <pubdate>Tue Dec 01 2015 19:00:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/74.html</guid>
-      </item>
-      <item>
-        <title>outlineプロパティで作った枠線は角丸にすることができない</title>
-        <link>http://dskd.jp/archives/73.html</link>
-        <description>CSSで出来そうで出来ないことシリーズ1</description>
-        <pubdate>Mon Nov 30 2015 09:49:15 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/73.html</guid>
-      </item>
-      <item>
-        <title>Launch dskd v5</title>
-        <link>http://dskd.jp/archives/72.html</link>
-        <description>ブログをバージョンアップした。</description>
-        <pubdate>Fri Nov 27 2015 10:12:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/72.html</guid>
-      </item>
-      <item>
-        <title>小さく持つ</title>
-        <link>http://dskd.jp/archives/71.html</link>
-        <description>宗教上の理由で小さいのが好き</description>
-        <pubdate>Sun Nov 08 2015 01:40:29 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/71.html</guid>
-      </item>
-      <item>
-        <title>translate属性による翻訳の制御</title>
-        <link>http://dskd.jp/archives/69.html</link>
-        <description>translate属性使ってます？</description>
-        <pubdate>Tue Oct 20 2015 10:32:46 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/69.html</guid>
-      </item>
-      <item>
-        <title>yargsを使ってタスク自動化ツールのコマンドにオプションを指定する</title>
-        <link>http://dskd.jp/archives/68.html</link>
-        <description>yargs便利ですわ〜</description>
-        <pubdate>Fri Aug 14 2015 10:26:24 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/68.html</guid>
-      </item>
-      <item>
-        <title>キーバインドの競合</title>
-        <link>http://dskd.jp/archives/67.html</link>
-        <description>あちらを立てればこちらが立たず</description>
-        <pubdate>Tue Jun 02 2015 09:43:28 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/67.html</guid>
-      </item>
-      <item>
-        <title>開発環境構築作業の理想</title>
-        <link>http://dskd.jp/archives/66.html</link>
-        <description>男は黙って再インストール</description>
-        <pubdate>Sun May 17 2015 07:46:40 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/66.html</guid>
-      </item>
-      <item>
-        <title>Launch dskd v4</title>
-        <link>http://dskd.jp/archives/65.html</link>
-        <description>BEM離れ</description>
-        <pubdate>Fri Apr 10 2015 01:28:45 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/65.html</guid>
-      </item>
-      <item>
-        <title>SKAGEN BLUE DIALS</title>
-        <link>http://dskd.jp/archives/64.html</link>
-        <description>なぜ腕時計は増えていくのか</description>
-        <pubdate>Wed Apr 08 2015 02:16:10 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/64.html</guid>
-      </item>
-      <item>
-        <title>TRBLメソッドでbackground-sizeを代替する</title>
-        <link>http://dskd.jp/archives/63.html</link>
-        <description>TRBLメソッドすごいな〜</description>
-        <pubdate>Fri Mar 27 2015 03:08:21 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/63.html</guid>
-      </item>
-      <item>
-        <title>Google Chrome 40でreversed属性のついたol要素のカウンターがおかしい</title>
-        <link>http://dskd.jp/archives/58.html</link>
-        <description>reversed属性、使ってます？</description>
-        <pubdate>Tue Feb 17 2015 22:14:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/58.html</guid>
-      </item>
-      <item>
-        <title>EDJOなオブジェクトの妄想</title>
-        <link>http://dskd.jp/archives/57.html</link>
-        <description>Every Declaration Just Once</description>
-        <pubdate>Sat Jan 24 2015 21:18:20 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/57.html</guid>
-      </item>
-      <item>
-        <title>UE BOOMを買った</title>
-        <link>http://dskd.jp/archives/56.html</link>
-        <description>無線スピーカーを買ったぞ！</description>
-        <pubdate>Mon Dec 15 2014 09:21:55 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/56.html</guid>
-      </item>
-      <item>
-        <title>columnプロパティが特定の状況でおかしくなる</title>
-        <link>http://dskd.jp/archives/55.html</link>
-        <description>columnこわい。</description>
-        <pubdate>Fri Dec 12 2014 19:37:05 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/55.html</guid>
-      </item>
-      <item>
-        <title>僕はCSSを見殺しにした</title>
-        <link>http://dskd.jp/archives/54.html</link>
-        <description>CSSよ死をもって我が地肉となれ</description>
-        <pubdate>Wed Dec 10 2014 19:30:30 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/54.html</guid>
-      </item>
-      <item>
-        <title>style属性でzoomを指定すると特定の状況でzoomが無効になる</title>
-        <link>http://dskd.jp/archives/50.html</link>
-        <description>zoomこわい。</description>
-        <pubdate>Fri Dec 05 2014 22:34:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/50.html</guid>
-      </item>
-      <item>
-        <title>適当とテキトー</title>
-        <link>http://dskd.jp/archives/49.html</link>
-        <description>ニュアンスの再定義みたいなこと</description>
-        <pubdate>Tue Dec 02 2014 19:06:47 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/49.html</guid>
-      </item>
-      <item>
-        <title>overflow: overlay;</title>
-        <link>http://dskd.jp/archives/48.html</link>
-        <description>知っていても役には立たない系のネタ</description>
-        <pubdate>Fri Jul 18 2014 03:42:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/48.html</guid>
-      </item>
-      <item>
-        <title>左右marginで任意の比率を保つ</title>
-        <link>http://dskd.jp/archives/47.html</link>
-        <description>calc()とmargin-*: auto;</description>
-        <pubdate>Sun Jul 13 2014 07:33:37 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/47.html</guid>
-      </item>
-      <item>
-        <title>git filter-branchで過去の全てのcommitから画像ファイルの追加/変更をなかったことにしてリポジトリを軽量化する</title>
-        <link>http://dskd.jp/archives/46.html</link>
-        <description>歴史の書き換えだぁ〜！</description>
-        <pubdate>Mon Jul 07 2014 10:45:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/46.html</guid>
-      </item>
-      <item>
-        <title>人には難しい気がする機械の真偽</title>
-        <link>http://dskd.jp/archives/45.html</link>
-        <description>素人なので簡単なことがわからない</description>
-        <pubdate>Sat May 24 2014 22:51:12 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/45.html</guid>
-      </item>
-      <item>
-        <title>Autoprefixerの@keyframes animation の処理に違和感があったけど、僕が間違っていた</title>
-        <link>http://dskd.jp/archives/44.html</link>
-        <description>Autoprefixerは頭がいい</description>
-        <pubdate>Wed May 07 2014 20:47:45 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/44.html</guid>
-      </item>
-      <item>
-        <title>BEMまとめ奴</title>
-        <link>http://dskd.jp/archives/43.html</link>
-        <description>ちゃんとまとめました</description>
-        <pubdate>Thu Dec 26 2013 12:00:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/43.html</guid>
-      </item>
-      <item>
-        <title>PSDファイルのレイヤー名でBEM</title>
-        <link>http://dskd.jp/archives/42.html</link>
-        <description>ファイル名でもBEMメソッドをとりいれる試み</description>
-        <pubdate>Thu Dec 26 2013 11:35:05 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/42.html</guid>
-      </item>
-      <item>
-        <title>BEMのロゴが個性的で面白い</title>
-        <link>http://dskd.jp/archives/41.html</link>
-        <description>BEMのロゴのご紹介です。</description>
-        <pubdate>Wed Dec 25 2013 11:45:50 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/41.html</guid>
-      </item>
-      <item>
-        <title>BEMに向いているデザイン、向いていないデザイン</title>
-        <link>http://dskd.jp/archives/40.html</link>
-        <description>BEMの向き不向き</description>
-        <pubdate>Mon Dec 23 2013 08:12:50 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/40.html</guid>
-      </item>
-      <item>
-        <title>ブログを初めてBEM化した時の流れの最後</title>
-        <link>http://dskd.jp/archives/39.html</link>
-        <description>BEM神の声完結編</description>
-        <pubdate>Tue Dec 10 2013 06:56:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/39.html</guid>
-      </item>
-      <item>
-        <title>ブログを初めてBEM化した時の流れの続き</title>
-        <link>http://dskd.jp/archives/38.html</link>
-        <description>BEM神の声の続き</description>
-        <pubdate>Fri Dec 06 2013 19:05:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/38.html</guid>
-      </item>
-      <item>
-        <title>内包要素の数が変動しても僕には擬似クラスと間接セレクタがある</title>
-        <link>http://dskd.jp/archives/37.html</link>
-        <description>CSSの数量クエリで対象を限定する</description>
-        <pubdate>Wed Dec 04 2013 20:15:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/37.html</guid>
-      </item>
-      <item>
-        <title>ブログを初めてBEM化した時の流れ</title>
-        <link>http://dskd.jp/archives/36.html</link>
-        <description>BEM神の声が聞こえているか</description>
-        <pubdate>Wed Dec 04 2013 18:54:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/36.html</guid>
-      </item>
-      <item>
-        <title>もっと広まって欲しいCSS</title>
-        <link>http://dskd.jp/archives/35.html</link>
-        <description>TRBLメソッドについて</description>
-        <pubdate>Tue Dec 03 2013 01:25:55 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/35.html</guid>
-      </item>
-      <item>
-        <title>CSSの命名規則にBEMを取り入れてみる</title>
-        <link>http://dskd.jp/archives/34.html</link>
-        <description>BEM始めました</description>
-        <pubdate>Mon Dec 02 2013 10:15:16 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/34.html</guid>
-      </item>
-      <item>
-        <title>画像サイズに依存しない絶対中央配置</title>
-        <link>http://dskd.jp/archives/29.html</link>
-        <description>上下左右の中央揃えは人類の欲望</description>
-        <pubdate>Tue May 14 2013 18:50:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/29.html</guid>
-      </item>
-      <item>
-        <title>次へ前ヘのボタンのどっちがどっちなのか試させないデザイン</title>
-        <link>http://dskd.jp/archives/27.html</link>
-        <description>予想しにくいデザインはいやずら</description>
-        <pubdate>Thu Feb 14 2013 02:30:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/27.html</guid>
-      </item>
-      <item>
-        <title>CSS Programming HTML5 Template Generator</title>
-        <link>http://dskd.jp/archives/25.html</link>
-        <description>CSS Programming</description>
-        <pubdate>Mon Dec 03 2012 19:00:15 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/25.html</guid>
-      </item>
-      <item>
-        <title>@mediaのorientationはviewportの縦横がどっちが長いかであって、デバイスが縦か横かじゃないですよ</title>
-        <link>http://dskd.jp/archives/24.html</link>
-        <description>@media orientationの注意点</description>
-        <pubdate>Sat Nov 17 2012 03:00:15 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/24.html</guid>
-      </item>
-      <item>
-        <title>:hoverしている要素の直前の要素の指定をCSS4の!符号で妄想した</title>
-        <link>http://dskd.jp/archives/23.html</link>
-        <description>親セレクタ的なやつ</description>
-        <pubdate>Fri Nov 16 2012 02:38:18 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/23.html</guid>
-      </item>
-      <item>
-        <title>「終わん寝」の提唱</title>
-        <link>http://dskd.jp/archives/14.html</link>
-        <description>終わらないから寝るとか</description>
-        <pubdate>Tue May 22 2012 08:22:47 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/14.html</guid>
-      </item>
-      <item>
-        <title>GW</title>
-        <link>http://dskd.jp/archives/13.html</link>
-        <description>ゴールデンウィークの前半は日光の中禅寺湖畔へ足を運んだ</description>
-        <pubdate>Tue May 08 2012 00:21:47 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/13.html</guid>
-      </item>
-      <item>
-        <title>絶対中央配置のCSSの続き</title>
-        <link>http://dskd.jp/archives/12.html</link>
-        <description>CSSの絶対中央配置スニペットの検証</description>
-        <pubdate>Thu May 03 2012 01:06:00 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/12.html</guid>
-      </item>
-      <item>
-        <title>絶対中央配置のCSS</title>
-        <link>http://dskd.jp/archives/11.html</link>
-        <description>上下左右方向で中央揃えにするCSSスニペット</description>
-        <pubdate>Fri Apr 20 2012 20:55:12 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/11.html</guid>
-      </item>
-      <item>
-        <title>img要素にpointer-events:none;を指定する</title>
-        <link>http://dskd.jp/archives/7.html</link>
-        <description>img要素にpointer-events:none;を指定するとどうなるのか</description>
-        <pubdate>Thu Oct 13 2011 04:02:06 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/7.html</guid>
-      </item>
-      <item>
-        <title>よくわかんないんですけど</title>
-        <link>http://dskd.jp/archives/1.html</link>
-        <description>a.k.a initial commit</description>
-        <pubdate>Wed Dec 22 2010 18:45:32 GMT+0900 (JST)</pubdate>
-        <guid isPermaLink="true">http://dskd.jp/archives/1.html</guid>
-      </item>
-    </channel>
-  </rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:creativeCommons="http://blogs.law.harvard.edu/tech/creativeCommonsRssModule">
+  <channel>
+    <title>dskd</title>
+    <link>http://dskd.jp/</link>
+    <description>&lt;![CDATA[dskd.jp is a memorandum of simple front-end technology.]]&gt;</description>
+    <language>ja-JP</language>
+    <pubdate>Mon Jun 06 2016 18:37:36 GMT+0900 (JST)</pubdate>
+    <lastbuilddate>Mon Jun 06 2016 18:37:36 GMT+0900 (JST)</lastbuilddate>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>Node.js v4.2.2</generator>
+    <managingeditor>otiext@gmail.com (oti)</managingeditor>
+    <webmaster>otiext@gmail.com (oti)</webmaster>
+    <atom:link href="http://dskd.jp/feed" rel="self" type="application/rss+xml" />
+    <creativeCommons:license>http://creativecommons.org/licenses/by-nc/4.0/</creativeCommons:license>
+    <item>
+      <title>続・CSSだけでviewportに常に対角線を引く</title>
+      <link>http://dskd.jp/archives/82.html</link>
+      <description>結論から言うとCSSを知らなすぎて死にたい</description>
+      <pubdate>Mon May 09 2016 09:03:22 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/82.html</guid>
+    </item>
+    <item>
+      <title>CSSだけでviewportに常に対角線を引く</title>
+      <link>http://dskd.jp/archives/81.html</link>
+      <description>結論から言うとCSSだけでは無理</description>
+      <pubdate>Mon May 09 2016 07:28:45 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/81.html</guid>
+    </item>
+    <item>
+      <title>夢</title>
+      <link>http://dskd.jp/archives/80.html</link>
+      <description>2016年3月23日の夢</description>
+      <pubdate>Fri Mar 25 2016 07:15:19 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/80.html</guid>
+    </item>
+    <item>
+      <title>CSSでは背景画像のリピート間隔を任意に設定できない</title>
+      <link>http://dskd.jp/archives/79.html</link>
+      <description>CSSで出来そうで出来ないことシリーズ2</description>
+      <pubdate>Wed Mar 16 2016 01:21:25 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/79.html</guid>
+    </item>
+    <item>
+      <title>TKGスロット</title>
+      <link>http://dskd.jp/archives/78.html</link>
+      <description>TKG Advent Calendar 2015、25日目</description>
+      <pubdate>Mon Jan 18 2016 07:52:17 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/78.html</guid>
+    </item>
+    <item>
+      <title>レゴ</title>
+      <link>http://dskd.jp/archives/77.html</link>
+      <description>30歳でもおもちゃは楽しい</description>
+      <pubdate>Mon Jan 11 2016 19:38:32 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/77.html</guid>
+    </item>
+    <item>
+      <title>IE6の疑似min-heightは奇跡のCSSトリック</title>
+      <link>http://dskd.jp/archives/76.html</link>
+      <description>みんなよく使ってたであろうあのスニペット</description>
+      <pubdate>Tue Dec 08 2015 23:45:18 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/76.html</guid>
+    </item>
+    <item>
+      <title>@importトリックの回顧</title>
+      <link>http://dskd.jp/archives/75.html</link>
+      <description>ブラウザの@importの解釈の違いを利用したCSSハック回顧会場</description>
+      <pubdate>Fri Dec 04 2015 10:57:32 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/75.html</guid>
+    </item>
+    <item>
+      <title>My Life, My TKG</title>
+      <link>http://dskd.jp/archives/74.html</link>
+      <description>僕のTKGオリジン</description>
+      <pubdate>Tue Dec 01 2015 19:00:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/74.html</guid>
+    </item>
+    <item>
+      <title>outlineプロパティで作った枠線は角丸にすることができない</title>
+      <link>http://dskd.jp/archives/73.html</link>
+      <description>CSSで出来そうで出来ないことシリーズ1</description>
+      <pubdate>Mon Nov 30 2015 09:49:15 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/73.html</guid>
+    </item>
+    <item>
+      <title>Launch dskd v5</title>
+      <link>http://dskd.jp/archives/72.html</link>
+      <description>ブログをバージョンアップした。</description>
+      <pubdate>Fri Nov 27 2015 10:12:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/72.html</guid>
+    </item>
+    <item>
+      <title>小さく持つ</title>
+      <link>http://dskd.jp/archives/71.html</link>
+      <description>宗教上の理由で小さいのが好き</description>
+      <pubdate>Sun Nov 08 2015 01:40:29 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/71.html</guid>
+    </item>
+    <item>
+      <title>translate属性による翻訳の制御</title>
+      <link>http://dskd.jp/archives/69.html</link>
+      <description>translate属性使ってます？</description>
+      <pubdate>Tue Oct 20 2015 10:32:46 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/69.html</guid>
+    </item>
+    <item>
+      <title>yargsを使ってタスク自動化ツールのコマンドにオプションを指定する</title>
+      <link>http://dskd.jp/archives/68.html</link>
+      <description>yargs便利ですわ〜</description>
+      <pubdate>Fri Aug 14 2015 10:26:24 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/68.html</guid>
+    </item>
+    <item>
+      <title>キーバインドの競合</title>
+      <link>http://dskd.jp/archives/67.html</link>
+      <description>あちらを立てればこちらが立たず</description>
+      <pubdate>Tue Jun 02 2015 09:43:28 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/67.html</guid>
+    </item>
+    <item>
+      <title>開発環境構築作業の理想</title>
+      <link>http://dskd.jp/archives/66.html</link>
+      <description>男は黙って再インストール</description>
+      <pubdate>Sun May 17 2015 07:46:40 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/66.html</guid>
+    </item>
+    <item>
+      <title>Launch dskd v4</title>
+      <link>http://dskd.jp/archives/65.html</link>
+      <description>BEM離れ</description>
+      <pubdate>Fri Apr 10 2015 01:28:45 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/65.html</guid>
+    </item>
+    <item>
+      <title>SKAGEN BLUE DIALS</title>
+      <link>http://dskd.jp/archives/64.html</link>
+      <description>なぜ腕時計は増えていくのか</description>
+      <pubdate>Wed Apr 08 2015 02:16:10 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/64.html</guid>
+    </item>
+    <item>
+      <title>TRBLメソッドでbackground-sizeを代替する</title>
+      <link>http://dskd.jp/archives/63.html</link>
+      <description>TRBLメソッドすごいな〜</description>
+      <pubdate>Fri Mar 27 2015 03:08:21 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/63.html</guid>
+    </item>
+    <item>
+      <title>Google Chrome 40でreversed属性のついたol要素のカウンターがおかしい</title>
+      <link>http://dskd.jp/archives/58.html</link>
+      <description>reversed属性、使ってます？</description>
+      <pubdate>Tue Feb 17 2015 22:14:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/58.html</guid>
+    </item>
+    <item>
+      <title>EDJOなオブジェクトの妄想</title>
+      <link>http://dskd.jp/archives/57.html</link>
+      <description>Every Declaration Just Once</description>
+      <pubdate>Sat Jan 24 2015 21:18:20 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/57.html</guid>
+    </item>
+    <item>
+      <title>UE BOOMを買った</title>
+      <link>http://dskd.jp/archives/56.html</link>
+      <description>無線スピーカーを買ったぞ！</description>
+      <pubdate>Mon Dec 15 2014 09:21:55 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/56.html</guid>
+    </item>
+    <item>
+      <title>columnプロパティが特定の状況でおかしくなる</title>
+      <link>http://dskd.jp/archives/55.html</link>
+      <description>columnこわい。</description>
+      <pubdate>Fri Dec 12 2014 19:37:05 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/55.html</guid>
+    </item>
+    <item>
+      <title>僕はCSSを見殺しにした</title>
+      <link>http://dskd.jp/archives/54.html</link>
+      <description>CSSよ死をもって我が地肉となれ</description>
+      <pubdate>Wed Dec 10 2014 19:30:30 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/54.html</guid>
+    </item>
+    <item>
+      <title>style属性でzoomを指定すると特定の状況でzoomが無効になる</title>
+      <link>http://dskd.jp/archives/50.html</link>
+      <description>zoomこわい。</description>
+      <pubdate>Fri Dec 05 2014 22:34:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/50.html</guid>
+    </item>
+    <item>
+      <title>適当とテキトー</title>
+      <link>http://dskd.jp/archives/49.html</link>
+      <description>ニュアンスの再定義みたいなこと</description>
+      <pubdate>Tue Dec 02 2014 19:06:47 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/49.html</guid>
+    </item>
+    <item>
+      <title>overflow: overlay;</title>
+      <link>http://dskd.jp/archives/48.html</link>
+      <description>知っていても役には立たない系のネタ</description>
+      <pubdate>Fri Jul 18 2014 03:42:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/48.html</guid>
+    </item>
+    <item>
+      <title>左右marginで任意の比率を保つ</title>
+      <link>http://dskd.jp/archives/47.html</link>
+      <description>calc()とmargin-*: auto;</description>
+      <pubdate>Sun Jul 13 2014 07:33:37 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/47.html</guid>
+    </item>
+    <item>
+      <title>git filter-branchで過去の全てのcommitから画像ファイルの追加/変更をなかったことにしてリポジトリを軽量化する</title>
+      <link>http://dskd.jp/archives/46.html</link>
+      <description>歴史の書き換えだぁ〜！</description>
+      <pubdate>Mon Jul 07 2014 10:45:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/46.html</guid>
+    </item>
+    <item>
+      <title>人には難しい気がする機械の真偽</title>
+      <link>http://dskd.jp/archives/45.html</link>
+      <description>素人なので簡単なことがわからない</description>
+      <pubdate>Sat May 24 2014 22:51:12 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/45.html</guid>
+    </item>
+    <item>
+      <title>Autoprefixerの@keyframes animation の処理に違和感があったけど、僕が間違っていた</title>
+      <link>http://dskd.jp/archives/44.html</link>
+      <description>Autoprefixerは頭がいい</description>
+      <pubdate>Wed May 07 2014 20:47:45 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/44.html</guid>
+    </item>
+    <item>
+      <title>BEMまとめ奴</title>
+      <link>http://dskd.jp/archives/43.html</link>
+      <description>ちゃんとまとめました</description>
+      <pubdate>Thu Dec 26 2013 12:00:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/43.html</guid>
+    </item>
+    <item>
+      <title>PSDファイルのレイヤー名でBEM</title>
+      <link>http://dskd.jp/archives/42.html</link>
+      <description>ファイル名でもBEMメソッドをとりいれる試み</description>
+      <pubdate>Thu Dec 26 2013 11:35:05 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/42.html</guid>
+    </item>
+    <item>
+      <title>BEMのロゴが個性的で面白い</title>
+      <link>http://dskd.jp/archives/41.html</link>
+      <description>BEMのロゴのご紹介です。</description>
+      <pubdate>Wed Dec 25 2013 11:45:50 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/41.html</guid>
+    </item>
+    <item>
+      <title>BEMに向いているデザイン、向いていないデザイン</title>
+      <link>http://dskd.jp/archives/40.html</link>
+      <description>BEMの向き不向き</description>
+      <pubdate>Mon Dec 23 2013 08:12:50 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/40.html</guid>
+    </item>
+    <item>
+      <title>ブログを初めてBEM化した時の流れの最後</title>
+      <link>http://dskd.jp/archives/39.html</link>
+      <description>BEM神の声完結編</description>
+      <pubdate>Tue Dec 10 2013 06:56:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/39.html</guid>
+    </item>
+    <item>
+      <title>ブログを初めてBEM化した時の流れの続き</title>
+      <link>http://dskd.jp/archives/38.html</link>
+      <description>BEM神の声の続き</description>
+      <pubdate>Fri Dec 06 2013 19:05:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/38.html</guid>
+    </item>
+    <item>
+      <title>内包要素の数が変動しても僕には擬似クラスと間接セレクタがある</title>
+      <link>http://dskd.jp/archives/37.html</link>
+      <description>CSSの数量クエリで対象を限定する</description>
+      <pubdate>Wed Dec 04 2013 20:15:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/37.html</guid>
+    </item>
+    <item>
+      <title>ブログを初めてBEM化した時の流れ</title>
+      <link>http://dskd.jp/archives/36.html</link>
+      <description>BEM神の声が聞こえているか</description>
+      <pubdate>Wed Dec 04 2013 18:54:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/36.html</guid>
+    </item>
+    <item>
+      <title>もっと広まって欲しいCSS</title>
+      <link>http://dskd.jp/archives/35.html</link>
+      <description>TRBLメソッドについて</description>
+      <pubdate>Tue Dec 03 2013 01:25:55 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/35.html</guid>
+    </item>
+    <item>
+      <title>CSSの命名規則にBEMを取り入れてみる</title>
+      <link>http://dskd.jp/archives/34.html</link>
+      <description>BEM始めました</description>
+      <pubdate>Mon Dec 02 2013 10:15:16 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/34.html</guid>
+    </item>
+    <item>
+      <title>画像サイズに依存しない絶対中央配置</title>
+      <link>http://dskd.jp/archives/29.html</link>
+      <description>上下左右の中央揃えは人類の欲望</description>
+      <pubdate>Tue May 14 2013 18:50:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/29.html</guid>
+    </item>
+    <item>
+      <title>次へ前ヘのボタンのどっちがどっちなのか試させないデザイン</title>
+      <link>http://dskd.jp/archives/27.html</link>
+      <description>予想しにくいデザインはいやずら</description>
+      <pubdate>Thu Feb 14 2013 02:30:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/27.html</guid>
+    </item>
+    <item>
+      <title>CSS Programming HTML5 Template Generator</title>
+      <link>http://dskd.jp/archives/25.html</link>
+      <description>CSS Programming</description>
+      <pubdate>Mon Dec 03 2012 19:00:15 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/25.html</guid>
+    </item>
+    <item>
+      <title>@mediaのorientationはviewportの縦横がどっちが長いかであって、デバイスが縦か横かじゃないですよ</title>
+      <link>http://dskd.jp/archives/24.html</link>
+      <description>@media orientationの注意点</description>
+      <pubdate>Sat Nov 17 2012 03:00:15 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/24.html</guid>
+    </item>
+    <item>
+      <title>:hoverしている要素の直前の要素の指定をCSS4の!符号で妄想した</title>
+      <link>http://dskd.jp/archives/23.html</link>
+      <description>親セレクタ的なやつ</description>
+      <pubdate>Fri Nov 16 2012 02:38:18 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/23.html</guid>
+    </item>
+    <item>
+      <title>「終わん寝」の提唱</title>
+      <link>http://dskd.jp/archives/14.html</link>
+      <description>終わらないから寝るとか</description>
+      <pubdate>Tue May 22 2012 08:22:47 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/14.html</guid>
+    </item>
+    <item>
+      <title>GW</title>
+      <link>http://dskd.jp/archives/13.html</link>
+      <description>ゴールデンウィークの前半は日光の中禅寺湖畔へ足を運んだ</description>
+      <pubdate>Tue May 08 2012 00:21:47 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/13.html</guid>
+    </item>
+    <item>
+      <title>絶対中央配置のCSSの続き</title>
+      <link>http://dskd.jp/archives/12.html</link>
+      <description>CSSの絶対中央配置スニペットの検証</description>
+      <pubdate>Thu May 03 2012 01:06:00 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/12.html</guid>
+    </item>
+    <item>
+      <title>絶対中央配置のCSS</title>
+      <link>http://dskd.jp/archives/11.html</link>
+      <description>上下左右方向で中央揃えにするCSSスニペット</description>
+      <pubdate>Fri Apr 20 2012 20:55:12 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/11.html</guid>
+    </item>
+    <item>
+      <title>img要素にpointer-events:none;を指定する</title>
+      <link>http://dskd.jp/archives/7.html</link>
+      <description>img要素にpointer-events:none;を指定するとどうなるのか</description>
+      <pubdate>Thu Oct 13 2011 04:02:06 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/7.html</guid>
+    </item>
+    <item>
+      <title>よくわかんないんですけど</title>
+      <link>http://dskd.jp/archives/1.html</link>
+      <description>a.k.a initial commit</description>
+      <pubdate>Wed Dec 22 2010 18:45:32 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/1.html</guid>
+    </item>
+  </channel>
+</rss>

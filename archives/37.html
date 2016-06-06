@@ -33,8 +33,7 @@
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer">
-          <time datetime="2013-12-04T11:15:00+09:00" class="post-timestamp">2013-12-04</time>
+        <footer class="post__footer"><time datetime="2013-12-04T11:15:00+09:00" class="post-timestamp">2013-12-04</time>
           <p class="post-tag"><a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar, </a><a href="/archives/css.html" class="tag-link">CSS</a></p>
         </footer>
         <h1 itemprop="name" class="post__title">内包要素の数が変動しても僕には擬似クラスと間接セレクタがある</h1>
@@ -128,7 +127,7 @@
 <mark>&lt;div class="box2"&gt;テキスート.box2&lt;/div&gt;</mark></code></pre>
           <p>上記のようなHTMLの場合、３行目の<code>.box2</code>からが適応対象です。１行目の<code>.box2</code>は<code>.box1</code>の兄弟関係にありますが、<code>.box1</code>より先に記述されており弟要素でないのでスタイル適応外となります。また、途中に<code>.heading</code>が挟まっていすが、そのあとに出てくる<code>.box2</code>は先の<code>.box1</code>の弟要素なのでスタイルは適応されます。
             <a
-            href="http://codepen.io/anon/pen/FHbGe">CodePen</a>にデモを置いたので参考にどうぞ。</p>
+              href="http://codepen.io/anon/pen/FHbGe">CodePen</a>にデモを置いたので参考にどうぞ。</p>
           <h2 id="-">間接セレクタで間にある兄弟要素をカバーしたら勝ったも同然</h2>
           <p><code>.tabs</code>のHTMLに戻りましょう。</p> <pre title="CSS"><code data-language="css">.tabs .tabs__item:first-child:nth-last-child(5) ~ .tabs__item</code></pre>
           <p>これを見ると、最後から５番目かつ最初の<code>.tabs__item</code>の兄弟要素な<code>.tabs__item</code>となります。これだと<code>.tabs__item:first-child</code>にはスタイルが適応されないので、<code>.tabs__item:first-child:nth-last-child(5)</code>をグルーピングして同じルールセットを適用させます。</p> <pre title="CSS"><code data-language="css">.tabs .tabs__item:first-child:nth-last-child(5),
@@ -156,10 +155,10 @@
         <aside role="complementary" class="post__social">
           <ul class="social-list">
             <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=%E5%86%85%E5%8C%85%E8%A6%81%E7%B4%A0%E3%81%AE%E6%95%B0%E3%81%8C%E5%A4%89%E5%8B%95%E3%81%97%E3%81%A6%E3%82%82%E5%83%95%E3%81%AB%E3%81%AF%E6%93%AC%E4%BC%BC%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%A8%E9%96%93%E6%8E%A5%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%81%8C%E3%81%82%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F37.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
-              class="social-link">Tweet</a></li>
+                class="social-link">Tweet</a></li>
             <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F37.html" class="social-link">Share on Facebook</a></li>
             <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=%E5%86%85%E5%8C%85%E8%A6%81%E7%B4%A0%E3%81%AE%E6%95%B0%E3%81%8C%E5%A4%89%E5%8B%95%E3%81%97%E3%81%A6%E3%82%82%E5%83%95%E3%81%AB%E3%81%AF%E6%93%AC%E4%BC%BC%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%A8%E9%96%93%E6%8E%A5%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%81%8C%E3%81%82%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F37.html"
-              class="social-link">Bookmark on Hatena</a></li>
+                class="social-link">Bookmark on Hatena</a></li>
           </ul>
         </aside>
       </article>

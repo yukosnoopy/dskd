@@ -33,8 +33,7 @@
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer">
-          <time datetime="2016-05-08T22:28:45+09:00" class="post-timestamp">2016-05-08</time>
+        <footer class="post__footer"><time datetime="2016-05-08T22:28:45+09:00" class="post-timestamp">2016-05-08</time>
           <p class="post-tag"><a href="/archives/css.html" class="tag-link">CSS</a></p>
         </footer>
         <h1 itemprop="name" class="post__title">CSSだけでviewportに常に対角線を引く</h1>
@@ -63,7 +62,7 @@
           <p><img src="/img/pure-css-diagonal-line/layer-image.png" alt="重なりのイメージ"></p>
           <p>内容物の幅と高さが共に<code>0</code>で、要素の大きさが<code>border-width</code>分しかない場合、その<code>border-width</code>分の大きさの要素が作られ、隣接する<code>border</code>の間には色の境界線ができる。そして対角に位置する方の「<code>border</code>同士の境界線」と直線で結ばれる。境界線の角度は要素の大きさで決まり、要素の大きさは<code>border-width</code>の合計値で<code>100vw</code>と<code>100vh</code>になっているので、viewportに対角線が引かれているのと同義になる。
             <a
-            href="http://s.codepen.io/o_ti/debug/ONEXbK">ちょっとわかりやすくなるかもしれないサンプルも作った</a>。ウィンドウサイズをぐいんぐいんすれば対角線が維持される様子がわかると思う。</p>
+              href="http://s.codepen.io/o_ti/debug/ONEXbK">ちょっとわかりやすくなるかもしれないサンプルも作った</a>。ウィンドウサイズをぐいんぐいんすれば対角線が維持される様子がわかると思う。</p>
           <p>デモでは画面に対して<code>position: fixed</code>で固定配置しているので、スタック文脈の解決のためにコンテンツエリアも<code>position: relative</code>する必要があるので注意。</p>
           <p>ウィンドウサイズぐいんぐいんおじさんがデスクトップ版Safariを使っている場合、「ウィンドウサイズをぐいんぐいんすると対角線が追随しないぞ」というバグ報告を絶対にしてくる。なので強制再描画ハックもつけた。これでウィンドウサイズぐいんぐいんおじさんも満足するはずだ。FirefoxやChromeでは強制再描画しなくてもウィンドウサイズぐいんぐいんに対角線が追随するので偉い。</p>
           <h2 id="-">問題点</h2>
@@ -87,7 +86,7 @@
         <aside role="complementary" class="post__social">
           <ul class="social-list">
             <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=CSS%E3%81%A0%E3%81%91%E3%81%A7viewport%E3%81%AB%E5%B8%B8%E3%81%AB%E5%AF%BE%E8%A7%92%E7%B7%9A%E3%82%92%E5%BC%95%E3%81%8F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F81.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
-              class="social-link">Tweet</a></li>
+                class="social-link">Tweet</a></li>
             <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F81.html" class="social-link">Share on Facebook</a></li>
             <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=CSS%E3%81%A0%E3%81%91%E3%81%A7viewport%E3%81%AB%E5%B8%B8%E3%81%AB%E5%AF%BE%E8%A7%92%E7%B7%9A%E3%82%92%E5%BC%95%E3%81%8F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F81.html" class="social-link">Bookmark on Hatena</a></li>
           </ul>

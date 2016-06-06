@@ -33,15 +33,13 @@
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer">
-          <time datetime="2014-12-12T10:37:05+09:00" class="post-timestamp">2014-12-12</time>
+        <footer class="post__footer"><time datetime="2014-12-12T10:37:05+09:00" class="post-timestamp">2014-12-12</time>
           <p class="post-tag"><a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar, </a><a href="/archives/css.html" class="tag-link">CSS</a></p>
         </footer>
         <h1 itemprop="name" class="post__title">columnプロパティが特定の状況でおかしくなる</h1>
         <div itemprop="articleBody" class="post__body">
           <p><a href="http://www.adventar.org/calendars/341">CSS 珍百景 Advent Calendar 2014</a>の12日目。</p>
-          <p>colunmプロパティを使った時にいくつかのブラウザで内容物のbreakがおかしくなる。デモは今回はJSFiddleにおいた。</p>
-          <iframe width="100%" height="300" src="http://jsfiddle.net/o_ti/pcr3pr14/6/embedded/result,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+          <p>colunmプロパティを使った時にいくつかのブラウザで内容物のbreakがおかしくなる。デモは今回はJSFiddleにおいた。</p> <iframe width="100%" height="300" src="http://jsfiddle.net/o_ti/pcr3pr14/6/embedded/result,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
           <p>で、このデモは.itemが３つごとに３カラムに別れて表示される想定でスタイルしている。このHTMLだとfloatではこういう表現はできないし、positionでやるのは面倒なだけなのでcolumnプロパティ最高だなと思っていた。PC版のGoogle Chrome 39系とiOS 7系のMobile Safariは期待どおりで問題ない。.caseの高さを目一杯使って.itemがきちんと収まっている。</p>
           <p>
             <a href="/img/column-property-breaking-bug/yep.png" title="期待通りの表示"><img src="/img/column-property-breaking-bug/yep.png" alt=".itemは.caseの高さにちょうど収まっている。"></a>
@@ -103,7 +101,7 @@
           </table>
           <p>IE12 Platform Previewでどうなっているか気になるけど、<a href="http://www.w3.org/TR/css3-multicol/">CSS Multi-column Layout Module</a>は全然動いてないので期待はできなそう。それに、columnをまたいだ時の内包物のbreak指定はbreak-after, break-before, break-insideというプロパティで指定できるかと思いきや、これらのプロパティの<a href="http://www.w3.org/TR/css3-multicol/#break-before-break-after-break-inside">対応メディアはpaged</a>だった。なのでvisualグループのscreenメディアでは使えない。
             <a
-            href="http://dev.w3.org/csswg/css-multicol/#break-before-break-after-break-inside">Editor&#39;s Draftではメディアがvisualに変わっている</a>ので、このまま行けばbreak-*プロパティで対応していくようになるのかもしれないが、そもそも高さが十分にあるはずなのにbreakされてしまうというバグなので、仕様うんぬんじゃなくcolumnなボックスのレンダリングの問題な気がする。なのでブラウザ頑張れ。</p>
+              href="http://dev.w3.org/csswg/css-multicol/#break-before-break-after-break-inside">Editor&#39;s Draftではメディアがvisualに変わっている</a>ので、このまま行けばbreak-*プロパティで対応していくようになるのかもしれないが、そもそも高さが十分にあるはずなのにbreakされてしまうというバグなので、仕様うんぬんじゃなくcolumnなボックスのレンダリングの問題な気がする。なのでブラウザ頑張れ。</p>
           <p>業務ではこの表示をクロスブラウザにすることができずに、結局columnごとにdivを作りそれをfloatさせて対応した。.itemの数が直近のユーザーの操作によって変動するので、合計値からcolumn数と幅だけ算出すれば簡単だなと思ったのだけど、つらい結果になった。</p>
           <p>columnこわい。</p>
         </div>
@@ -111,10 +109,10 @@
         <aside role="complementary" class="post__social">
           <ul class="social-list">
             <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=column%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%8C%E7%89%B9%E5%AE%9A%E3%81%AE%E7%8A%B6%E6%B3%81%E3%81%A7%E3%81%8A%E3%81%8B%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F55.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
-              class="social-link">Tweet</a></li>
+                class="social-link">Tweet</a></li>
             <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F55.html" class="social-link">Share on Facebook</a></li>
             <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=column%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%8C%E7%89%B9%E5%AE%9A%E3%81%AE%E7%8A%B6%E6%B3%81%E3%81%A7%E3%81%8A%E3%81%8B%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F55.html"
-              class="social-link">Bookmark on Hatena</a></li>
+                class="social-link">Bookmark on Hatena</a></li>
           </ul>
         </aside>
       </article>

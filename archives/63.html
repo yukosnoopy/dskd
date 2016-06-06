@@ -33,8 +33,7 @@
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer">
-          <time datetime="2015-03-26T18:08:21+09:00" class="post-timestamp">2015-03-26</time>
+        <footer class="post__footer"><time datetime="2015-03-26T18:08:21+09:00" class="post-timestamp">2015-03-26</time>
           <p class="post-tag"><a href="/archives/css.html" class="tag-link">CSS</a></p>
         </footer>
         <h1 itemprop="name" class="post__title">TRBLメソッドでbackground-sizeを代替する</h1>
@@ -95,7 +94,7 @@
 }</code></pre>
           <p><a href="/demo/60.html">ボタンを押すとねこ画像が切り替わって挿入されるデモ</a>を作った。どのサイズの画像でも<code>background-size: 100% auto;</code>と同じ表示形式になっているのが確認できると思う。画像の読み込みが少し重い。JavaScriptがイーカゲンなのには目をつぶって欲しい。PlaceKittenはサイズの組み合わせによっては表示してくれない場合があり、珍妙なif文を書かざるを得なかった。</p>
           <h2
-          id="contain-cover-">containもcoverも</h2>
+            id="contain-cover-">containもcoverも</h2>
             <p>background-sizeの他の値もTRBLメソッドの応用で代替できる。代表的な値は<code>100% auto</code>, <code>auto 100%</code>, <code>contain</code>, <code>cover</code>だろう。.wrapのルールセットは同じなので、画像のスタイルだけそれぞれまとめると下記のようになる。</p> <pre title="CSS"><code data-language="css"><mark>/* like background-size: 100% auto; */</mark>
 .wrap img{
   position: absolute;
@@ -188,7 +187,7 @@
         <aside role="complementary" class="post__social">
           <ul class="social-list">
             <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=TRBL%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%A7background-size%E3%82%92%E4%BB%A3%E6%9B%BF%E3%81%99%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F63.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
-              class="social-link">Tweet</a></li>
+                class="social-link">Tweet</a></li>
             <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F63.html" class="social-link">Share on Facebook</a></li>
             <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=TRBL%E3%83%A1%E3%82%BD%E3%83%83%E3%83%89%E3%81%A7background-size%E3%82%92%E4%BB%A3%E6%9B%BF%E3%81%99%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F63.html" class="social-link">Bookmark on Hatena</a></li>
           </ul>
