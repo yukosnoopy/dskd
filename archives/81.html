@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
   <head>
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
@@ -19,36 +18,53 @@
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/style.css" rel="stylesheet" media="only screen">
   </head>
-
   <body>
     <header role="banner" class="global-header">
-      <h1 class="logo"><a href="/" class="logo-link"><img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img"></a></h1>
+      <h1 class="logo">
+        <a href="/" class="logo-link">
+          <img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img">
+        </a>
+      </h1>
       <nav role="navigation" class="site-nav">
         <ul class="site-nav-list">
-          <li class="site-nav-list__item"><a href="/archives/" class="site-nav-list-link">ARCHIVES</a></li>
-          <li class="site-nav-list__item"><a href="/demo/" class="site-nav-list-link">DEMO</a></li>
-          <li class="site-nav-list__item"><a href="/about.html" class="site-nav-list-link">ABOUT</a></li>
+          <li class="site-nav-list__item">
+            <a href="/archives/" class="site-nav-list-link">ARCHIVES</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/demo/" class="site-nav-list-link">DEMO</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/about.html" class="site-nav-list-link">ABOUT</a>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer"><time datetime="2016-05-08T22:28:45+09:00" class="post-timestamp">2016-05-08</time>
-          <p class="post-tag"><a href="/archives/css.html" class="tag-link">CSS</a></p>
+        <footer class="post__footer">
+          <time datetime="2016-05-08T22:28:45+09:00" class="post-timestamp">2016-05-08</time>
+          <p class="post-tag">
+            <a href="/archives/css.html" class="tag-link">CSS</a>
+          </p>
         </footer>
         <h1 itemprop="name" class="post__title">CSSだけでviewportに常に対角線を引く</h1>
         <div itemprop="articleBody" class="post__body">
           <p>画面に対角線をどうしても引きたい時が人生に一度や二度は来ると思う。</p>
           <p>任意の角度で斜め線を引くなら<code>linear-gradient()</code>で<code>&lt;color-stop&gt;</code>を工夫したり、線だけの要素を<code>transform: rotate()</code>するなど手法はいくつかある。しかしviewportの対角線においては閲覧環境によってその角度が異なるので、角度を動的に算出する必要がある。</p>
           <p>一見望みがありそうな<code>calc()</code>はどうだろうか。平方根や三角関数を直接求めることは2016年4月時点ではできないが、CSS Variablesを利用し、計算結果を保存して別の<code>calc()</code>に渡していけばできるかもしれない。</p>
-          <p><img src="/img/pure-css-diagonal-line/length-and-angle.png" alt="長方形と対角線の長さと角度の関係"></p>
+          <p>
+            <img src="/img/pure-css-diagonal-line/length-and-angle.png" alt="長方形と対角線の長さと角度の関係">
+          </p>
           <p>viewportを長方形と見ると、幅が<code>100vw</code>で高さが<code>100vh</code>となる。これで斜辺Cの長さがわかれば、対角線の上側と下側の角度がラジアン単位で求められるので、<code>linear-gradient()</code>の第一引数や<code>rotate()</code>に指定すれば解決だ。</p>
-          <p>なのだが、前述した通り平方根を直接求めることはできない。<a href="http://izumi-math.jp/M_Kitamura/tikuji/tikuji.htm">平方根を逐次計算で求めていく方法</a>もあるようだが、<code>100vw</code>の二乗、<code>100vh</code>の二乗とはいったいいくつなのだろうか？　Computed Valueでは実数になっているけど、それはComputed Valueでの話だし、CSS Varで<code>--num: calc(100vw * 100vw);</code>としても、乗算では引数は少なくとも1つが<code>&lt;number&gt;</code>でなければならないのでエラーになる。</p>
+          <p>なのだが、前述した通り平方根を直接求めることはできない。
+            <a href="http://izumi-math.jp/M_Kitamura/tikuji/tikuji.htm">平方根を逐次計算で求めていく方法</a>もあるようだが、<code>100vw</code>の二乗、<code>100vh</code>の二乗とはいったいいくつなのだろうか？　Computed Valueでは実数になっているけど、それはComputed Valueでの話だし、CSS Varで<code>--num: calc(100vw * 100vw);</code>としても、乗算では引数は少なくとも1つが<code>&lt;number&gt;</code>でなければならないのでエラーになる。</p>
           <p>ということで、どう頑張ろうともCSSだけで動的に角度を求めることはできない。</p>
           <h2 id="-css-">でもCSSでできるよ</h2>
           <p>できないのは「動的に角度を求めること」なので、違うアプローチで対角線を表現する。</p>
           <p>具体的には、<code>border</code>プロパティで三角形を作る方法を応用し、直角三角形を重ねて対角線を表現する。</p>
-          <p><a href="http://s.codepen.io/o_ti/debug/redWXp">CodePenにデモを作った。</a></p>
+          <p>
+            <a href="http://s.codepen.io/o_ti/debug/redWXp">CodePenにデモを作った。</a>
+          </p>
           <p>Windowsユーザーの人はtoggle menuボタンを押すとスクロールバーが出てアレするが、それについては後述しているので一旦置いておいてほしい。</p>
           <p>やってることを言葉で詳しく説明すると、</p>
           <ul>
@@ -59,21 +75,32 @@
             <li>上に重なっている要素の<code>border-color</code>は、コンテンツエリアの背景色と同じにする</li>
           </ul>
           <p>となる。右上から左下への対角線の場合は<code>border-color</code>で色を指定する箇所を変えればよい。</p>
-          <p><img src="/img/pure-css-diagonal-line/layer-image.png" alt="重なりのイメージ"></p>
+          <p>
+            <img src="/img/pure-css-diagonal-line/layer-image.png" alt="重なりのイメージ">
+          </p>
           <p>内容物の幅と高さが共に<code>0</code>で、要素の大きさが<code>border-width</code>分しかない場合、その<code>border-width</code>分の大きさの要素が作られ、隣接する<code>border</code>の間には色の境界線ができる。そして対角に位置する方の「<code>border</code>同士の境界線」と直線で結ばれる。境界線の角度は要素の大きさで決まり、要素の大きさは<code>border-width</code>の合計値で<code>100vw</code>と<code>100vh</code>になっているので、viewportに対角線が引かれているのと同義になる。
             <a
               href="http://s.codepen.io/o_ti/debug/ONEXbK">ちょっとわかりやすくなるかもしれないサンプルも作った</a>。ウィンドウサイズをぐいんぐいんすれば対角線が維持される様子がわかると思う。</p>
           <p>デモでは画面に対して<code>position: fixed</code>で固定配置しているので、スタック文脈の解決のためにコンテンツエリアも<code>position: relative</code>する必要があるので注意。</p>
           <p>ウィンドウサイズぐいんぐいんおじさんがデスクトップ版Safariを使っている場合、「ウィンドウサイズをぐいんぐいんすると対角線が追随しないぞ」というバグ報告を絶対にしてくる。なので強制再描画ハックもつけた。これでウィンドウサイズぐいんぐいんおじさんも満足するはずだ。FirefoxやChromeでは強制再描画しなくてもウィンドウサイズぐいんぐいんに対角線が追随するので偉い。</p>
           <h2 id="-">問題点</h2>
-          <p>まずブラウザのCSS対応的にViewport Unitが必要というのが絶対条件になる。<a href="https://www.w3.org/TR/CSS22/box.html#value-def-border-width"><code>border-width</code>には<code>&lt;percentage&gt;型</code>は許容されておらず</a>、<code>border-width: 50%</code>のような指定は使えないのでViewport Unitに対応していないブラウザでは諦めざるを得ない。</p>
+          <p>まずブラウザのCSS対応的にViewport Unitが必要というのが絶対条件になる。
+            <a href="https://www.w3.org/TR/CSS22/box.html#value-def-border-width"><code>border-width</code>には<code>&lt;percentage&gt;型</code>は許容されておらず</a>、<code>border-width: 50%</code>のような指定は使えないのでViewport Unitに対応していないブラウザでは諦めざるを得ない。</p>
           <p>また、<code>border-color</code>が単色しか指定できないので、コンテンツの背景も単色でなければならない。背景画像があるとかグラデーションを入れているとかだと対応できない。</p>
           <p>そして一番の問題点は「スクロールバーで隠れる」ことと「Mobile Safari 9のUIで隠れる」ことだ。</p>
-          <p>問題の前者は主にWindows環境下での話。ページにスクロールバーが現れていると「見た目の画面幅」と<code>100vw</code>の結果が異なるというやつ。Windowsで<a href="http://s.codepen.io/o_ti/debug/redWXp">デモ</a>のtoggle moreのボタンを押せばコンテンツが増えてスクロールバーが出るので、どういうことかわかると思う。</p>
-          <p><img src="/img/pure-css-diagonal-line/edge-no-scrollbar.png" alt="Edgeでスクロールバーが表示されていない場合"></p>
-          <p><img src="/img/pure-css-diagonal-line/edge-has-scrollbar.png" alt="Edgeでスクロールバーが表示されている場合"></p>
+          <p>問題の前者は主にWindows環境下での話。ページにスクロールバーが現れていると「見た目の画面幅」と<code>100vw</code>の結果が異なるというやつ。Windowsで
+            <a href="http://s.codepen.io/o_ti/debug/redWXp">デモ</a>のtoggle moreのボタンを押せばコンテンツが増えてスクロールバーが出るので、どういうことかわかると思う。</p>
+          <p>
+            <img src="/img/pure-css-diagonal-line/edge-no-scrollbar.png" alt="Edgeでスクロールバーが表示されていない場合">
+          </p>
+          <p>
+            <img src="/img/pure-css-diagonal-line/edge-has-scrollbar.png" alt="Edgeでスクロールバーが表示されている場合">
+          </p>
           <p>問題の後者はiOS環境下で、Mobile Safari 9のUI（戻るボタンとかインテントボタンとかのやつ）がviewportにかぶさって「見た目の画面高」と<code>100vh</code>の結果が異なるというやつ。ロケーションバーの方ではなく画面の下側に出る方のUIが問題になる。ページをスクロールするとそのUIは隠されて見た目と結果が揃うのでやっかい。Mobile Safari 9に依存した問題なのでモバイル版のGoogle Chromeで閲覧すればこの問題は起きないが、それでいいのかと手斧が飛んできたら防げずに死ぬ。</p>
-          <p><img src="/img/pure-css-diagonal-line/mobile-safari-no-gui.png" alt="Mobile SafariでUIが表示されていない場合"> <img src="/img/pure-css-diagonal-line/mobile-safari-has-gui.png" alt="Mobile SafariでUIが表示されている場合"></p>
+          <p>
+            <img src="/img/pure-css-diagonal-line/mobile-safari-no-gui.png" alt="Mobile SafariでUIが表示されていない場合">
+            <img src="/img/pure-css-diagonal-line/mobile-safari-has-gui.png" alt="Mobile SafariでUIが表示されている場合">
+          </p>
           <p>スクロールバーにしろボタンエリアにしろ、ブラウザUIを除いた表示領域の大きさをCSSだけで動的に得るには限界がある。特に今回は対角線の描画に<code>border</code>を使っているので、<code>%</code>指定ができない点が痛い。</p>
           <p>「CSSでできる」と言いながらも、できているのはOS Xでだけである。それ以上でも以下でもなく、他のことを一切解決できないまま結局死ぬ。</p>
           <hr>
@@ -82,31 +109,50 @@
           <p>CSSの表現の幅の拡張で、その界隈ではCSS Houdiniに一瞬注目が集まったような気がする。でも結局中ではJavaScriptで実装を書くんだから、JSからは逃れられないのは変わらない。カスタムファンクションとしてCSSだけで動いているように見えるだけだ。</p>
           <p>CSSお絵描きに未来はあるか。あるとすれば高等数学をサポートした<code>calc()</code>が登場するか、ブラウザUIを考慮した表示領域を扱える単位かプロパティーが登場する時だろう。しかしCSS Houdiniが策定されていくとなれば、そちらでやれということにしかならなそうな気もする。未来なさそう。</p>
         </div>
-        <aside class="post__contribute"><a href="https://github.com/oti/dskd/blob/master/src/md/post/81.md" class="contribute">Patches welcome!</a></aside>
+        <aside class="post__contribute">
+          <a href="https://github.com/oti/dskd/blob/master/src/md/post/81.md" class="contribute">Patches welcome!</a>
+        </aside>
         <aside role="complementary" class="post__social">
           <ul class="social-list">
-            <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=CSS%E3%81%A0%E3%81%91%E3%81%A7viewport%E3%81%AB%E5%B8%B8%E3%81%AB%E5%AF%BE%E8%A7%92%E7%B7%9A%E3%82%92%E5%BC%95%E3%81%8F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F81.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
-                class="social-link">Tweet</a></li>
-            <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F81.html" class="social-link">Share on Facebook</a></li>
-            <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=CSS%E3%81%A0%E3%81%91%E3%81%A7viewport%E3%81%AB%E5%B8%B8%E3%81%AB%E5%AF%BE%E8%A7%92%E7%B7%9A%E3%82%92%E5%BC%95%E3%81%8F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F81.html" class="social-link">Bookmark on Hatena</a></li>
+            <li class="social-list__item social-list__item--twitter">
+              <a href="https://twitter.com/intent/tweet?text=CSS%E3%81%A0%E3%81%91%E3%81%A7viewport%E3%81%AB%E5%B8%B8%E3%81%AB%E5%AF%BE%E8%A7%92%E7%B7%9A%E3%82%92%E5%BC%95%E3%81%8F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F81.html&amp;via=dskd_jp&amp;related=o_ti"
+                class="social-link">Tweet</a>
+            </li>
+            <li class="social-list__item social-list__item--facebook">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F81.html" class="social-link">Share on Facebook</a>
+            </li>
+            <li class="social-list__item social-list__item--hatebu">
+              <a href="http://b.hatena.ne.jp/my/add.confirm?title=CSS%E3%81%A0%E3%81%91%E3%81%A7viewport%E3%81%AB%E5%B8%B8%E3%81%AB%E5%AF%BE%E8%A7%92%E7%B7%9A%E3%82%92%E5%BC%95%E3%81%8F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F81.html" class="social-link">Bookmark on Hatena</a>
+            </li>
           </ul>
         </aside>
       </article>
       <nav class="neighbor">
         <ul class="neighbor-list">
-          <li class="neighbor-list__item neighbor-list__item--newer"><a href="/archives/82.html" class="neighbor-link">続・CSSだけでviewportに常に対角線を引く</a></li>
-          <li class="neighbor-list__item neighbor-list__item--older"><a href="/archives/80.html" class="neighbor-link">夢</a></li>
+          <li class="neighbor-list__item neighbor-list__item--newer">
+            <a href="/archives/82.html" class="neighbor-link">続・CSSだけでviewportに常に対角線を引く</a>
+          </li>
+          <li class="neighbor-list__item neighbor-list__item--older">
+            <a href="/archives/80.html" class="neighbor-link">夢</a>
+          </li>
         </ul>
       </nav>
     </main>
     <footer class="global-footer">
       <p class="author">Made by
-        <adress class="author__address"><a href="mailto:otiext@gmail.com">oti</a></adress>.</p>
+        <adress class="author__address">
+          <a href="mailto:otiext@gmail.com">oti</a>
+        </adress>.</p>
       <ul class="subinfo">
-        <li class="subinfo__item"><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link"><small class="subinfo-license">CC BY-NC</small></a></li>
-        <li class="subinfo__item"><a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a></li>
+        <li class="subinfo__item">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link">
+            <small class="subinfo-license">CC BY-NC</small>
+          </a>
+        </li>
+        <li class="subinfo__item">
+          <a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a>
+        </li>
       </ul>
     </footer>
   </body>
-
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
   <head>
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
@@ -14,10 +13,15 @@
     <title>transform: scale();の二重指定なら問題ない - dskd</title>
     <link href="http://dskd.jp/demo/52.html" rel="canonical" itemprop="url">
   </head>
-
   <body>
-    <footer><small>published by <a href="/">dskd </a>on <time datetime="2014-12-05T13:35:00+09:00">2014-12-05</time></small>
-      <p>related to <a href="http://dskd.jp/archives/50.html">http://dskd.jp/archives/50.html</a></p>
+    <footer>
+      <small>published by
+        <a href="/">dskd </a>on
+        <time datetime="2014-12-05T13:35:00+09:00">2014-12-05</time>
+      </small>
+      <p>related to
+        <a href="http://dskd.jp/archives/50.html">http://dskd.jp/archives/50.html</a>
+      </p>
     </footer>
     <p>
       <style>
@@ -31,18 +35,18 @@
           background: url(bg50px.gif) repeat 15px 15px;
         }
         
-        </p> <p>#ctrl {
+        </p><p>#ctrl {
           height: 50px;
           font-size: 18px;
           line-height: 50px;
         }
         
-        </p> <p>#zoomVal {
+        </p><p>#zoomVal {
           width: 3em;
           color: red;
         }
         
-        </p> <p>#target {
+        </p><p>#target {
           transform-origin: 0 0;
           transform: scale(2);
           box-sizing: border-box;
@@ -65,11 +69,14 @@
         tar.style.transform = '';
       }
     </script>
-    <div id="ctrl"> <input type="number" id="zoomVal" value="2"> <button onclick="addScale();">add style=&quot;transform: scale(N)&quot;</button> <button onclick="removeScale();">remove style=&quot;transform: scale(N)&quot;</button> </div>
+    <div id="ctrl">
+      <input type="number" id="zoomVal" value="2">
+      <button onclick="addScale();">add style=&quot;transform: scale(N)&quot;</button>
+      <button onclick="removeScale();">remove style=&quot;transform: scale(N)&quot;</button>
+    </div>
     <div id="target">
       <div>この要素は幅300pxです。以下のスタイルが指定されています。</div>
       <xmp> #target{ transform-origin: 0 0; transform: scale(2); box-sizing: border-box; width: 300px; border: 1px solid magenta; }</xmp>
     </div>
   </body>
-
 </html>

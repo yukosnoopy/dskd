@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
   <head>
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
@@ -19,26 +18,39 @@
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/style.css" rel="stylesheet" media="only screen">
   </head>
-
   <body>
     <header role="banner" class="global-header">
-      <h1 class="logo"><a href="/" class="logo-link"><img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img"></a></h1>
+      <h1 class="logo">
+        <a href="/" class="logo-link">
+          <img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img">
+        </a>
+      </h1>
       <nav role="navigation" class="site-nav">
         <ul class="site-nav-list">
-          <li class="site-nav-list__item"><a href="/archives/" class="site-nav-list-link">ARCHIVES</a></li>
-          <li class="site-nav-list__item"><a href="/demo/" class="site-nav-list-link">DEMO</a></li>
-          <li class="site-nav-list__item"><a href="/about.html" class="site-nav-list-link">ABOUT</a></li>
+          <li class="site-nav-list__item">
+            <a href="/archives/" class="site-nav-list-link">ARCHIVES</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/demo/" class="site-nav-list-link">DEMO</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/about.html" class="site-nav-list-link">ABOUT</a>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer"><time datetime="2014-05-07T11:47:45+09:00" class="post-timestamp">2014-05-07</time>
-          <p class="post-tag"><a href="/archives/css.html" class="tag-link">CSS</a></p>
+        <footer class="post__footer">
+          <time datetime="2014-05-07T11:47:45+09:00" class="post-timestamp">2014-05-07</time>
+          <p class="post-tag">
+            <a href="/archives/css.html" class="tag-link">CSS</a>
+          </p>
         </footer>
         <h1 itemprop="name" class="post__title">Autoprefixerの@keyframes animation の処理に違和感があったけど、僕が間違っていた</h1>
         <div itemprop="articleBody" class="post__body">
-          <p>ポストプロセッサーの<a href="https://github.com/ai/autoprefixer">Autoprefixer</a>、大変強力で素晴らしく便利なのだけど、<code>@keyframes</code>の処理には違和感があった。</p>
+          <p>ポストプロセッサーの
+            <a href="https://github.com/ai/autoprefixer">Autoprefixer</a>、大変強力で素晴らしく便利なのだけど、<code>@keyframes</code>の処理には違和感があった。</p>
           <p>以下の様なCSSルールセットがあったとする。<code>translate</code>で要素のY座標を+300pxするだけの簡単なアニメーション。<code>animation-deday</code>, <code>animation-iteration-count</code>, <code>animation-direction</code>は規定値ということでショートハンドで省略している。</p> <pre><code data-language="css">.ugoku {
   animation: ugoku 0.5s ease-in;
 }
@@ -105,36 +117,57 @@
     transform: translate(0px, 300px);
   }
 }</code></pre>
-          <p>スッキリやん！　FTWやん！　<strong>でも僕が間違っていた。</strong></p>
+          <p>スッキリやん！　FTWやん！
+            <strong>でも僕が間違っていた。</strong>
+          </p>
           <p>というのも、<code>animation</code>と<code>@keyframes</code>と<code>transform</code>が同時にunprefixされる保障はない。もし<code>transform</code>がunprefixされないまま<code>@keyframes</code>がunprefixされたら、上記CSSではアニメーションが正常に動くかはわからない。だから<code>@keyframes</code>にもprefixが付与されていたのか。</p>
           <p>Autoprefixer賢い！ Autoprefixerｻｲｺｰ!!</p>
         </div>
-        <aside class="post__contribute"><a href="https://github.com/oti/dskd/blob/master/src/md/post/44.md" class="contribute">Patches welcome!</a></aside>
+        <aside class="post__contribute">
+          <a href="https://github.com/oti/dskd/blob/master/src/md/post/44.md" class="contribute">Patches welcome!</a>
+        </aside>
         <aside role="complementary" class="post__social">
           <ul class="social-list">
-            <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=Autoprefixer%E3%81%AE%40keyframes%20animation%20%E3%81%AE%E5%87%A6%E7%90%86%E3%81%AB%E9%81%95%E5%92%8C%E6%84%9F%E3%81%8C%E3%81%82%E3%81%A3%E3%81%9F%E3%81%91%E3%81%A9%E3%80%81%E5%83%95%E3%81%8C%E9%96%93%E9%81%95%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F44.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
-                class="social-link">Tweet</a></li>
-            <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F44.html" class="social-link">Share on Facebook</a></li>
-            <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=Autoprefixer%E3%81%AE%40keyframes%20animation%20%E3%81%AE%E5%87%A6%E7%90%86%E3%81%AB%E9%81%95%E5%92%8C%E6%84%9F%E3%81%8C%E3%81%82%E3%81%A3%E3%81%9F%E3%81%91%E3%81%A9%E3%80%81%E5%83%95%E3%81%8C%E9%96%93%E9%81%95%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F44.html"
-                class="social-link">Bookmark on Hatena</a></li>
+            <li class="social-list__item social-list__item--twitter">
+              <a href="https://twitter.com/intent/tweet?text=Autoprefixer%E3%81%AE%40keyframes%20animation%20%E3%81%AE%E5%87%A6%E7%90%86%E3%81%AB%E9%81%95%E5%92%8C%E6%84%9F%E3%81%8C%E3%81%82%E3%81%A3%E3%81%9F%E3%81%91%E3%81%A9%E3%80%81%E5%83%95%E3%81%8C%E9%96%93%E9%81%95%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F44.html&amp;via=dskd_jp&amp;related=o_ti"
+                class="social-link">Tweet</a>
+            </li>
+            <li class="social-list__item social-list__item--facebook">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F44.html" class="social-link">Share on Facebook</a>
+            </li>
+            <li class="social-list__item social-list__item--hatebu">
+              <a href="http://b.hatena.ne.jp/my/add.confirm?title=Autoprefixer%E3%81%AE%40keyframes%20animation%20%E3%81%AE%E5%87%A6%E7%90%86%E3%81%AB%E9%81%95%E5%92%8C%E6%84%9F%E3%81%8C%E3%81%82%E3%81%A3%E3%81%9F%E3%81%91%E3%81%A9%E3%80%81%E5%83%95%E3%81%8C%E9%96%93%E9%81%95%E3%81%A3%E3%81%A6%E3%81%84%E3%81%9F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F44.html"
+                class="social-link">Bookmark on Hatena</a>
+            </li>
           </ul>
         </aside>
       </article>
       <nav class="neighbor">
         <ul class="neighbor-list">
-          <li class="neighbor-list__item neighbor-list__item--newer"><a href="/archives/45.html" class="neighbor-link">人には難しい気がする機械の真偽</a></li>
-          <li class="neighbor-list__item neighbor-list__item--older"><a href="/archives/43.html" class="neighbor-link">BEMまとめ奴</a></li>
+          <li class="neighbor-list__item neighbor-list__item--newer">
+            <a href="/archives/45.html" class="neighbor-link">人には難しい気がする機械の真偽</a>
+          </li>
+          <li class="neighbor-list__item neighbor-list__item--older">
+            <a href="/archives/43.html" class="neighbor-link">BEMまとめ奴</a>
+          </li>
         </ul>
       </nav>
     </main>
     <footer class="global-footer">
       <p class="author">Made by
-        <adress class="author__address"><a href="mailto:otiext@gmail.com">oti</a></adress>.</p>
+        <adress class="author__address">
+          <a href="mailto:otiext@gmail.com">oti</a>
+        </adress>.</p>
       <ul class="subinfo">
-        <li class="subinfo__item"><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link"><small class="subinfo-license">CC BY-NC</small></a></li>
-        <li class="subinfo__item"><a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a></li>
+        <li class="subinfo__item">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link">
+            <small class="subinfo-license">CC BY-NC</small>
+          </a>
+        </li>
+        <li class="subinfo__item">
+          <a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a>
+        </li>
       </ul>
     </footer>
   </body>
-
 </html>

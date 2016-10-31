@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
   <head>
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
@@ -19,57 +18,91 @@
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/style.css" rel="stylesheet" media="only screen">
   </head>
-
   <body>
     <header role="banner" class="global-header">
-      <h1 class="logo"><a href="/" class="logo-link"><img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img"></a></h1>
+      <h1 class="logo">
+        <a href="/" class="logo-link">
+          <img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img">
+        </a>
+      </h1>
       <nav role="navigation" class="site-nav">
         <ul class="site-nav-list">
-          <li class="site-nav-list__item"><a href="/archives/" class="site-nav-list-link">ARCHIVES</a></li>
-          <li class="site-nav-list__item"><a href="/demo/" class="site-nav-list-link">DEMO</a></li>
-          <li class="site-nav-list__item"><a href="/about.html" class="site-nav-list-link">ABOUT</a></li>
+          <li class="site-nav-list__item">
+            <a href="/archives/" class="site-nav-list-link">ARCHIVES</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/demo/" class="site-nav-list-link">DEMO</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/about.html" class="site-nav-list-link">ABOUT</a>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer"><time datetime="2014-12-10T10:30:30+09:00" class="post-timestamp">2014-12-10</time>
-          <p class="post-tag"><a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar, </a><a href="/archives/css.html" class="tag-link">CSS</a></p>
+        <footer class="post__footer">
+          <time datetime="2014-12-10T10:30:30+09:00" class="post-timestamp">2014-12-10</time>
+          <p class="post-tag">
+            <a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar</a>,
+            <a href="/archives/css.html" class="tag-link">CSS</a>
+          </p>
         </footer>
         <h1 itemprop="name" class="post__title">僕はCSSを見殺しにした</h1>
         <div itemprop="articleBody" class="post__body">
-          <p><a href="http://www.adventar.org/calendars/337">CSS Architecture Advent Calendar 2014</a>の10日目。</p>
+          <p>
+            <a href="http://www.adventar.org/calendars/337">CSS Architecture Advent Calendar 2014</a>の10日目。</p>
           <p>それまではけっこう頑張っていた。スタイルガイドも作っていた。デザイナーとコミュニケーションをとり、拡張性のあるパーツを作っていった。新しく触る人にも読み方や使い方を説明できるようにしていた。</p>
           <p>崩壊はUIデザイナーがいなくなった時に始まった。汎用ボタンは使われなくなった。決まったルールのデザインエッセンスはなくなった。要素間の空白は誰かの感覚で変わった。</p>
-          <p>なぜ止めることができなかったのか。それは、デザインの改修が<em>少しずつ</em>行われたからだと思う。その改修は<em>いつのまにか始まり、いつ終わるとも決まっていなかった</em>。あらゆるパターンが同居するデザインをCSSは管理できない。改修途中でも平気でブランチが切られていく。デザイナーがやりたい時にやりたいだけ変えると知ったとき、僕はCSSを管理するのをやめた。</p>
+          <p>なぜ止めることができなかったのか。それは、デザインの改修が
+            <em>少しずつ</em>行われたからだと思う。その改修は
+            <em>いつのまにか始まり、いつ終わるとも決まっていなかった</em>。あらゆるパターンが同居するデザインをCSSは管理できない。改修途中でも平気でブランチが切られていく。デザイナーがやりたい時にやりたいだけ変えると知ったとき、僕はCSSを管理するのをやめた。</p>
           <p>すでに完成形まで共通化されたCSSでは影響範囲が大きすぎた。それでも既存のルールセットに手を加えたのは、「いままでの共通パーツを使いまわせる」という思いこみがあったからだった。結果的に全ページユニークなデザインになったのを見ると、デザインが変わると決まった瞬間に新しいセレクタを作った方が楽だったのだろう。これは明確に僕の予測ミスだし、途中でもそれに気づいて管理しなおすべきだった。</p>
           <p>見殺しにしたCSSは今もcommonフォルダの中でもがき苦しんでいる。</p>
         </div>
-        <aside class="post__contribute"><a href="https://github.com/oti/dskd/blob/master/src/md/post/54.md" class="contribute">Patches welcome!</a></aside>
+        <aside class="post__contribute">
+          <a href="https://github.com/oti/dskd/blob/master/src/md/post/54.md" class="contribute">Patches welcome!</a>
+        </aside>
         <aside role="complementary" class="post__social">
           <ul class="social-list">
-            <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=%E5%83%95%E3%81%AFCSS%E3%82%92%E8%A6%8B%E6%AE%BA%E3%81%97%E3%81%AB%E3%81%97%E3%81%9F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F54.html&amp;via=dskd_jp&amp;related=o_ti&quot;" class="social-link">Tweet</a></li>
-            <li
-              class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F54.html" class="social-link">Share on Facebook</a></li>
-              <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=%E5%83%95%E3%81%AFCSS%E3%82%92%E8%A6%8B%E6%AE%BA%E3%81%97%E3%81%AB%E3%81%97%E3%81%9F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F54.html" class="social-link">Bookmark on Hatena</a></li>
+            <li class="social-list__item social-list__item--twitter">
+              <a href="https://twitter.com/intent/tweet?text=%E5%83%95%E3%81%AFCSS%E3%82%92%E8%A6%8B%E6%AE%BA%E3%81%97%E3%81%AB%E3%81%97%E3%81%9F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F54.html&amp;via=dskd_jp&amp;related=o_ti" class="social-link">Tweet</a>
+            </li>
+            <li class="social-list__item social-list__item--facebook">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F54.html" class="social-link">Share on Facebook</a>
+            </li>
+            <li class="social-list__item social-list__item--hatebu">
+              <a href="http://b.hatena.ne.jp/my/add.confirm?title=%E5%83%95%E3%81%AFCSS%E3%82%92%E8%A6%8B%E6%AE%BA%E3%81%97%E3%81%AB%E3%81%97%E3%81%9F&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F54.html" class="social-link">Bookmark on Hatena</a>
+            </li>
           </ul>
         </aside>
       </article>
       <nav class="neighbor">
         <ul class="neighbor-list">
-          <li class="neighbor-list__item neighbor-list__item--newer"><a href="/archives/55.html" class="neighbor-link">columnプロパティが特定の状況でおかしくなる</a></li>
-          <li class="neighbor-list__item neighbor-list__item--older"><a href="/archives/50.html" class="neighbor-link">style属性でzoomを指定すると特定の状況でzoomが無効になる</a></li>
+          <li class="neighbor-list__item neighbor-list__item--newer">
+            <a href="/archives/55.html" class="neighbor-link">columnプロパティが特定の状況でおかしくなる</a>
+          </li>
+          <li class="neighbor-list__item neighbor-list__item--older">
+            <a href="/archives/50.html" class="neighbor-link">style属性でzoomを指定すると特定の状況でzoomが無効になる</a>
+          </li>
         </ul>
       </nav>
     </main>
     <footer class="global-footer">
       <p class="author">Made by
-        <adress class="author__address"><a href="mailto:otiext@gmail.com">oti</a></adress>.</p>
+        <adress class="author__address">
+          <a href="mailto:otiext@gmail.com">oti</a>
+        </adress>.</p>
       <ul class="subinfo">
-        <li class="subinfo__item"><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link"><small class="subinfo-license">CC BY-NC</small></a></li>
-        <li class="subinfo__item"><a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a></li>
+        <li class="subinfo__item">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link">
+            <small class="subinfo-license">CC BY-NC</small>
+          </a>
+        </li>
+        <li class="subinfo__item">
+          <a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a>
+        </li>
       </ul>
     </footer>
   </body>
-
 </html>

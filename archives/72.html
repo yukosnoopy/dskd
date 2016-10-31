@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
   <head>
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
@@ -19,56 +18,91 @@
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/style.css" rel="stylesheet" media="only screen">
   </head>
-
   <body>
     <header role="banner" class="global-header">
-      <h1 class="logo"><a href="/" class="logo-link"><img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img"></a></h1>
+      <h1 class="logo">
+        <a href="/" class="logo-link">
+          <img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img">
+        </a>
+      </h1>
       <nav role="navigation" class="site-nav">
         <ul class="site-nav-list">
-          <li class="site-nav-list__item"><a href="/archives/" class="site-nav-list-link">ARCHIVES</a></li>
-          <li class="site-nav-list__item"><a href="/demo/" class="site-nav-list-link">DEMO</a></li>
-          <li class="site-nav-list__item"><a href="/about.html" class="site-nav-list-link">ABOUT</a></li>
+          <li class="site-nav-list__item">
+            <a href="/archives/" class="site-nav-list-link">ARCHIVES</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/demo/" class="site-nav-list-link">DEMO</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/about.html" class="site-nav-list-link">ABOUT</a>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer"><time datetime="2015-11-27T01:12:00+09:00" class="post-timestamp">2015-11-27</time>
-          <p class="post-tag"><a href="/archives/note.html" class="tag-link">note</a></p>
+        <footer class="post__footer">
+          <time datetime="2015-11-27T01:12:00+09:00" class="post-timestamp">2015-11-27</time>
+          <p class="post-tag">
+            <a href="/archives/note.html" class="tag-link">note</a>
+          </p>
         </footer>
         <h1 itemprop="name" class="post__title">Launch dskd v5</h1>
         <div itemprop="articleBody" class="post__body">
-          <p>ブログをバージョンアップした。<a href="/archives/65.html">前回</a>が4月だが、やはりMovable Typeによるビルドだと、さくさくと記事を書くというのがやりづらくなっていた。それはMTのせいではなく、原稿をmdファイルで持ちつつgit管理し、それを手でMTにコピペして記事公開し、FTPとローカルを同期させてMT buildなるcommitをするフローに耐えられなかったからである。Movable Typeの強力なテンプレート機能が劣っているわけではない。手元でビルドしたいという欲求に負けたにすぎない。</p>
-          <p>今回はいわゆるブログツールのようなものを自作した。一応Node製だけど実行はgulpを使っている。雑に言うとgulp-layoutでmdからHTMLをビルドしている。細かくは、Yamlブロックでブログ構築のメタ情報を記事ごとに設定し、そこからJSONをよしなに作り、それを元に記事一覧やタグ一覧などのページも作っている。Yamlブロックの抽出にはgulp-front-matterとthough2、utilなどを使った。細かい実装は<a href="https://github.com/oti/dskd">GitHubにリポジトリがある</a>。記事構築や一覧ページの管理などがまだ甘い気がするが、これ以上の改良は今回のリニューアル範囲外としてv5をリリースした。</p>
+          <p>ブログをバージョンアップした。
+            <a href="/archives/65.html">前回</a>が4月だが、やはりMovable Typeによるビルドだと、さくさくと記事を書くというのがやりづらくなっていた。それはMTのせいではなく、原稿をmdファイルで持ちつつgit管理し、それを手でMTにコピペして記事公開し、FTPとローカルを同期させてMT buildなるcommitをするフローに耐えられなかったからである。Movable Typeの強力なテンプレート機能が劣っているわけではない。手元でビルドしたいという欲求に負けたにすぎない。</p>
+          <p>今回はいわゆるブログツールのようなものを自作した。一応Node製だけど実行はgulpを使っている。雑に言うとgulp-layoutでmdからHTMLをビルドしている。細かくは、Yamlブロックでブログ構築のメタ情報を記事ごとに設定し、そこからJSONをよしなに作り、それを元に記事一覧やタグ一覧などのページも作っている。Yamlブロックの抽出にはgulp-front-matterとthough2、utilなどを使った。細かい実装は
+            <a href="https://github.com/oti/dskd">GitHubにリポジトリがある</a>。記事構築や一覧ページの管理などがまだ甘い気がするが、これ以上の改良は今回のリニューアル範囲外としてv5をリリースした。</p>
           <p>マークアップも刷新した。またBEMに戻ってみている。マルチクラスのMindBEMding。BEMはSassと相性がいいので&amp;など使ってやってみたが、時間が空いたら読めなくなる感じがすでにしている。レイアウトはなんとなくfloatで横並びを作ったりしている。flexboxでも全然よいのだけど、ブログ来訪者の解析などはほとんどしていないので安パイで逃げたと言えばハイそうですといった感じだ。ほかにも細かい変更はあるが忘れた。手元でビルドして手元でデプロイできるというのが何より嬉しくて今の所満足している。</p>
           <hr>
           <p>Advent Calendarの季節がもうすぐそこまで迫っている。その前に切り替えられてよかった。今年もTKGのを作っているので、興味がある人はぜひ参加してほしい。現在15日までは連続でうまっているが、それ以降がスッカスカである。こちらとしては残りは全部自分で埋める気概はある。TKGポイントを日々ためているので問題ない。問題ないが、やれるなら誰かにやってほしい。卵は高いのだ。たのむ。</p>
-          <p><a href="http://www.adventar.org/calendars/720">TKG Advent Calendar 2015</a></p>
+          <p>
+            <a href="http://www.adventar.org/calendars/720">TKG Advent Calendar 2015</a>
+          </p>
         </div>
-        <aside class="post__contribute"><a href="https://github.com/oti/dskd/blob/master/src/md/post/72.md" class="contribute">Patches welcome!</a></aside>
+        <aside class="post__contribute">
+          <a href="https://github.com/oti/dskd/blob/master/src/md/post/72.md" class="contribute">Patches welcome!</a>
+        </aside>
         <aside role="complementary" class="post__social">
           <ul class="social-list">
-            <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=Launch%20dskd%20v5&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F72.html&amp;via=dskd_jp&amp;related=o_ti&quot;" class="social-link">Tweet</a></li>
-            <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F72.html" class="social-link">Share on Facebook</a></li>
-            <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=Launch%20dskd%20v5&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F72.html" class="social-link">Bookmark on Hatena</a></li>
+            <li class="social-list__item social-list__item--twitter">
+              <a href="https://twitter.com/intent/tweet?text=Launch%20dskd%20v5&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F72.html&amp;via=dskd_jp&amp;related=o_ti" class="social-link">Tweet</a>
+            </li>
+            <li class="social-list__item social-list__item--facebook">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F72.html" class="social-link">Share on Facebook</a>
+            </li>
+            <li class="social-list__item social-list__item--hatebu">
+              <a href="http://b.hatena.ne.jp/my/add.confirm?title=Launch%20dskd%20v5&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F72.html" class="social-link">Bookmark on Hatena</a>
+            </li>
           </ul>
         </aside>
       </article>
       <nav class="neighbor">
         <ul class="neighbor-list">
-          <li class="neighbor-list__item neighbor-list__item--newer"><a href="/archives/73.html" class="neighbor-link">outlineプロパティで作った枠線は角丸にすることができない</a></li>
-          <li class="neighbor-list__item neighbor-list__item--older"><a href="/archives/71.html" class="neighbor-link">小さく持つ</a></li>
+          <li class="neighbor-list__item neighbor-list__item--newer">
+            <a href="/archives/73.html" class="neighbor-link">outlineプロパティで作った枠線は角丸にすることができない</a>
+          </li>
+          <li class="neighbor-list__item neighbor-list__item--older">
+            <a href="/archives/71.html" class="neighbor-link">小さく持つ</a>
+          </li>
         </ul>
       </nav>
     </main>
     <footer class="global-footer">
       <p class="author">Made by
-        <adress class="author__address"><a href="mailto:otiext@gmail.com">oti</a></adress>.</p>
+        <adress class="author__address">
+          <a href="mailto:otiext@gmail.com">oti</a>
+        </adress>.</p>
       <ul class="subinfo">
-        <li class="subinfo__item"><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link"><small class="subinfo-license">CC BY-NC</small></a></li>
-        <li class="subinfo__item"><a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a></li>
+        <li class="subinfo__item">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link">
+            <small class="subinfo-license">CC BY-NC</small>
+          </a>
+        </li>
+        <li class="subinfo__item">
+          <a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a>
+        </li>
       </ul>
     </footer>
   </body>
-
 </html>

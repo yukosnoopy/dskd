@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
   <head>
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
@@ -19,30 +18,46 @@
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/style.css" rel="stylesheet" media="only screen">
   </head>
-
   <body>
     <header role="banner" class="global-header">
-      <h1 class="logo"><a href="/" class="logo-link"><img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img"></a></h1>
+      <h1 class="logo">
+        <a href="/" class="logo-link">
+          <img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img">
+        </a>
+      </h1>
       <nav role="navigation" class="site-nav">
         <ul class="site-nav-list">
-          <li class="site-nav-list__item"><a href="/archives/" class="site-nav-list-link">ARCHIVES</a></li>
-          <li class="site-nav-list__item"><a href="/demo/" class="site-nav-list-link">DEMO</a></li>
-          <li class="site-nav-list__item"><a href="/about.html" class="site-nav-list-link">ABOUT</a></li>
+          <li class="site-nav-list__item">
+            <a href="/archives/" class="site-nav-list-link">ARCHIVES</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/demo/" class="site-nav-list-link">DEMO</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/about.html" class="site-nav-list-link">ABOUT</a>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer"><time datetime="2013-12-04T11:15:00+09:00" class="post-timestamp">2013-12-04</time>
-          <p class="post-tag"><a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar, </a><a href="/archives/css.html" class="tag-link">CSS</a></p>
+        <footer class="post__footer">
+          <time datetime="2013-12-04T11:15:00+09:00" class="post-timestamp">2013-12-04</time>
+          <p class="post-tag">
+            <a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar</a>,
+            <a href="/archives/css.html" class="tag-link">CSS</a>
+          </p>
         </footer>
         <h1 itemprop="name" class="post__title">内包要素の数が変動しても僕には擬似クラスと間接セレクタがある</h1>
         <div itemprop="articleBody" class="post__body">
-          <p><a href="http://www.adventar.org/calendars/57">CSS Property Advent Calendar 2013</a> ４日目のエントリです。</p>
+          <p>
+            <a href="http://www.adventar.org/calendars/57">CSS Property Advent Calendar 2013</a> ４日目のエントリです。</p>
           <p>昨日、げこたんさんに BEM Advent Calendar を手伝ってもらったら、</p>
           <p>
             <blockquote class="twitter-tweet" lang="ja">
-              <p>おや？プロパティの方に恩返しがありませんね？</p>&mdash; げこたん (@GeckoTang) <a href="https://twitter.com/GeckoTang/statuses/407367908268834816">2013, 12月 2</a></blockquote>
+              <p>おや？プロパティの方に恩返しがありませんね？</p>&mdash; げこたん (@GeckoTang)
+              <a href="https://twitter.com/GeckoTang/statuses/407367908268834816">2013, 12月 2</a>
+            </blockquote>
           </p>
           <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
           <p>と言われてしまったので２回目を登録しました。</p>
@@ -54,7 +69,9 @@
   &lt;a class="tabs__item"&gt;タブ３&lt;/a&gt;
 &lt;/div&gt;</code></pre>
           <p><code>.tabs__item</code>がページによっては２つだったり５つだったりする時、という想定です。図示すると以下のような感じです。</p>
-          <p><img src="/img/multiple-tabs/01.png" alt="タブの数が異なるけど親要素内に収まるようにしたい" title="タブの数が異なるけど幅はそれぞれ親要素内に収まるようにしたい"></p>
+          <p>
+            <img src="/img/multiple-tabs/01.png" alt="タブの数が異なるけど親要素内に収まるようにしたい" title="タブの数が異なるけど幅はそれぞれ親要素内に収まるようにしたい">
+          </p>
           <p>親の<code>.tabs</code>は幅が決まっていて、操作性を考えて<code>.tabs__item</code>の大きさは常にいっぱいまで広げておきたいな〜とかいう時、擬似クラスと間接セレクタを使うと内包要素の数ごとにクラスを作らなくて済むようになります。</p>
           <h2 id="-">擬似クラスと間接セレクタの合わせ技</h2> <pre title="CSS"><code data-language="css">.tabs{
   box-sizing: border-box;
@@ -146,37 +163,60 @@
           <p>今気づいたんですけど、CSS Property Advent CalendarなのにCSSセレクタのことを書いてしまいました。まぁいいかな？と思ってAdvent Calendarを改めて見てみると......。</p>
           <blockquote>
             <p>CSSのプロパティに関することだったら何でもOKです！</p>
-            <footer><cite><a href="http://www.adventar.org/calendars/57">CSS Property Advent Calendar 2013 - Adventar</a></cite>から</footer>
+            <footer>
+              <cite>
+                <a href="http://www.adventar.org/calendars/57">CSS Property Advent Calendar 2013 - Adventar</a>
+              </cite>から</footer>
           </blockquote>
           <p>セレクタ、ダメです！</p>
-          <p>５日目は<a href="http://www.adventar.org/users/2313">maechabin</a>さんです。よろしくお願いします。</p>
+          <p>５日目は
+            <a href="http://www.adventar.org/users/2313">maechabin</a>さんです。よろしくお願いします。</p>
         </div>
-        <aside class="post__contribute"><a href="https://github.com/oti/dskd/blob/master/src/md/post/37.md" class="contribute">Patches welcome!</a></aside>
+        <aside class="post__contribute">
+          <a href="https://github.com/oti/dskd/blob/master/src/md/post/37.md" class="contribute">Patches welcome!</a>
+        </aside>
         <aside role="complementary" class="post__social">
           <ul class="social-list">
-            <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=%E5%86%85%E5%8C%85%E8%A6%81%E7%B4%A0%E3%81%AE%E6%95%B0%E3%81%8C%E5%A4%89%E5%8B%95%E3%81%97%E3%81%A6%E3%82%82%E5%83%95%E3%81%AB%E3%81%AF%E6%93%AC%E4%BC%BC%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%A8%E9%96%93%E6%8E%A5%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%81%8C%E3%81%82%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F37.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
-                class="social-link">Tweet</a></li>
-            <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F37.html" class="social-link">Share on Facebook</a></li>
-            <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=%E5%86%85%E5%8C%85%E8%A6%81%E7%B4%A0%E3%81%AE%E6%95%B0%E3%81%8C%E5%A4%89%E5%8B%95%E3%81%97%E3%81%A6%E3%82%82%E5%83%95%E3%81%AB%E3%81%AF%E6%93%AC%E4%BC%BC%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%A8%E9%96%93%E6%8E%A5%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%81%8C%E3%81%82%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F37.html"
-                class="social-link">Bookmark on Hatena</a></li>
+            <li class="social-list__item social-list__item--twitter">
+              <a href="https://twitter.com/intent/tweet?text=%E5%86%85%E5%8C%85%E8%A6%81%E7%B4%A0%E3%81%AE%E6%95%B0%E3%81%8C%E5%A4%89%E5%8B%95%E3%81%97%E3%81%A6%E3%82%82%E5%83%95%E3%81%AB%E3%81%AF%E6%93%AC%E4%BC%BC%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%A8%E9%96%93%E6%8E%A5%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%81%8C%E3%81%82%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F37.html&amp;via=dskd_jp&amp;related=o_ti"
+                class="social-link">Tweet</a>
+            </li>
+            <li class="social-list__item social-list__item--facebook">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F37.html" class="social-link">Share on Facebook</a>
+            </li>
+            <li class="social-list__item social-list__item--hatebu">
+              <a href="http://b.hatena.ne.jp/my/add.confirm?title=%E5%86%85%E5%8C%85%E8%A6%81%E7%B4%A0%E3%81%AE%E6%95%B0%E3%81%8C%E5%A4%89%E5%8B%95%E3%81%97%E3%81%A6%E3%82%82%E5%83%95%E3%81%AB%E3%81%AF%E6%93%AC%E4%BC%BC%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%A8%E9%96%93%E6%8E%A5%E3%82%BB%E3%83%AC%E3%82%AF%E3%82%BF%E3%81%8C%E3%81%82%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F37.html"
+                class="social-link">Bookmark on Hatena</a>
+            </li>
           </ul>
         </aside>
       </article>
       <nav class="neighbor">
         <ul class="neighbor-list">
-          <li class="neighbor-list__item neighbor-list__item--newer"><a href="/archives/38.html" class="neighbor-link">ブログを初めてBEM化した時の流れの続き</a></li>
-          <li class="neighbor-list__item neighbor-list__item--older"><a href="/archives/36.html" class="neighbor-link">ブログを初めてBEM化した時の流れ</a></li>
+          <li class="neighbor-list__item neighbor-list__item--newer">
+            <a href="/archives/38.html" class="neighbor-link">ブログを初めてBEM化した時の流れの続き</a>
+          </li>
+          <li class="neighbor-list__item neighbor-list__item--older">
+            <a href="/archives/36.html" class="neighbor-link">ブログを初めてBEM化した時の流れ</a>
+          </li>
         </ul>
       </nav>
     </main>
     <footer class="global-footer">
       <p class="author">Made by
-        <adress class="author__address"><a href="mailto:otiext@gmail.com">oti</a></adress>.</p>
+        <adress class="author__address">
+          <a href="mailto:otiext@gmail.com">oti</a>
+        </adress>.</p>
       <ul class="subinfo">
-        <li class="subinfo__item"><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link"><small class="subinfo-license">CC BY-NC</small></a></li>
-        <li class="subinfo__item"><a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a></li>
+        <li class="subinfo__item">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link">
+            <small class="subinfo-license">CC BY-NC</small>
+          </a>
+        </li>
+        <li class="subinfo__item">
+          <a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a>
+        </li>
       </ul>
     </footer>
   </body>
-
 </html>

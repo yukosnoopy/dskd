@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
   <head>
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
@@ -19,65 +18,102 @@
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/style.css" rel="stylesheet" media="only screen">
   </head>
-
   <body>
     <header role="banner" class="global-header">
-      <h1 class="logo"><a href="/" class="logo-link"><img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img"></a></h1>
+      <h1 class="logo">
+        <a href="/" class="logo-link">
+          <img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img">
+        </a>
+      </h1>
       <nav role="navigation" class="site-nav">
         <ul class="site-nav-list">
-          <li class="site-nav-list__item"><a href="/archives/" class="site-nav-list-link">ARCHIVES</a></li>
-          <li class="site-nav-list__item"><a href="/demo/" class="site-nav-list-link">DEMO</a></li>
-          <li class="site-nav-list__item"><a href="/about.html" class="site-nav-list-link">ABOUT</a></li>
+          <li class="site-nav-list__item">
+            <a href="/archives/" class="site-nav-list-link">ARCHIVES</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/demo/" class="site-nav-list-link">DEMO</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/about.html" class="site-nav-list-link">ABOUT</a>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer"><time datetime="2013-12-26T02:35:05+09:00" class="post-timestamp">2013-12-26</time>
-          <p class="post-tag"><a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar, </a><a href="/archives/bem.html" class="tag-link">BEM</a></p>
+        <footer class="post__footer">
+          <time datetime="2013-12-26T02:35:05+09:00" class="post-timestamp">2013-12-26</time>
+          <p class="post-tag">
+            <a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar</a>,
+            <a href="/archives/bem.html" class="tag-link">BEM</a>
+          </p>
         </footer>
         <h1 itemprop="name" class="post__title">PSDファイルのレイヤー名でBEM</h1>
         <div itemprop="articleBody" class="post__body">
-          <p><a href="http://www.adventar.org/calendars/61">BEM Advent Calendar 2013</a> 24日目のエントリです。</p>
-          <p>BEMはセレクタの命名規則だけでなく、<a href="http://bem.info/method/filesystem/">ファイルシステムの管理にも導入できます</a>よというbem.infoのページを見ていて、MindBEMdingな名前付けは何もウェブだけのものに留まらなくていいんじゃないかと思うようになりました。そこでタイトルにあるように、PSDファイルのレイヤー名でBEMです。</p>
+          <p>
+            <a href="http://www.adventar.org/calendars/61">BEM Advent Calendar 2013</a> 24日目のエントリです。</p>
+          <p>BEMはセレクタの命名規則だけでなく、
+            <a href="http://bem.info/method/filesystem/">ファイルシステムの管理にも導入できます</a>よというbem.infoのページを見ていて、MindBEMdingな名前付けは何もウェブだけのものに留まらなくていいんじゃないかと思うようになりました。そこでタイトルにあるように、PSDファイルのレイヤー名でBEMです。</p>
           <p>何回か前の記事で紹介したこちらの画像の、</p>
           <p>
-            <a href="/img/multiple-tabs/01.png" title="汎用タブ"><img src="/img/multiple-tabs/01.png" alt="汎用的なタブの例"></a>
+            <a href="/img/multiple-tabs/01.png" title="汎用タブ">
+              <img src="/img/multiple-tabs/01.png" alt="汎用的なタブの例">
+            </a>
           </p>
           <p>PSDファイルをこんな感じにしてみました。</p>
           <p>
-            <a href="/img/bem-layer-psd/01.png" title="レイヤー名でBEM"><img src="/img/bem-layer-psd/01.png" alt="レイヤー名でBEMったスクリーンショット"></a>
+            <a href="/img/bem-layer-psd/01.png" title="レイヤー名でBEM">
+              <img src="/img/bem-layer-psd/01.png" alt="レイヤー名でBEMったスクリーンショット">
+            </a>
           </p>
           <p>冗長になるのでBlockとElementの継承は省略してModifierを書いています。レイヤー名でBEMと言いましたが、このような単純なイラストでもレイヤー単位ではHTML化できないところが出てくるので、グループにしてそこでBEMな名前付けをしています。</p>
           <p>用意したサンプルが単純な作りなのでBEMなレイヤー名を一概に「良い」とは言えません。ですが「◯◯のコピー」が大量に生まれたりして見通しも悪くなりがちなレイヤー名を、Block, Element, Modifierに基づいたグループツリーで表現しておくことで、他のメンバーにデータを渡す時にもその全容を把握してもらいやすくなるのではないでしょうか。</p>
           <hr>
           <p>25日目は１日ぶり８度目、僕です。</p>
         </div>
-        <aside class="post__contribute"><a href="https://github.com/oti/dskd/blob/master/src/md/post/42.md" class="contribute">Patches welcome!</a></aside>
+        <aside class="post__contribute">
+          <a href="https://github.com/oti/dskd/blob/master/src/md/post/42.md" class="contribute">Patches welcome!</a>
+        </aside>
         <aside role="complementary" class="post__social">
           <ul class="social-list">
-            <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=PSD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E5%90%8D%E3%81%A7BEM&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F42.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
-                class="social-link">Tweet</a></li>
-            <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F42.html" class="social-link">Share on Facebook</a></li>
-            <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=PSD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E5%90%8D%E3%81%A7BEM&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F42.html" class="social-link">Bookmark on Hatena</a></li>
+            <li class="social-list__item social-list__item--twitter">
+              <a href="https://twitter.com/intent/tweet?text=PSD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E5%90%8D%E3%81%A7BEM&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F42.html&amp;via=dskd_jp&amp;related=o_ti" class="social-link">Tweet</a>
+            </li>
+            <li class="social-list__item social-list__item--facebook">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F42.html" class="social-link">Share on Facebook</a>
+            </li>
+            <li class="social-list__item social-list__item--hatebu">
+              <a href="http://b.hatena.ne.jp/my/add.confirm?title=PSD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%AC%E3%82%A4%E3%83%A4%E3%83%BC%E5%90%8D%E3%81%A7BEM&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F42.html" class="social-link">Bookmark on Hatena</a>
+            </li>
           </ul>
         </aside>
       </article>
       <nav class="neighbor">
         <ul class="neighbor-list">
-          <li class="neighbor-list__item neighbor-list__item--newer"><a href="/archives/43.html" class="neighbor-link">BEMまとめ奴</a></li>
-          <li class="neighbor-list__item neighbor-list__item--older"><a href="/archives/41.html" class="neighbor-link">BEMのロゴが個性的で面白い</a></li>
+          <li class="neighbor-list__item neighbor-list__item--newer">
+            <a href="/archives/43.html" class="neighbor-link">BEMまとめ奴</a>
+          </li>
+          <li class="neighbor-list__item neighbor-list__item--older">
+            <a href="/archives/41.html" class="neighbor-link">BEMのロゴが個性的で面白い</a>
+          </li>
         </ul>
       </nav>
     </main>
     <footer class="global-footer">
       <p class="author">Made by
-        <adress class="author__address"><a href="mailto:otiext@gmail.com">oti</a></adress>.</p>
+        <adress class="author__address">
+          <a href="mailto:otiext@gmail.com">oti</a>
+        </adress>.</p>
       <ul class="subinfo">
-        <li class="subinfo__item"><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link"><small class="subinfo-license">CC BY-NC</small></a></li>
-        <li class="subinfo__item"><a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a></li>
+        <li class="subinfo__item">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link">
+            <small class="subinfo-license">CC BY-NC</small>
+          </a>
+        </li>
+        <li class="subinfo__item">
+          <a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a>
+        </li>
       </ul>
     </footer>
   </body>
-
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
   <head>
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
@@ -19,34 +18,53 @@
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/style.css" rel="stylesheet" media="only screen">
   </head>
-
   <body>
     <header role="banner" class="global-header">
-      <h1 class="logo"><a href="/" class="logo-link"><img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img"></a></h1>
+      <h1 class="logo">
+        <a href="/" class="logo-link">
+          <img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img">
+        </a>
+      </h1>
       <nav role="navigation" class="site-nav">
         <ul class="site-nav-list">
-          <li class="site-nav-list__item"><a href="/archives/" class="site-nav-list-link">ARCHIVES</a></li>
-          <li class="site-nav-list__item"><a href="/demo/" class="site-nav-list-link">DEMO</a></li>
-          <li class="site-nav-list__item"><a href="/about.html" class="site-nav-list-link">ABOUT</a></li>
+          <li class="site-nav-list__item">
+            <a href="/archives/" class="site-nav-list-link">ARCHIVES</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/demo/" class="site-nav-list-link">DEMO</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/about.html" class="site-nav-list-link">ABOUT</a>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer"><time datetime="2014-12-12T10:37:05+09:00" class="post-timestamp">2014-12-12</time>
-          <p class="post-tag"><a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar, </a><a href="/archives/css.html" class="tag-link">CSS</a></p>
+        <footer class="post__footer">
+          <time datetime="2014-12-12T10:37:05+09:00" class="post-timestamp">2014-12-12</time>
+          <p class="post-tag">
+            <a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar</a>,
+            <a href="/archives/css.html" class="tag-link">CSS</a>
+          </p>
         </footer>
         <h1 itemprop="name" class="post__title">columnプロパティが特定の状況でおかしくなる</h1>
         <div itemprop="articleBody" class="post__body">
-          <p><a href="http://www.adventar.org/calendars/341">CSS 珍百景 Advent Calendar 2014</a>の12日目。</p>
-          <p>colunmプロパティを使った時にいくつかのブラウザで内容物のbreakがおかしくなる。デモは今回はJSFiddleにおいた。</p> <iframe width="100%" height="300" src="http://jsfiddle.net/o_ti/pcr3pr14/6/embedded/result,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+          <p>
+            <a href="http://www.adventar.org/calendars/341">CSS 珍百景 Advent Calendar 2014</a>の12日目。</p>
+          <p>colunmプロパティを使った時にいくつかのブラウザで内容物のbreakがおかしくなる。デモは今回はJSFiddleにおいた。</p>
+          <iframe width="100%" height="300" src="http://jsfiddle.net/o_ti/pcr3pr14/6/embedded/result,html,css/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
           <p>で、このデモは.itemが３つごとに３カラムに別れて表示される想定でスタイルしている。このHTMLだとfloatではこういう表現はできないし、positionでやるのは面倒なだけなのでcolumnプロパティ最高だなと思っていた。PC版のGoogle Chrome 39系とiOS 7系のMobile Safariは期待どおりで問題ない。.caseの高さを目一杯使って.itemがきちんと収まっている。</p>
           <p>
-            <a href="/img/column-property-breaking-bug/yep.png" title="期待通りの表示"><img src="/img/column-property-breaking-bug/yep.png" alt=".itemは.caseの高さにちょうど収まっている。"></a>
+            <a href="/img/column-property-breaking-bug/yep.png" title="期待通りの表示">
+              <img src="/img/column-property-breaking-bug/yep.png" alt=".itemは.caseの高さにちょうど収まっている。">
+            </a>
           </p>
           <p>しかしFirefox 34やIE11では.caseの高さが.item３つ分より足りないような挙動になり、.itemの一部がbreakされて次のカラムにめり込んでいる。.caseに指定した背景色の<code>limegrean</code>が出ているように、別に.case自体の高さが小さくなったわけではない。にも関わらず、.itemの一部が次のカラムにbreakしている。さらに不可解なのは中段のデモで、<code>column-width</code>と<code>column-gap</code>の合計が.caseの幅を超えると.item３つ分の高さがぴったり収まり、一部がbreakされるようなことはなくなるというところ。</p>
           <p>
-            <a href="/img/column-property-breaking-bug/nope.png" title="期待通りにいっていない表示"><img src="/img/column-property-breaking-bug/nope.png" alt=".itemは.caseの高さを利用しきれず、次のcolumnに一部だけbreakして表示されている。"></a>
+            <a href="/img/column-property-breaking-bug/nope.png" title="期待通りにいっていない表示">
+              <img src="/img/column-property-breaking-bug/nope.png" alt=".itemは.caseの高さを利用しきれず、次のcolumnに一部だけbreakして表示されている。">
+            </a>
           </p>
           <p><code>column-width</code>と<code>column-gap</code>の合計が.caseを超えた時に、column-rule（黒い帯）の表示位置が変になるのも面白い現象ではある。仕様ではカラム間のちょうど中央に配置されるはずだ。</p>
           <p>ややこしいことに、iOS版のGoogle Chrome 39.0.2171.50で見るとiOS 7.1.2では期待通りに表示できるが、iOS 8.1.1では.itemの一部がbreakされてしまう。同じバージョンのブラウザでプラットフォーム別にこういうことが起こるのはちょっと困る（Android OSは怖くて見ていない）。表示の状況をまとめると以下の通りとなる。</p>
@@ -99,38 +117,58 @@
               <td>☓</td>
             </tr>
           </table>
-          <p>IE12 Platform Previewでどうなっているか気になるけど、<a href="http://www.w3.org/TR/css3-multicol/">CSS Multi-column Layout Module</a>は全然動いてないので期待はできなそう。それに、columnをまたいだ時の内包物のbreak指定はbreak-after, break-before, break-insideというプロパティで指定できるかと思いきや、これらのプロパティの<a href="http://www.w3.org/TR/css3-multicol/#break-before-break-after-break-inside">対応メディアはpaged</a>だった。なのでvisualグループのscreenメディアでは使えない。
-            <a
-              href="http://dev.w3.org/csswg/css-multicol/#break-before-break-after-break-inside">Editor&#39;s Draftではメディアがvisualに変わっている</a>ので、このまま行けばbreak-*プロパティで対応していくようになるのかもしれないが、そもそも高さが十分にあるはずなのにbreakされてしまうというバグなので、仕様うんぬんじゃなくcolumnなボックスのレンダリングの問題な気がする。なのでブラウザ頑張れ。</p>
+          <p>IE12 Platform Previewでどうなっているか気になるけど、
+            <a href="http://www.w3.org/TR/css3-multicol/">CSS Multi-column Layout Module</a>は全然動いてないので期待はできなそう。それに、columnをまたいだ時の内包物のbreak指定はbreak-after, break-before, break-insideというプロパティで指定できるかと思いきや、これらのプロパティの
+            <a href="http://www.w3.org/TR/css3-multicol/#break-before-break-after-break-inside">対応メディアはpaged</a>だった。なのでvisualグループのscreenメディアでは使えない。
+            <a href="http://dev.w3.org/csswg/css-multicol/#break-before-break-after-break-inside">Editor&#39;s Draftではメディアがvisualに変わっている</a>ので、このまま行けばbreak-*プロパティで対応していくようになるのかもしれないが、そもそも高さが十分にあるはずなのにbreakされてしまうというバグなので、仕様うんぬんじゃなくcolumnなボックスのレンダリングの問題な気がする。なのでブラウザ頑張れ。</p>
           <p>業務ではこの表示をクロスブラウザにすることができずに、結局columnごとにdivを作りそれをfloatさせて対応した。.itemの数が直近のユーザーの操作によって変動するので、合計値からcolumn数と幅だけ算出すれば簡単だなと思ったのだけど、つらい結果になった。</p>
           <p>columnこわい。</p>
         </div>
-        <aside class="post__contribute"><a href="https://github.com/oti/dskd/blob/master/src/md/post/55.md" class="contribute">Patches welcome!</a></aside>
+        <aside class="post__contribute">
+          <a href="https://github.com/oti/dskd/blob/master/src/md/post/55.md" class="contribute">Patches welcome!</a>
+        </aside>
         <aside role="complementary" class="post__social">
           <ul class="social-list">
-            <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=column%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%8C%E7%89%B9%E5%AE%9A%E3%81%AE%E7%8A%B6%E6%B3%81%E3%81%A7%E3%81%8A%E3%81%8B%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F55.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
-                class="social-link">Tweet</a></li>
-            <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F55.html" class="social-link">Share on Facebook</a></li>
-            <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=column%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%8C%E7%89%B9%E5%AE%9A%E3%81%AE%E7%8A%B6%E6%B3%81%E3%81%A7%E3%81%8A%E3%81%8B%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F55.html"
-                class="social-link">Bookmark on Hatena</a></li>
+            <li class="social-list__item social-list__item--twitter">
+              <a href="https://twitter.com/intent/tweet?text=column%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%8C%E7%89%B9%E5%AE%9A%E3%81%AE%E7%8A%B6%E6%B3%81%E3%81%A7%E3%81%8A%E3%81%8B%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F55.html&amp;via=dskd_jp&amp;related=o_ti"
+                class="social-link">Tweet</a>
+            </li>
+            <li class="social-list__item social-list__item--facebook">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F55.html" class="social-link">Share on Facebook</a>
+            </li>
+            <li class="social-list__item social-list__item--hatebu">
+              <a href="http://b.hatena.ne.jp/my/add.confirm?title=column%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%8C%E7%89%B9%E5%AE%9A%E3%81%AE%E7%8A%B6%E6%B3%81%E3%81%A7%E3%81%8A%E3%81%8B%E3%81%97%E3%81%8F%E3%81%AA%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F55.html"
+                class="social-link">Bookmark on Hatena</a>
+            </li>
           </ul>
         </aside>
       </article>
       <nav class="neighbor">
         <ul class="neighbor-list">
-          <li class="neighbor-list__item neighbor-list__item--newer"><a href="/archives/56.html" class="neighbor-link">UE BOOMを買った</a></li>
-          <li class="neighbor-list__item neighbor-list__item--older"><a href="/archives/54.html" class="neighbor-link">僕はCSSを見殺しにした</a></li>
+          <li class="neighbor-list__item neighbor-list__item--newer">
+            <a href="/archives/56.html" class="neighbor-link">UE BOOMを買った</a>
+          </li>
+          <li class="neighbor-list__item neighbor-list__item--older">
+            <a href="/archives/54.html" class="neighbor-link">僕はCSSを見殺しにした</a>
+          </li>
         </ul>
       </nav>
     </main>
     <footer class="global-footer">
       <p class="author">Made by
-        <adress class="author__address"><a href="mailto:otiext@gmail.com">oti</a></adress>.</p>
+        <adress class="author__address">
+          <a href="mailto:otiext@gmail.com">oti</a>
+        </adress>.</p>
       <ul class="subinfo">
-        <li class="subinfo__item"><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link"><small class="subinfo-license">CC BY-NC</small></a></li>
-        <li class="subinfo__item"><a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a></li>
+        <li class="subinfo__item">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link">
+            <small class="subinfo-license">CC BY-NC</small>
+          </a>
+        </li>
+        <li class="subinfo__item">
+          <a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a>
+        </li>
       </ul>
     </footer>
   </body>
-
 </html>

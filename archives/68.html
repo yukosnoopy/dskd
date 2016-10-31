@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
   <head>
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
@@ -19,26 +18,39 @@
     <link href="/feed" rel="alternate" type="application/rss+xml">
     <link href="/css/style.css" rel="stylesheet" media="only screen">
   </head>
-
   <body>
     <header role="banner" class="global-header">
-      <h1 class="logo"><a href="/" class="logo-link"><img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img"></a></h1>
+      <h1 class="logo">
+        <a href="/" class="logo-link">
+          <img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img">
+        </a>
+      </h1>
       <nav role="navigation" class="site-nav">
         <ul class="site-nav-list">
-          <li class="site-nav-list__item"><a href="/archives/" class="site-nav-list-link">ARCHIVES</a></li>
-          <li class="site-nav-list__item"><a href="/demo/" class="site-nav-list-link">DEMO</a></li>
-          <li class="site-nav-list__item"><a href="/about.html" class="site-nav-list-link">ABOUT</a></li>
+          <li class="site-nav-list__item">
+            <a href="/archives/" class="site-nav-list-link">ARCHIVES</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/demo/" class="site-nav-list-link">DEMO</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/about.html" class="site-nav-list-link">ABOUT</a>
+          </li>
         </ul>
       </nav>
     </header>
     <main class="contents">
       <article class="post">
-        <footer class="post__footer"><time datetime="2015-08-14T01:26:24+09:00" class="post-timestamp">2015-08-14</time>
-          <p class="post-tag"><a href="/archives/node_js.html" class="tag-link">Node.js</a></p>
+        <footer class="post__footer">
+          <time datetime="2015-08-14T01:26:24+09:00" class="post-timestamp">2015-08-14</time>
+          <p class="post-tag">
+            <a href="/archives/node_js.html" class="tag-link">Node.js</a>
+          </p>
         </footer>
         <h1 itemprop="name" class="post__title">yargsを使ってタスク自動化ツールのコマンドにオプションを指定する</h1>
         <div itemprop="articleBody" class="post__body">
-          <p>Gruntやgulpを使っていると、タスクにオプションを渡して処理を切り分けたいっていう欲求が出てくる。そういう時は<a href="https://www.npmjs.com/package/yargs">yargs</a>を使えば、コマンドにオプションを指定することでそれをタスク側で受け取ることができるようになる。</p>
+          <p>Gruntやgulpを使っていると、タスクにオプションを渡して処理を切り分けたいっていう欲求が出てくる。そういう時は
+            <a href="https://www.npmjs.com/package/yargs">yargs</a>を使えば、コマンドにオプションを指定することでそれをタスク側で受け取ることができるようになる。</p>
           <p><code>npm install --save-dev yargs</code>したのち、タスクを書いてるJSファイル（Gruntfile.jsとかgulpfile.jsとか）で、</p> <pre title="JavaScript"><code data-language="javascript">var yargs = require('yargs').argv;</code></pre>
           <p>とやって、タスクの実行で</p> <pre title="command"><code data-language="shell">$ gulp sass --device=pc</code></pre>
           <p>とすると、タスクを書いてるJS内で<code>yargs</code>にキーと値がオブジェクトで格納されるので、</p> <pre title="JavaScript"><code data-language="javascript">yargs.device  // -> 'pc'</code></pre>
@@ -109,7 +121,8 @@ gulp.task('sass', function() {
           <p>こうするとPC用のsassファイルをコンパイルしてPC向けのautoprefixerに通してPC用のディレクトリに出力できる。SP用ならオプションを<code>--device=sp</code>とすればよい。</p>
           <p>PC/SP両方を開発してる時って、同じディレクトリ構成にすることが多いと思うんだけど、それなのにsourceとdestinationが違うがためにタスクをたくさん書くことになりがち。PCのSPもまとめて処理するようなタスクにするのはwatchでつらいしそもそも無駄がある。<code>gulp.task(&#39;sass:pc&#39;, ...</code>とか<code>gulp.task(&#39;sass:sp&#39;, ...</code>とかでネームスペースを分けて2倍書くのもめんどうくさい。</p>
           <p>オプションで指定すれようにすれば、仮にディレクトリ構成が違ってもそれを吸収できるconfigを作ればいいだけなのでgulpfile.jsに対するストレスは減る。</p>
-          <p>ただデメリットも当然あって、タスクによって<em>オプションをつけるのが前提になる</em>というのが、これはこれでまたストレスになり得る。どんなキーにどんな値が必要なのかをJSファイル内にコメントで書いておくとかしないと1日で忘れる。</p>
+          <p>ただデメリットも当然あって、タスクによって
+            <em>オプションをつけるのが前提になる</em>というのが、これはこれでまたストレスになり得る。どんなキーにどんな値が必要なのかをJSファイル内にコメントで書いておくとかしないと1日で忘れる。</p>
           <p>そこで、npm run-scriptを使う。</p>
           <h2 id="npm-run-script-">npm run-scriptでオプション付きのタスクをラップする</h2>
           <p>npm run-scriptがなんであるかは他のブログでいろいろ書かれているので割愛。「npm run-script」で検索すれば良い記事がたくさんでてくるのでぜひ見てみてほしい。</p>
@@ -124,32 +137,51 @@ gulp.task('sass', function() {
           <hr>
           <p>yargsを使ってnpm run-scriptの良さがわかった。僕はそんなにGrunt/gulpに消耗してはいないつもりだったのだけど、どうやらちゃんと消耗していたらしい。</p>
         </div>
-        <aside class="post__contribute"><a href="https://github.com/oti/dskd/blob/master/src/md/post/68.md" class="contribute">Patches welcome!</a></aside>
+        <aside class="post__contribute">
+          <a href="https://github.com/oti/dskd/blob/master/src/md/post/68.md" class="contribute">Patches welcome!</a>
+        </aside>
         <aside role="complementary" class="post__social">
           <ul class="social-list">
-            <li class="social-list__item social-list__item--twitter"><a href="https://twitter.com/intent/tweet?text=yargs%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%BF%E3%82%B9%E3%82%AF%E8%87%AA%E5%8B%95%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AE%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AB%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F68.html&amp;via=dskd_jp&amp;related=o_ti&quot;"
-                class="social-link">Tweet</a></li>
-            <li class="social-list__item social-list__item--facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F68.html" class="social-link">Share on Facebook</a></li>
-            <li class="social-list__item social-list__item--hatebu"><a href="http://b.hatena.ne.jp/my/add.confirm?title=yargs%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%BF%E3%82%B9%E3%82%AF%E8%87%AA%E5%8B%95%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AE%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AB%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F68.html"
-                class="social-link">Bookmark on Hatena</a></li>
+            <li class="social-list__item social-list__item--twitter">
+              <a href="https://twitter.com/intent/tweet?text=yargs%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%BF%E3%82%B9%E3%82%AF%E8%87%AA%E5%8B%95%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AE%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AB%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F68.html&amp;via=dskd_jp&amp;related=o_ti"
+                class="social-link">Tweet</a>
+            </li>
+            <li class="social-list__item social-list__item--facebook">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F68.html" class="social-link">Share on Facebook</a>
+            </li>
+            <li class="social-list__item social-list__item--hatebu">
+              <a href="http://b.hatena.ne.jp/my/add.confirm?title=yargs%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%BF%E3%82%B9%E3%82%AF%E8%87%AA%E5%8B%95%E5%8C%96%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AE%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%81%AB%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F68.html"
+                class="social-link">Bookmark on Hatena</a>
+            </li>
           </ul>
         </aside>
       </article>
       <nav class="neighbor">
         <ul class="neighbor-list">
-          <li class="neighbor-list__item neighbor-list__item--newer"><a href="/archives/69.html" class="neighbor-link">translate属性による翻訳の制御</a></li>
-          <li class="neighbor-list__item neighbor-list__item--older"><a href="/archives/67.html" class="neighbor-link">キーバインドの競合</a></li>
+          <li class="neighbor-list__item neighbor-list__item--newer">
+            <a href="/archives/69.html" class="neighbor-link">translate属性による翻訳の制御</a>
+          </li>
+          <li class="neighbor-list__item neighbor-list__item--older">
+            <a href="/archives/67.html" class="neighbor-link">キーバインドの競合</a>
+          </li>
         </ul>
       </nav>
     </main>
     <footer class="global-footer">
       <p class="author">Made by
-        <adress class="author__address"><a href="mailto:otiext@gmail.com">oti</a></adress>.</p>
+        <adress class="author__address">
+          <a href="mailto:otiext@gmail.com">oti</a>
+        </adress>.</p>
       <ul class="subinfo">
-        <li class="subinfo__item"><a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link"><small class="subinfo-license">CC BY-NC</small></a></li>
-        <li class="subinfo__item"><a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a></li>
+        <li class="subinfo__item">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link">
+            <small class="subinfo-license">CC BY-NC</small>
+          </a>
+        </li>
+        <li class="subinfo__item">
+          <a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a>
+        </li>
       </ul>
     </footer>
   </body>
-
 </html>

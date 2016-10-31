@@ -5,14 +5,21 @@
     <link>http://dskd.jp/</link>
     <description>&lt;![CDATA[dskd.jp is a memorandum of simple front-end technology.]]&gt;</description>
     <language>ja-JP</language>
-    <pubdate>Mon Jun 06 2016 18:37:36 GMT+0900 (JST)</pubdate>
-    <lastbuilddate>Mon Jun 06 2016 18:37:36 GMT+0900 (JST)</lastbuilddate>
+    <pubdate>Mon Oct 31 2016 20:44:48 GMT+0900 (JST)</pubdate>
+    <lastbuilddate>Mon Oct 31 2016 20:44:48 GMT+0900 (JST)</lastbuilddate>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <generator>Node.js v4.2.2</generator>
     <managingeditor>otiext@gmail.com (oti)</managingeditor>
     <webmaster>otiext@gmail.com (oti)</webmaster>
     <atom:link href="http://dskd.jp/feed" rel="self" type="application/rss+xml" />
     <creativeCommons:license>http://creativecommons.org/licenses/by-nc/4.0/</creativeCommons:license>
+    <item>
+      <title>SKAGEN Rungsted Leather Watch</title>
+      <link>http://dskd.jp/archives/83.html</link>
+      <description>続・なぜ腕時計は増えていくのか</description>
+      <pubdate>Sat Oct 22 2016 00:57:21 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/83.html</guid>
+    </item>
     <item>
       <title>続・CSSだけでviewportに常に対角線を引く</title>
       <link>http://dskd.jp/archives/82.html</link>

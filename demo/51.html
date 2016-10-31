@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
   <head>
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
@@ -14,10 +13,15 @@
     <title>style属性とstyle要素で二重にzoomを指定する - dskd</title>
     <link href="http://dskd.jp/demo/51.html" rel="canonical" itemprop="url">
   </head>
-
   <body>
-    <footer><small>published by <a href="/">dskd </a>on <time datetime="2014-12-05T13:34:00+09:00">2014-12-05</time></small>
-      <p>related to <a href="http://dskd.jp/archives/50.html">http://dskd.jp/archives/50.html</a></p>
+    <footer>
+      <small>published by
+        <a href="/">dskd </a>on
+        <time datetime="2014-12-05T13:34:00+09:00">2014-12-05</time>
+      </small>
+      <p>related to
+        <a href="http://dskd.jp/archives/50.html">http://dskd.jp/archives/50.html</a>
+      </p>
     </footer>
     <p>
       <style>
@@ -31,18 +35,18 @@
           background: url(/img/double-zoom-bug/bg50px.gif) repeat 15px 15px;
         }
         
-        </p> <p>#ctrl {
+        </p><p>#ctrl {
           height: 50px;
           font-size: 18px;
           line-height: 50px;
         }
         
-        </p> <p>#zoomVal {
+        </p><p>#zoomVal {
           width: 3em;
           color: red;
         }
         
-        </p> <p>#target {
+        </p><p>#target {
           zoom: 2;
           box-sizing: border-box;
           width: 300px;
@@ -65,7 +69,11 @@
       }
     </script>
     <p>
-      <div id="ctrl"> <input type="number" id="zoomVal" value="2"> <button onclick="addZoom();">add style=&quot;zoom: N&quot;</button> <button onclick="removeZoom();">remove style=&quot;zoom: N&quot;</button> </div>
+      <div id="ctrl">
+        <input type="number" id="zoomVal" value="2">
+        <button onclick="addZoom();">add style=&quot;zoom: N&quot;</button>
+        <button onclick="removeZoom();">remove style=&quot;zoom: N&quot;</button>
+      </div>
     </p>
     <p>
       <div id="target">
@@ -73,7 +81,8 @@
         <xmp> #target{ zoom: 2; box-sizing: border-box; width: 300px; border: 1px solid skyblue; }</xmp>
       </div>
     </p>
-    <p><a href="/archives/50.html">記事に戻る</a></p>
+    <p>
+      <a href="/archives/50.html">記事に戻る</a>
+    </p>
   </body>
-
 </html>
