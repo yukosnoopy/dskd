@@ -5,14 +5,21 @@
     <link>http://dskd.jp/</link>
     <description>&lt;![CDATA[dskd.jp is a memorandum of simple front-end technology.]]&gt;</description>
     <language>ja-JP</language>
-    <pubdate>Mon Oct 31 2016 21:05:23 GMT+0900 (JST)</pubdate>
-    <lastbuilddate>Mon Oct 31 2016 21:05:23 GMT+0900 (JST)</lastbuilddate>
+    <pubdate>Fri Nov 18 2016 01:50:55 GMT+0900 (JST)</pubdate>
+    <lastbuilddate>Fri Nov 18 2016 01:50:55 GMT+0900 (JST)</lastbuilddate>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <generator>Node.js v4.2.2</generator>
     <managingeditor>otiext@gmail.com (oti)</managingeditor>
     <webmaster>otiext@gmail.com (oti)</webmaster>
     <atom:link href="http://dskd.jp/feed" rel="self" type="application/rss+xml" />
     <creativeCommons:license>http://creativecommons.org/licenses/by-nc/4.0/</creativeCommons:license>
+    <item>
+      <title>夢</title>
+      <link>http://dskd.jp/archives/84.html</link>
+      <description>2016年11月17日の夢</description>
+      <pubdate>Fri Nov 18 2016 10:41:42 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/84.html</guid>
+    </item>
     <item>
       <title>SKAGEN Rungsted Leather Watch</title>
       <link>http://dskd.jp/archives/83.html</link>
