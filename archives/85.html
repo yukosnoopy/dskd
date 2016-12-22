@@ -55,7 +55,7 @@
           </p>
           <p>CSSのpointer-eventsプロパティーにはかねてからお世話になっていた。このプロパティーとの出会いはまぁまぁ古く、
             <a href="https://twitter.com/o_ti/statuses/119283764693172224">2011年の9月の終わり頃だったもよう</a>。勢い余って雑な検証しかしていない記事も
-            <a href="http://dskd.jp/archives/7.html">書いていた</a>。HTML+CSS+JSでブラウザゲームを作っていた頃はあまりのお世話のなりすぎさに何度も感謝している痕跡がツイッターにある。</p>
+            <a href="http://dskd.jp/archives/7.html">書いた</a>。HTML+CSS+JSでブラウザゲームを作っていた頃はあまりのお世話のなりすぎさに何度も感謝している痕跡がツイッターにある。</p>
           <figure>
             <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
             <blockquote class="twitter-tweet" data-lang="ja">
@@ -197,15 +197,15 @@
           <aside>El CapitanとSierraのSafari 10はCSS対応的に同じではない場合がある。
             <a href="https://developer.apple.com/library/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-DontLinkElementID_24"><code>direction: rtl</code>なドキュメントではスクロールバーが左側に表示されるようになった</a>が、そうなるのはmacOS 10.12 SierraのSafari 10であってMac OS X 10.11（macOS 10.11.x）のSafari 10ではならない。どういうことなのか説明してほしい。</aside>
           <p>
-            <a href="https://jsfiddle.net/k4tr6cf5/">Test: <code>pointer-evenst: none</code> to scrollable element</a>
+            <a href="https://jsfiddle.net/k4tr6cf5/1/">Test: <code>pointer-evenst: none</code> to scrollable element</a>
           </p>
-          <script async src="//jsfiddle.net/k4tr6cf5/embed/html,css,result/"></script>
+          <script async src="//jsfiddle.net/k4tr6cf5/1/embed/html,css,result/"></script>
           <p>4については、<code>a</code>要素に<code>pointer-events: none</code>を指定する時に<code>display: inline</code>のままだとIE11とEdgeでポインターイベントが無効にならないというもの。Can I use…では<code>inline-block</code>か<code>block</code>以外だとだめみたいな書き方だったが、実際のところは<code>inline</code>以外ならなんでも良いようだった。</p>
           <p>
             <a href="https://jsfiddle.net/4gtzvwby/">Test: <code>pointer-events: none</code> and <code>display: *</code> to <code>a</code> element</a>
           </p>
           <script async src="//jsfiddle.net/4gtzvwby/embed/html,css,result/"></script>
-          <p>今回はデスクトップブラウザでしか見ていない。モバイル版のChromeやSafariだとさらに状況が複雑かもしれない。とにかく</p>
+          <p>今回はデスクトップブラウザでしか見ていない。モバイル版のChromeやSafariだとさらに状況が複雑かもしれない。</p>
           <h2 id="-">アクセシビリティーの視点</h2>
           <p>DISTで発表しておいて申し訳ないのだけど、個人的にはインタラクティブ要素（リンクやフォームパーツ、デベロッパーがカスタムイベントを定義した要素）を<code>pointer-events: none</code>するのはよろしくないと思っている。制御できるのはポインターデバイスのイベントだけで、キーボードは関係ない。要素のroleも変わらないので、特定の<code>a</code>要素に対して<code>pointer-events: none</code>を指定してもスクリーンリーダーでは通常のリンクとして読み上げられるし、フォーカス後のキーエンターでページ移動することもできる。<code>tabindex</code>属性がついている要素であればインタラクティブ要素でなくてもフォーカスできるので、キー操作の対象になりうる。前述した
             <a
@@ -222,7 +222,8 @@
           <p>また、<code>pointer-events: none</code>はイベントを透過させるので、z軸上で上に被さった要素を「触らせない」ようにできる。込み入った装飾を<code>position: fixed</code>で最前面に表示している時、通常ならかぶさっている要素のせいでz軸上の下側の要素は押せなくなる。そういった装飾要素に<code>pointer-evenst: none</code>をあてればイベントが透過するので下側のコンテンツのリンクなども触れるようになる。</p>
           <p><code>input</code> や <code>select</code> に擬似要素で作ったなんかのアイコンを乗せている時も、そのアイコンに<code>pointer-events: none</code>しておくとクリックの時に邪魔にならない。</p>
           <p>繰り返すが依然としてキーボードのイベントはなかったことにはできないから、使う場合はインタラクティブ要素でないことが望ましいと思う。フォーカスする必要がなく、クリックイベントをトリガーしてしまうが故に邪魔になるタイプには使っていい。インタラクティブ要素でイベントを封じたいなら普通にJavaScriptを書こう。</p>
-          <p>込み入った装飾の<code>position: fixed</code>な要素はそもそもfixedやめろなのでやめろ。</p>
+          <p>込み入った装飾の<code>position: fixed</code>な要素はそもそもfixedをやめろ。</p>
+          <hr>
           <p>来年もよろしくお願いいたします。</p>
         </div>
         <aside class="post__contribute">
