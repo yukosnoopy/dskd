@@ -316,6 +316,7 @@ a:hover .post__footer .post-tag {
 	padding: 0 2px;
 	border-radius: 3px;
 	font-size: inherit;
+	font-family: monospace;
 	background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -358,10 +359,10 @@ a:hover .post__footer .post-tag {
 }
 
 .post__body pre {
-	padding: 0.66667rem;
+	padding: 0.33333rem;
 	border-radius: 3px;
 	font-size: 1.4rem;
-	font-family: Consolas, monospace;
+	font-family: monospace;
 	background-image: url("/img/bg2.png");
 	overflow-x: auto;
 }

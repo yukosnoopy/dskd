@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width" name="viewport">
+    <title>CSS pointer-events 2016 - dskd</title>
+    <meta content="/img/blog-cover.png" itemprop="image">
+    <meta content="" name="description">
+    <meta content="http://dskd.jp/archives/85.html" property="og:url">
+    <meta content="CSS pointer-events 2016" property="og:title">
+    <meta content="" property="og:description">
+    <meta content="/img/blog-cover.png" property="og:image">
+    <meta content="article" property="og:type">
+    <meta content="ja_JP" property="og:locale">
+    <meta content="dskd" property="og:site_name">
+    <link href="http://dskd.jp/archives/85.html" rel="canonical" itemprop="url">
+    <link href="/img/blog-icon.png" rel="apple-touch-icon-precomposed">
+    <link href="/feed" rel="alternate" type="application/rss+xml">
+    <link href="/css/style.css" rel="stylesheet" media="only screen">
+  </head>
+  <body>
+    <header role="banner" class="global-header">
+      <h1 class="logo">
+        <a href="/" class="logo-link">
+          <img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img">
+        </a>
+      </h1>
+      <nav role="navigation" class="site-nav">
+        <ul class="site-nav-list">
+          <li class="site-nav-list__item">
+            <a href="/archives/" class="site-nav-list-link">ARCHIVES</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/demo/" class="site-nav-list-link">DEMO</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/about.html" class="site-nav-list-link">ABOUT</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="contents">
+      <article class="post">
+        <footer class="post__footer">
+          <time datetime="2016-12-22T17:00:00+09:00" class="post-timestamp">2016-12-22</time>
+          <p class="post-tag">
+            <a href="/archives/advent_calendar.html" class="tag-link">Advent Calendar</a>,
+            <a href="/archives/css.html" class="tag-link">CSS</a>
+          </p>
+        </footer>
+        <h1 itemprop="name" class="post__title">CSS pointer-events 2016</h1>
+        <div itemprop="articleBody" class="post__body">
+          <p>
+            <a href="http://www.adventar.org/calendars/1347">今年お世話になったCSSアドベントカレンダー2016、22日目</a>
+          </p>
+          <p>CSSのpointer-eventsプロパティーにはかねてからお世話になっていた。このプロパティーとの出会いはまぁまぁ古く、
+            <a href="https://twitter.com/o_ti/statuses/119283764693172224">2011年の9月の終わり頃だったもよう</a>。勢い余って雑な検証しかしていない記事も
+            <a href="http://dskd.jp/archives/7.html">書いていた</a>。HTML+CSS+JSでブラウザゲームを作っていた頃はあまりのお世話のなりすぎさに何度も感謝している痕跡がツイッターにある。</p>
+          <figure>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <blockquote class="twitter-tweet" data-lang="ja">
+              <p lang="ja" dir="ltr">pointer-events最高！</p>— 越智 (@o_ti)
+              <a href="https://twitter.com/o_ti/status/532079428491157505">2014年11月11日</a>
+            </blockquote>
+            <blockquote class="twitter-tweet" data-lang="ja">
+              <p lang="ja" dir="ltr">pointer-eventsが女だったら全力で口説いてるレベル</p>— 越智 (@o_ti)
+              <a href="https://twitter.com/o_ti/status/532079739641409536">2014年11月11日</a>
+            </blockquote>
+            <blockquote class="twitter-tweet" data-lang="ja">
+              <p lang="ja" dir="ltr">pointer-eventsが人間だったら抱きたい</p>— 越智 (@o_ti)
+              <a href="https://twitter.com/o_ti/status/532080592255348737">2014年11月11日</a>
+            </blockquote>
+            <blockquote class="twitter-tweet" data-lang="ja">
+              <p lang="ja" dir="ltr">pointer-events: none; に感謝の正拳突き１万回</p>— 越智 (@o_ti)
+              <a href="https://twitter.com/o_ti/status/429152592355016704">2014年1月31日</a>
+            </blockquote>
+            <blockquote class="twitter-tweet" data-lang="ja">
+              <p lang="ja" dir="ltr">CSSの方のpointer-events: none;には100万回は助けられてるので６億円欲しい</p>— 越智 (@o_ti)
+              <a href="https://twitter.com/o_ti/status/570761250243629056">2015年2月26日</a>
+            </blockquote>
+            <blockquote class="twitter-tweet" data-lang="ja">
+              <p lang="ja" dir="ltr">親愛なるpointer-events: noneへ。大好きなので付き合ってください。</p>— 越智 (@o_ti)
+              <a href="https://twitter.com/o_ti/status/702674615538098177">2016年2月25日</a>
+            </blockquote>
+          </figure>
+          <p>気持ち悪い。</p>
+          <p>先日、
+            <a href="https://dist.connpass.com/event/44273/">DIST.13</a>というイベントでLTをして<code>pointer-events</code>プロパティーの凄さと凄くなさを
+            <a href="https://github.com/oti/talks/blob/master/2016/1202-DIST.13/smile-css-pointer-events-none.pdf">少し紹介させてもらってた</a>。持ち時間が5分だったので<code>a</code>要素に対する指定時の挙動に焦点を当てて話した。LTの内容を下記にかいつまんでおく。</p>
+          <hr>
+          <p><code>pointer-events</code>ではその名の通りポインターデバイス（マウスやタッチ）によるイベントを制御できるCSSプロパティーで、アンカーリンクに<code>pointer-events: none</code>を指定するとイベントをトリガーしなくなる。これを利用して
+            <a href="http://jsfiddle.net/o_ti/z50vf5hv/">ナビゲーションの現在地のリンクを無効にできる</a>。CSS的には<code>:link</code> <code>:visited</code> <code>:hover</code> <code>:active</code> といった擬似クラスが当たらなくなる。</p>
+          <p>しかし、キーイベントは通常どおりトリガーされるので、Tabキーで<code>a</code>要素にフォーカスできるし、Enterキーを押せば指定されたURLへ移動できてしまう。リンクの無効化を本気でやるなら普通に<code>a</code>要素をやめるかJavaScriptで制御するしかない。</p>
+          <p>また、<code>pointer-events: none</code>を指定した要素の子に<code>pointer-events: auto</code>を指定すると、その子要素はポインターイベントをトリガーするので親要素へイベントのバブリングが起こり、そのさらに親要素へ（最終的にはルート要素まで）イベントは伝わっていく。複雑なイベント管理をしなければならないコンテンツでは<code>pointer-events</code>に頼れない。</p>
+          <hr>
+          <p>
+            <a href="https://jsfiddle.net/sfxkhm9e/"><code>pointer-events: none</code>のイベントの透過とバブリングを確認できるデモ</a>を作ってみた。</p>
+          <script async src="//jsfiddle.net/sfxkhm9e/embed/html,css,result/"></script>
+          <p><code>div</code>には擬似要素でクラス名が出るようにしている。tomato色のボーダーの各<code>div</code>上でクリックすると<code>div:active</code>によりボーダーがpurpleになるはずだが、skyeblue色のボーダーに設定した<code>div.item</code>以外は<code>pointer-events: none</code>が指定されているのでボーダーの色は変わらない。クリックイベントは透過されて最背後<code>body</code>をクリックしていることになるので、<code>body:active</code>のスタイルが適用される。</p>
+          <p><code>div.item</code>をクリックした場合は自身のボーダー色が変わるとともに、<code>:active</code>がバブリングして親要素の<code>div</code>のボーダー色も変わり、<code>body</code>の背景色も変わる。</p>
+          <p>このように<code>pointer-events: none</code>は自身のマウス/タッチ操作を無効にするだけで、<code>event.stopPropagation()</code>のようにバブリングを止めるわけではないことには注意が必要だと思う。</p>
+          <aside>IE11だと<code>:active</code>がバブリングしないが、これは<code>pointer-events</code>プロパティーの有無とは関係がない。Windows OSユーザーは他のブラウザで見て欲しい。</aside>
+          <hr>
+          <h2 id="-">ブラウザ対応とバグ（あるいは仕様）</h2>
+          <p><code>pointer-events</code>プロパティーは元はSVGの仕様で、HTMLの要素に対して適用できるのは<code>auto</code>、<code>none</code>、<code>all</code>となっているが、SVG要素向けに<code>fill</code>や<code>stroke</code>などの値もある。</p>
+          <p>仕様はこの辺り。</p>
+          <ul>
+            <li>
+              <a href="https://developer.mozilla.org/ja/docs/Web/CSS/pointer-events">pointer-events - CSS | MDN</a>
+            </li>
+            <li>
+              <a href="https://www.w3.org/TR/SVG11/interact.html#PointerEventsProperty">SVG1.1 Interactivity - 16.6</a>
+            </li>
+            <li>
+              <a href="https://wiki.csswg.org/spec/css4-ui#pointer-events">#pointer-events - css4-ui feature list [CSS Working Group Wiki]</a>
+            </li>
+          </ul>
+          <p>
+            <a href="http://caniuse.com/#feat=pointer-events">Can I use…</a>から確認できる情報をまとめると以下の通り。</p>
+          <table>
+            <thead>
+              <tr>
+                <th>ブラウザ</th>
+                <th>バージョン</th>
+                <th>リリース日</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Internet Explorer</td>
+                <td>11</td>
+                <td>2013/10/17</td>
+              </tr>
+              <tr>
+                <td>Edge</td>
+                <td>12+</td>
+                <td>2015/5/30</td>
+              </tr>
+              <tr>
+                <td>Firefox</td>
+                <td>3.6+</td>
+                <td>2010/1/21</td>
+              </tr>
+              <tr>
+                <td>Googel Chrome</td>
+                <td>4+</td>
+                <td>2010/1/25</td>
+              </tr>
+              <tr>
+                <td>Safari</td>
+                <td>4+</td>
+                <td>2009/7/8</td>
+              </tr>
+              <tr>
+                <td>Opera</td>
+                <td>15+(Blink)</td>
+                <td>2013/6/2</td>
+              </tr>
+              <tr>
+                <td>iOS Safari</td>
+                <td>3.2+</td>
+                <td>2010/4/3</td>
+              </tr>
+              <tr>
+                <td>Android Browser</td>
+                <td>2.1+</td>
+                <td>2009/10/26</td>
+              </tr>
+              <tr>
+                <td>Android Chrome</td>
+                <td>54+</td>
+                <td>2016/10/19</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>さらにCan I use…では下記がIssueとしてリストアップされている。</p>
+          <ol>
+            <li>IE9, 10ではJavaScriptで<code>document.documentElement.style.pointerEvents</code>を呼ぶと空文字列を返すのでCSS的には対応しているように見えるが、SVG要素に対してのみの対応なのでHTML要素には使えない。</li>
+            <li>IE11では<code>select</code>要素の親に<code>pointer-events: none</code>を指定しても<code>select</code>要素が無効にならないが、<code>select</code>要素に指定すると効く。</li>
+            <li><code>overflow: scroll</code>な要素に<code>pointer-events: none</code>を指定すると、Firefoxではスクロール不能になるが、ChromeとIE11ではスクロールバーをクリックすることでスクロールできてしまう。</li>
+            <li>IE11とEdgeでは、<code>a</code>要素の<code>display</code>の値が<code>inline-block</code>か<code>block</code>以外だと<code>pointer-events: none</code>を指定しても効かない。</li>
+          </ol>
+          <p>1については、JavaScriptを使ってブラウザのCSSプロパティーの対応を調べる時の話だ。IE9,10ではHTML要素への<code>pointer-events</code>プロパティー指定は有効ではないが、SVG要素への指定が有効なために<code>documentElement.style</code>に<code>pointerEvents</code>プロパティー（ここではオブジェクトとしての「プロパティー」という意味）が存在する。HTMLの要素にCSSの<code>pointer-events</code>プロパティーを使いたい時に、<code>document.documentElement.style.pointerEvents</code>を用いてブラウザ判定しているとハマるので注意が必要となる。だけど
+            <i>もはや2017年なのでIE10以下のことは忘れていい</i>と思う。</p>
+          <p>2については、IE11は<code>select</code>要素の親に<code>pointer-events: none</code>を指定しても子要素の<code>select</code>が通常通りプルダウンが展開できてしまうというもの。らしいのだが、手元で確認したところどうもそうではなかった。</p>
+          <p>
+            <strong>Windows 10のIE11では<code>select</code>の親に<code>pointer-events: none</code>を指定した場合も期待通りポインターイベントは封じられ、<code>select</code>のプルダウンは展開されなくなった</strong>。しかし、
+            <strong>Windows 8.1のIE11では、<code>select</code>要素自体への指定でもその親への指定でも、両方とも<code>pointer-events: none</code>は効かずにプルダウンが展開できてしまった</strong>。modern.ieからダウンロードできるVirtualBoxのイメージを利用したので、実機では違うのかもしれない。</p>
+          <p>
+            <a href="https://jsfiddle.net/fu9n9k8p/">Test: <code>pointer-events: none</code> to select element</a>
+          </p>
+          <script async src="//jsfiddle.net/fu9n9k8p/embed/html,result/"></script>
+          <p>3については、<code>overflow: scroll</code>などとしたスクロール可能な要素に<code>pointer-events: none</code>を指定すると、その要素上でのスクロール（スクロールバーのクリック、およびマウスホイールでのスクロール）ができなくなるはずだが、ChromeとIE11はできてしまうというもの。らしいのだが、これも現在は状況が異なるようだった。</p>
+          <p>手元では
+            <strong>Safari 10.0.1(El Capitan/Sierra)でスクロールバーのクリックでスクロールできてしまうが、ChromeとIE11(Win 8.1/10)はちゃんとクリックできなくなっているのでスクロールもできない</strong>。FirefoxとEdgeは期待通りスクロールバーのクリックも<code>pointer-events: none</code>によって無効化されていた。Macでは環境設定 &gt; 一般 &gt; スクロールバーの表示のところで「常に表示」を選択すれば確認できる。</p>
+          <p>しかし、Windows 10だとテキスト選択で下へスクロールができた。これはブラウザは問わないようだった。Windows 8.1以下もできるのかもしれない。</p>
+          <aside>El CapitanとSierraのSafari 10はCSS対応的に同じではない場合がある。
+            <a href="https://developer.apple.com/library/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-DontLinkElementID_24"><code>direction: rtl</code>なドキュメントではスクロールバーが左側に表示されるようになった</a>が、そうなるのはmacOS 10.12 SierraのSafari 10であってMac OS X 10.11（macOS 10.11.x）のSafari 10ではならない。どういうことなのか説明してほしい。</aside>
+          <p>
+            <a href="https://jsfiddle.net/k4tr6cf5/">Test: <code>pointer-evenst: none</code> to scrollable element</a>
+          </p>
+          <script async src="//jsfiddle.net/k4tr6cf5/embed/html,css,result/"></script>
+          <p>4については、<code>a</code>要素に<code>pointer-events: none</code>を指定する時に<code>display: inline</code>のままだとIE11とEdgeでポインターイベントが無効にならないというもの。Can I use…では<code>inline-block</code>か<code>block</code>以外だとだめみたいな書き方だったが、実際のところは<code>inline</code>以外ならなんでも良いようだった。</p>
+          <p>
+            <a href="https://jsfiddle.net/4gtzvwby/">Test: <code>pointer-events: none</code> and <code>display: *</code> to <code>a</code> element</a>
+          </p>
+          <script async src="//jsfiddle.net/4gtzvwby/embed/html,css,result/"></script>
+          <p>今回はデスクトップブラウザでしか見ていない。モバイル版のChromeやSafariだとさらに状況が複雑かもしれない。とにかく</p>
+          <h2 id="-">アクセシビリティーの視点</h2>
+          <p>DISTで発表しておいて申し訳ないのだけど、個人的にはインタラクティブ要素（リンクやフォームパーツ、デベロッパーがカスタムイベントを定義した要素）を<code>pointer-events: none</code>するのはよろしくないと思っている。制御できるのはポインターデバイスのイベントだけで、キーボードは関係ない。要素のroleも変わらないので、特定の<code>a</code>要素に対して<code>pointer-events: none</code>を指定してもスクリーンリーダーでは通常のリンクとして読み上げられるし、フォーカス後のキーエンターでページ移動することもできる。<code>tabindex</code>属性がついている要素であればインタラクティブ要素でなくてもフォーカスできるので、キー操作の対象になりうる。前述した
+            <a
+              href="https://jsfiddle.net/k4tr6cf5/">スクロールできる要素にpointer-events: noneを指定したデモ</a>で一番右のボックスはフォーカスできるようにしているので、フォーカス後にスペースキーや上下キーでスクロールできるのは試してみればわかる。</p>
+          <p>つまり、インタラクティブ要素に<code>pointer-events: none</code>を指定すると「ある種の入力では操作不能で、別の入力では操作可能」になってしまう。これでいいと思う人はそんなにいないはずだ。<code>pointer-events: none</code>で<code>disabled</code>な状態を代替しようとするのが間違っているのだろう。</p>
+          <h2 id="-">ではどこで役に立つのか？</h2>
+          <p>この世の中には、IE11で<code>form label img</code>なHTMLの時に画像をクリックしても<code>label</code>へイベントがバブリングしないという現実がある。<code>label</code>にバブリングしないと<code>for</code>属性で紐づけた<code>input</code>要素にフォーカスしないし、
+            <a href="https://jsfiddle.net/togx7db4/">ラジオボタンやチェックボックスがトグルできない</a>。</p>
+          <script async src="//jsfiddle.net/togx7db4/embed/html,result/"></script>
+          <p>IE11では、ブラウザUIのパーツをクリックすれば選択できるが、画像の上をクリックしても選択が反映されない。</p>
+          <aside>このバグはIE6,7,8にあった有名なもので、IE9,10で治ったと思っていたけどIE11で再発した。
+            <a href="http://stackoverflow.com/questions/20198137/image-label-for-input-in-a-form-not-clickable-in-ie11">IE11が愉快なのは、<code>form</code>要素の中に入れなければ期待通り動作する</a>ところだ。マジでなんなんだお前は。</aside>
+          <p>この問題は当該箇所の画像に<code>pointer-events: none</code>を指定することで簡単に解決できた。IE8対応をしていた頃はブラウザ分岐やらをしてJSで管理していたけどもうそれはしなくてよくなった。「ポインターイベントを透過させる」ことをうまく利用できた例だと思う。</p>
+          <p>また、<code>pointer-events: none</code>はイベントを透過させるので、z軸上で上に被さった要素を「触らせない」ようにできる。込み入った装飾を<code>position: fixed</code>で最前面に表示している時、通常ならかぶさっている要素のせいでz軸上の下側の要素は押せなくなる。そういった装飾要素に<code>pointer-evenst: none</code>をあてればイベントが透過するので下側のコンテンツのリンクなども触れるようになる。</p>
+          <p><code>input</code> や <code>select</code> に擬似要素で作ったなんかのアイコンを乗せている時も、そのアイコンに<code>pointer-events: none</code>しておくとクリックの時に邪魔にならない。</p>
+          <p>繰り返すが依然としてキーボードのイベントはなかったことにはできないから、使う場合はインタラクティブ要素でないことが望ましいと思う。フォーカスする必要がなく、クリックイベントをトリガーしてしまうが故に邪魔になるタイプには使っていい。インタラクティブ要素でイベントを封じたいなら普通にJavaScriptを書こう。</p>
+          <p>込み入った装飾の<code>position: fixed</code>な要素はそもそもfixedやめろなのでやめろ。</p>
+          <p>来年もよろしくお願いいたします。</p>
+        </div>
+        <aside class="post__contribute">
+          <a href="https://github.com/oti/dskd/blob/master/src/md/post/85.md" class="contribute">Patches welcome!</a>
+        </aside>
+        <aside role="complementary" class="post__social">
+          <ul class="social-list">
+            <li class="social-list__item social-list__item--twitter">
+              <a href="https://twitter.com/intent/tweet?text=CSS%20pointer-events%202016&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F85.html&amp;via=dskd_jp&amp;related=o_ti" class="social-link">Tweet</a>
+            </li>
+            <li class="social-list__item social-list__item--facebook">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F85.html" class="social-link">Share on Facebook</a>
+            </li>
+            <li class="social-list__item social-list__item--hatebu">
+              <a href="http://b.hatena.ne.jp/my/add.confirm?title=CSS%20pointer-events%202016&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F85.html" class="social-link">Bookmark on Hatena</a>
+            </li>
+          </ul>
+        </aside>
+      </article>
+      <nav class="neighbor">
+        <ul class="neighbor-list">
+          <li class="neighbor-list__item neighbor-list__item--older">
+            <a href="/archives/84.html" class="neighbor-link">夢</a>
+          </li>
+        </ul>
+      </nav>
+    </main>
+    <footer class="global-footer">
+      <p class="author">Made by
+        <adress class="author__address">
+          <a href="mailto:otiext@gmail.com">oti</a>
+        </adress>.</p>
+      <ul class="subinfo">
+        <li class="subinfo__item">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link">
+            <small class="subinfo-license">CC BY-NC</small>
+          </a>
+        </li>
+        <li class="subinfo__item">
+          <a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
