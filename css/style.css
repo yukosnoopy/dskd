@@ -396,7 +396,6 @@ a:hover .post__footer .post-tag {
 
 .post__body ul,
 .post__body ol {
-	list-style-position: inside;
 	line-height: 1.6;
 }
 
@@ -406,6 +405,11 @@ a:hover .post__footer .post-tag {
 	border-radius: 3px;
 	font-size: inherit;
 	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.post__body ul > li,
+.post__body ol > li {
+	margin-left: 3rem;
 }
 
 .post__body ul ul,
