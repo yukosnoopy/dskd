@@ -53,7 +53,7 @@
           <p>約物を半角にするオプションはCSSの<code>font-feature-settings</code>プロパティーに<code>&quot;palt&quot;</code>値を指定すればできる。約物とは文字や数字以外のグリフと考えていい。</p>
           <p>エディトリアルデザインをかじると、約物の一部は全角文字の場合にアキが生じてテキストが間伸びしたように感じることがある。そこで約物半角というオプションを適用すると括弧や句読点のアキが詰まるので、テキストが締まった印象になる。</p>
           <p>本文エリア全体に約物半角をかけたい人たちは一定数いるのだろうが、僕はそれはやりすぎだと思う。かと言って
-            <q>和文フォントはベタ組みで読みやすくなっている</q>という話も諸手を挙げて賛成もできない。グリフによってアキはまちまちだし、個性が出にくい約物はやはろ半角にしたほうが見栄えがいいなと思う場面もあるからだ。行頭の括弧などは強くそう思う。というわけでこの記事を書いている。</p>
+            <q>和文フォントはベタ組みで読みやすくなっている</q>という話も諸手を挙げて賛成もできない。グリフによってアキはまちまちだし、個性が出にくい約物はやはり半角にしたほうが見栄えがいいなと思う場面もあるからだ。行頭の括弧などは強くそう思う。というわけでこの記事を書いている。</p>
           <h2 id="-">行頭にマッチするセレクタ</h2>
           <p>CSSには<code>first-letter</code>擬似要素というものがある。要素の最初の文字にマッチするセレクタで、英語圏などで一文字目を大きく装飾する「ドロップキャプス」という表現に使われることを想定して考えられたセレクタだ。</p> <pre title="CSS"><code data-language="css">.lede::first-letter {
   float: left;
@@ -99,13 +99,13 @@
           </p>
           <p>IE11 / Windows 10
             <br>
-            <img src="/img/first-letter-palt/IE11.png" alt="IE11では約物半角が効いているが、游明朝だとなぜか効かない。">
+            <img src="/img/first-letter-palt/ie11.png" alt="IE11では約物半角が効いているが、游明朝だとなぜか効かない。">
           </p>
           <p>Edge 14/ Windows 10
             <br>
             <img src="/img/first-letter-palt/edge.png" alt="Edge 14では約物半角が効いているが、游フォントとヒラギノで半角になる約物が異なる。">
           </p>
-          <p>まず気づくのは、<code>::first-letter</code>で行頭の一文字目だけにスタイルを当てているつもりが、約物が行頭の時はその次の文字も、行頭の二文字目が約物の時はその約物も<code>::first-letter</code>に含まれることだろう。つまりテキストによっては<code>::first-letter</code>の対象が二文字やそれ以上の文字数になるということ。これは
+          <p>まず気づくのは、<code>::first-letter</code>で行頭の一文字目だけにスタイルを当てているつもりが、約物が一文字目の時はその次の文字も、約物以外が一文字目で約物が二文字目の時はその約物も、約物が一文字目から連続している時はその全てが<code>::first-letter</code>に含まれることだろう。つまりテキストによっては<code>::first-letter</code>の対象が二文字やそれ以上の文字数になるということ。これは
             <a href="https://www.w3.org/TR/css3-selectors/#first-letter">仕様通り</a>なのでこのこと自体に驚く必要はない。</p>
           <p>ひとつひとつ見ていくと、現状ではまともに使うことができなさそうというのがわかる。</p>
           <p>Chrome 55では<code>::first-letter</code>への<code>font-feature-settings: &quot;palt&quot;</code>が効かない。Windows 10の一番右のボックスでは効いているように見えるがこれは僕の環境でヒラギノがないのでMS Pゴシックが当てられているだけだ。MS Pゴシックはそもそも約物が字詰めされているグリフを持っている。</p>
@@ -204,7 +204,7 @@
           </p>
           <p>IE11 / Windows 10
             <br>
-            <img src="/img/first-letter-palt/use-font-face/ff-IE11.png" alt="IE11も@font-faceの約物半角が効かなくなった。">
+            <img src="/img/first-letter-palt/use-font-face/ff-ie11.png" alt="IE11も@font-faceの約物半角が効かなくなった。">
           </p>
           <p>Edge 14/ Windows 10
             <br>
@@ -212,7 +212,7 @@
           </p>
           <p>Chrome 55で<code>::first-letter</code>に<code>font-feature-settings: &quot;palt&quot;</code>が効かないのは<code>@font-face</code>を使っても変わらない。</p>
           <p>Firefox 50では<code>@font-face</code>を使っても<code>＄</code>記号でおかしくなるのは変わらない。</p>
-          <p>Safari 10は<code>@font-face</code>を使うと<code>::first-letter</code>の<code>font-feature-settings: &quot;palt&quot;</code>が効かなくなってしまった。効かなくなったので詰まりすぎになるのもなくなった。</p>
+          <p>Safari 10は<code>@font-face</code>を使うと<code>::first-letter</code>の<code>font-feature-settings: &quot;palt&quot;</code>が効かなくなってしまった。</p>
           <p>IE11も効かなくなった。</p>
           <p>Edge 14も効かなくなった。</p>
           <table>
