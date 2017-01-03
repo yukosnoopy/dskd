@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width" name="viewport">
+    <title>CSSで行頭の約物を半角にする - dskd</title>
+    <meta content="/img/blog-cover.png" itemprop="image">
+    <meta content="first-letter擬似要素とfont-feature-settingsで行頭の約物半角を対応してみる。" name="description">
+    <meta content="http://dskd.jp/archives/87.html" property="og:url">
+    <meta content="CSSで行頭の約物を半角にする" property="og:title">
+    <meta content="first-letter擬似要素とfont-feature-settingsで行頭の約物半角を対応してみる。" property="og:description">
+    <meta content="/img/blog-cover.png" property="og:image">
+    <meta content="article" property="og:type">
+    <meta content="ja_JP" property="og:locale">
+    <meta content="dskd" property="og:site_name">
+    <link href="http://dskd.jp/archives/87.html" rel="canonical" itemprop="url">
+    <link href="/img/blog-icon.png" rel="apple-touch-icon-precomposed">
+    <link href="/feed" rel="alternate" type="application/rss+xml">
+    <link href="/css/style.css" rel="stylesheet" media="only screen">
+  </head>
+  <body>
+    <header role="banner" class="global-header">
+      <h1 class="logo">
+        <a href="/" class="logo-link">
+          <img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img">
+        </a>
+      </h1>
+      <nav role="navigation" class="site-nav">
+        <ul class="site-nav-list">
+          <li class="site-nav-list__item">
+            <a href="/archives/" class="site-nav-list-link">ARCHIVES</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/demo/" class="site-nav-list-link">DEMO</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/about.html" class="site-nav-list-link">ABOUT</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="contents">
+      <article class="post">
+        <footer class="post__footer">
+          <time datetime="2017-01-03T22:05:10+09:00" class="post-timestamp">2017-01-03</time>
+          <p class="post-tag">
+            <a href="/archives/css.html" class="tag-link">CSS</a>
+          </p>
+        </footer>
+        <h1 itemprop="name" class="post__title">CSSで行頭の約物を半角にする</h1>
+        <div itemprop="articleBody" class="post__body">
+          <p>あけましておめでとうございます。</p>
+          <p>約物を半角にするオプションはCSSの<code>font-feature-settings</code>プロパティーに<code>&quot;palt&quot;</code>値を指定すればできる。約物とは文字や数字以外のグリフと考えていい。</p>
+          <p>エディトリアルデザインをかじると、約物の一部は全角文字の場合にアキが生じてテキストが間伸びしたように感じることがある。そこで約物半角というオプションを適用すると括弧や句読点のアキが詰まるので、テキストが締まった印象になる。</p>
+          <p>本文エリア全体に約物半角をかけたい人たちは一定数いるのだろうが、僕はそれはやりすぎだと思う。かと言って
+            <q>和文フォントはベタ組みで読みやすくなっている</q>という話も諸手を挙げて賛成もできない。グリフによってアキはまちまちだし、個性が出にくい約物はやはろ半角にしたほうが見栄えがいいなと思う場面もあるからだ。行頭の括弧などは強くそう思う。というわけでこの記事を書いている。</p>
+          <h2 id="-">行頭にマッチするセレクタ</h2>
+          <p>CSSには<code>first-letter</code>擬似要素というものがある。要素の最初の文字にマッチするセレクタで、英語圏などで一文字目を大きく装飾する「ドロップキャプス」という表現に使われることを想定して考えられたセレクタだ。</p> <pre title="CSS"><code data-language="css">.lede::first-letter {
+  float: left;
+  color: tomato;
+  font-size: 3em;
+}
+</code></pre>
+          <p>このように記述することで<code>.lede</code>要素の一文字目だけを装飾することができる。この<code>::first-letter</code>を本文エリア内の<code>p</code>要素につければ、段落ごとの一文字目に約物半角のオプションを当てられるようになる。</p>
+          <p><code>::first-letter</code>と<code>font-feature-settings: &quot;palt&quot;</code>を組み合わせれば、行頭の一文字目の約物を半角にできるはずだ。</p> <pre title="CSS"><code data-language="css">.article-body p::first-letter {
+  <mark>font-feature-settings: "palt";</mark>
+}
+</code></pre>
+          <p>論理的にはこれでいいはずだが、結論から言うとリアルワールドはそう甘くなかった。</p>
+          <aside>あまり使われていないので知らない人も多いかもしれないが、
+            <a href="https://www.w3.org/TR/REC-CSS1/#the-first-letter-pseudo-element">first-letter擬似要素はCSS1から使える古参のセレクタ</a>で、CSS2まではコロンは一つだった。
+            <a href="https://www.w3.org/TR/css3-selectors/#selectors">CSS Selectors Level 3でダブルコロンになった</a>。IE8ではダブルコロンの擬似要素を解釈できないのでbeforeやafterにおいてもシングルコロンで記述しなければならないという童話がある。</aside>
+          <aside>さらに、IE6はfirst-letterとfirst-line擬似要素のコロンはいくつ書いても解釈されるという神話がある。想像してごらん、<code>div::::::first-letter</code>などというバカげたセレクタを解釈するブラウザを。</aside>
+          <p>
+            <a href="https://jsfiddle.net/rv0ptzt7/">次のデモをいろんなブラウザで見て</a>ほしい。</p>
+          <script async src="//jsfiddle.net/rv0ptzt7/embed/result,html,css/"></script>
+          <p>紫borderのボックスの背景には全角1文字幅の方眼を敷いている。<code>::first-letter</code>を赤文字にしつつ約物半角オプションを指定した。ボックスのフォントファミリーは左から游ゴシック、游明朝、ヒラギノ角ゴシックProNを指定した。</p>
+          <h2 id="-">ブラウザ検証</h2>
+          <p>確認した主要ブラウザのキャプチャを羅列した。</p>
+          <p>Google Chrome 55 / Mac OS X 10.11(El Capitan)
+            <br>
+            <img src="/img/first-letter-palt/chrome55-mac.png" alt="Google Chrome 55はfirst-letterへのfont-feature-settingsが効いていない。">
+          </p>
+          <p>Google Chrome 55 / Windows 10
+            <br>
+            <img src="/img/first-letter-palt/chrome55-win.png" alt="Google Chrome 55はWindows 10でもMax OS X 10.11(El Capitan)でも効かないようだ。">
+          </p>
+          <p>Firefox 50 / Mac OS X 10.11(El Capitan)
+            <br>
+            <img src="/img/first-letter-palt/firefox50-mac.png" alt="Firefox 50は期待通り効いているように見えるが＄記号があるとfirst-letter自体が無効になってしまう。">
+          </p>
+          <p>Firefox 50 / Windows 10
+            <br>
+            <img src="/img/first-letter-palt/firefox50-win.png" alt="Firefox 50で＄があるときにfirst-letterが無効になってしまうのはMacでもWindowsでも同じなようだ。">
+          </p>
+          <p>Safari 10 / Mac OS X 10.11(El Capitan)
+            <br>
+            <img src="/img/first-letter-palt/safari10.png" alt="Safari 10では約物半角は効いているがその直後との文字間が詰まりすぎて読めない。">
+          </p>
+          <p>IE11 / Windows 10
+            <br>
+            <img src="/img/first-letter-palt/IE11.png" alt="IE11では約物半角が効いているが、游明朝だとなぜか効かない。">
+          </p>
+          <p>Edge 14/ Windows 10
+            <br>
+            <img src="/img/first-letter-palt/edge.png" alt="Edge 14では約物半角が効いているが、游フォントとヒラギノで半角になる約物が異なる。">
+          </p>
+          <p>まず気づくのは、<code>::first-letter</code>で行頭の一文字目だけにスタイルを当てているつもりが、約物が行頭の時はその次の文字も、行頭の二文字目が約物の時はその約物も<code>::first-letter</code>に含まれることだろう。つまりテキストによっては<code>::first-letter</code>の対象が二文字やそれ以上の文字数になるということ。これは
+            <a href="https://www.w3.org/TR/css3-selectors/#first-letter">仕様通り</a>なのでこのこと自体に驚く必要はない。</p>
+          <p>ひとつひとつ見ていくと、現状ではまともに使うことができなさそうというのがわかる。</p>
+          <p>Chrome 55では<code>::first-letter</code>への<code>font-feature-settings: &quot;palt&quot;</code>が効かない。Windows 10の一番右のボックスでは効いているように見えるがこれは僕の環境でヒラギノがないのでMS Pゴシックが当てられているだけだ。MS Pゴシックはそもそも約物が字詰めされているグリフを持っている。</p>
+          <p>Firefox 50では奇妙なことに、<code>＄</code>記号が入ると<code>::first-letter</code>自体が効かなくなる。<code>＄</code>がなければ期待通り動いているだけに惜しい。もしかしたら他の約物でも起こるかもしれない。</p>
+          <p>Safari 10では<code>::first-letter</code>の一文字目の約物は半角にならないが、<code>::first-letter</code>に含まれる二文字目以降の約物には半角が効いている。そして<code>::first-letter</code>直後が詰まりすぎている。<code>font-family</code>の宣言をコメントアウトすると詰まりすぎがなくなる。フォントに依るのかもしれない。詰まっていない時のフォントは何が適応されているのかよくわからない。計算値では<code>-webkit-standard</code>というファミリーだった。現象が謎すぎてFirefoxを超えている。段落の一文字目の約物半角が効かないのは<code>::first-letter</code>が対象でなくても同じだった。</p>
+          <p>IE11ではどういうわけか分からないが游明朝で<code>::first-letter</code>への<code>font-feature-settings: &quot;palt&quot;</code>が効いていない。</p>
+          <p>Edgeでは期待通りに全てできているように見えるが、游フォントとヒラギノで半角になる約物が異なる。</p>
+          <table>
+            <thead>
+              <tr>
+                <th>ブラウザ</th>
+                <th><code>::first-letter</code>と<code>font-feature-settings: &quot;palt&quot;</code>の対応状況</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google Chrome 55</td>
+                <td>first-letterに約物半角が効かない</td>
+              </tr>
+              <tr>
+                <td>Firefox 50</td>
+                <td>約物半角は効くが、＄が入るとおかしい</td>
+              </tr>
+              <tr>
+                <td>Safari 10 (El Capitan)</td>
+                <td>一文字目の約物が半角にならない。游ゴ、游明、ヒラギノでfirst-letter直後が詰まりすぎる</td>
+              </tr>
+              <tr>
+                <td>IE11</td>
+                <td>游明のfirst-letterに約物半角が効かない</td>
+              </tr>
+              <tr>
+                <td>Edge</td>
+                <td>游フォントとヒラギノで半角になる約物が異なる</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>対応状況としてはカオスだ。<code>＄</code>記号に気をつければFirefoxでは問題なさそう。Edgeも行頭約物半角をかけたい要素はフォントファミリーが統一されているだろうからそこまで問題ではないだろう。ChromeとIE11は約物半角がfirst-letterで効かないだけなのでまだいい。しかしSafariでは読めなくなってしまうのできつい。</p>
+          <p>あっさり出来ると思ったけど、すくなくともSafariで詰まりすぎるのが修正されなければ普通には使えない。</p>
+          <h2 id="-font-face-">約物半角されたフォントを@font-faceで作る</h2>
+          <p>なんとかして対応したいと思って次に試したのが、<code>@font-face</code>ルールを使って約物半角したフォントファミリーを作る方法だ。</p> <pre title="CSS"><code data-language="css">@font-face {
+  font-family: "YuGothicYH";
+  font-feature-settings: "palt";
+  src: local("游ゴシック"),
+    local("YuGothic-Medium"),
+    local("Yu Gothic Medium"),
+    local("YuGothic-Regular"),
+    local("YuGothic"),
+    local(YuGothic);
+}
+
+@font-face {
+  font-family: "YuMinchoYH";
+  font-feature-settings: "palt";
+  src: local("游明朝"),
+    local("YuMincho-Medium"),
+    local("Yu Mincho Medium"),
+    local("YuMincho-Regular"),
+    local("YuMincho"),
+    local(YuMincho);
+}
+
+@font-face {
+  font-family: "HiraginoYH";
+  font-feature-settings: "palt";
+  src: local("ヒラギノ角ゴシック ProN"),
+    local("Hiragino Kaku Gothic ProN");
+}
+</code></pre> <pre title="CSS"><code data-language="css">.test1 p::first-letter {font-family: "YuGothicYH";}
+.test2 p::first-letter {font-family: "YuMinchoYH";}
+.test3 p::first-letter {font-family: "HiraginoYH";}
+</code></pre>
+          <p>このように<code>@font-face</code>で<code>font-feature-settings: &quot;palt&quot;</code>を指定したフォントファミリーを設定し、それを対象の段落の<code>::first-letter</code>に指定する。</p>
+          <p>しかしというかやはりというか、リアルワールドは甘くなかった。</p>
+          <script async src="//jsfiddle.net/rv0ptzt7/1/embed/result,html,css/"></script>
+          <p>主要ブラウザのキャプチャは次の通り。</p>
+          <p>Google Chrome 55 / Mac OS X 10.11(El Capitan)
+            <br>
+            <img src="/img/first-letter-palt/use-font-face/ff-chrome55-mac.png" alt="Google Chrome 55は@font-faceを使ってもfirst-letterへのfont-feature-settingsが効いていない。">
+          </p>
+          <p>Google Chrome 55 / Windows 10
+            <br>
+            <img src="/img/first-letter-palt/use-font-face/ff-chrome55-win.png" alt="Google Chrome 55は@font-faceを使っても、Windows 10もMax OS X 10.11(El Capitan)も効かない。">
+          </p>
+          <p>Firefox 50 / Mac OS X 10.11(El Capitan)
+            <br>
+            <img src="/img/first-letter-palt/use-font-face/ff-firefox50-mac.png" alt="Firefox 50は期待通り効いているように見える。しかし@font-faceを使っても＄記号があるとfirst-letter自体が無効になってしまうのは変わらなかった。">
+          </p>
+          <p>Firefox 50 / Windows 10
+            <br>
+            <img src="/img/first-letter-palt/use-font-face/ff-firefox50-win.png" alt="Firefox 50で＄があるときにfirst-letterが無効になってしまうのはMacでもWindowsでも同じ。">
+          </p>
+          <p>Safari 10 / Mac OS X 10.11(El Capitan)
+            <br>
+            <img src="/img/first-letter-palt/use-font-face/ff-safari10.png" alt="Safari 10では@font-faceを使うと約物半角が効かなくなってしまった。">
+          </p>
+          <p>IE11 / Windows 10
+            <br>
+            <img src="/img/first-letter-palt/use-font-face/ff-IE11.png" alt="IE11も@font-faceの約物半角が効かなくなった。">
+          </p>
+          <p>Edge 14/ Windows 10
+            <br>
+            <img src="/img/first-letter-palt/use-font-face/ff-edge.png" alt="Edge 14も@font-faceの約物半角が効かなくなった。">
+          </p>
+          <p>Chrome 55で<code>::first-letter</code>に<code>font-feature-settings: &quot;palt&quot;</code>が効かないのは<code>@font-face</code>を使っても変わらない。</p>
+          <p>Firefox 50では<code>@font-face</code>を使っても<code>＄</code>記号でおかしくなるのは変わらない。</p>
+          <p>Safari 10は<code>@font-face</code>を使うと<code>::first-letter</code>の<code>font-feature-settings: &quot;palt&quot;</code>が効かなくなってしまった。効かなくなったので詰まりすぎになるのもなくなった。</p>
+          <p>IE11も効かなくなった。</p>
+          <p>Edge 14も効かなくなった。</p>
+          <table>
+            <thead>
+              <tr>
+                <th>ブラウザ</th>
+                <th><code>@font-face</code>を使った行頭約物半角の対応状況</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Google Chrome 55</td>
+                <td>効かない</td>
+              </tr>
+              <tr>
+                <td>Firefox 50</td>
+                <td>約物半角は効くが、＄が入るとおかしい</td>
+              </tr>
+              <tr>
+                <td>Safari 10 (El Capitan)</td>
+                <td>効かない</td>
+              </tr>
+              <tr>
+                <td>IE11</td>
+                <td>効かない</td>
+              </tr>
+              <tr>
+                <td>Edge</td>
+                <td>効かない</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><code>@font-face</code>を使うと使わないときより状況が悪化してしまった。つらい結果としか言いようがない。</p>
+          <p>いろいろ確かめるのに疲れてこれ以上の検証はしていないが、約物のグリフが半角な専用フォントを作ってウェブフォントで読み込み、<code>::first-letter</code>に指定する方法がまだ残っている。</p>
+          <p>
+            <a href="https://twitter.com/glatyou">壁写真活動家の誰か</a>がそんなフォントを2年くらい前から作っている気がする。そろそろリリースされて欲しい。</p>
+          <hr>
+          <p>落ち着いたらバグ報告しようと思うが、これが<code>::first-letter</code>と<code>font-feature-settings</code>のどちらに起因している問題なのかよくわからない。そもそものフォントファイルに起因している可能性もゼロではなさそう。主要な欧文フォントに差し替えてテストしたら何も問題ないとかだと悲しい。</p>
+          <p>今年もよろしくお願いいたします。</p>
+        </div>
+        <aside class="post__contribute">
+          <a href="https://github.com/oti/dskd/blob/master/src/md/post/87.md" class="contribute">Patches welcome!</a>
+        </aside>
+        <aside role="complementary" class="post__social">
+          <ul class="social-list">
+            <li class="social-list__item social-list__item--twitter">
+              <a href="https://twitter.com/intent/tweet?text=CSS%E3%81%A7%E8%A1%8C%E9%A0%AD%E3%81%AE%E7%B4%84%E7%89%A9%E3%82%92%E5%8D%8A%E8%A7%92%E3%81%AB%E3%81%99%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F87.html&amp;via=dskd_jp&amp;related=o_ti"
+                class="social-link">Tweet</a>
+            </li>
+            <li class="social-list__item social-list__item--facebook">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F87.html" class="social-link">Share on Facebook</a>
+            </li>
+            <li class="social-list__item social-list__item--hatebu">
+              <a href="http://b.hatena.ne.jp/my/add.confirm?title=CSS%E3%81%A7%E8%A1%8C%E9%A0%AD%E3%81%AE%E7%B4%84%E7%89%A9%E3%82%92%E5%8D%8A%E8%A7%92%E3%81%AB%E3%81%99%E3%82%8B&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F87.html" class="social-link">Bookmark on Hatena</a>
+            </li>
+          </ul>
+        </aside>
+      </article>
+      <nav class="neighbor">
+        <ul class="neighbor-list">
+          <li class="neighbor-list__item neighbor-list__item--older">
+            <a href="/archives/86.html" class="neighbor-link">ベストオブ2016</a>
+          </li>
+        </ul>
+      </nav>
+    </main>
+    <footer class="global-footer">
+      <p class="author">Made by
+        <adress class="author__address">
+          <a href="mailto:otiext@gmail.com">oti</a>
+        </adress>.</p>
+      <ul class="subinfo">
+        <li class="subinfo__item">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link">
+            <small class="subinfo-license">CC BY-NC</small>
+          </a>
+        </li>
+        <li class="subinfo__item">
+          <a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

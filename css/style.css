@@ -359,10 +359,11 @@ a:hover .post__footer .post-tag {
 }
 
 .post__body pre {
-	padding: 0.33333rem;
+	padding: 1rem;
 	border-radius: 3px;
-	font-size: 1.4rem;
-	font-family: monospace;
+	font-size: 1.6rem;
+	font-family: "Consolas", monospace;
+	line-height: 1.1;
 	background-image: url("/img/bg2.png");
 	overflow-x: auto;
 }
