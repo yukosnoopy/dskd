@@ -95,7 +95,7 @@
           <hr>
           <p>
             <a href="https://jsfiddle.net/sfxkhm9e/"><code>pointer-events: none</code>のイベントの透過とバブリングを確認できるデモ</a>を作ってみた。</p>
-          <script async src="//jsfiddle.net/sfxkhm9e/embed/html,css,result/"></script>
+          <script async src="//jsfiddle.net/sfxkhm9e/embed/result,html,css/"></script>
           <p><code>div</code>には擬似要素でクラス名が出るようにしている。tomato色のボーダーの各<code>div</code>上でクリックすると<code>div:active</code>によりボーダーがpurpleになるはずだが、skyeblue色のボーダーに設定した<code>div.item</code>以外は<code>pointer-events: none</code>が指定されているのでボーダーの色は変わらない。クリックイベントは透過されて最背後<code>body</code>をクリックしていることになるので、<code>body:active</code>のスタイルが適用される。</p>
           <p><code>div.item</code>をクリックした場合は自身のボーダー色が変わるとともに、<code>:active</code>がバブリングして親要素の<code>div</code>のボーダー色も変わり、<code>body</code>の背景色も変わる。</p>
           <p>このように<code>pointer-events: none</code>は自身のマウス/タッチ操作を無効にするだけで、<code>event.stopPropagation()</code>のようにバブリングを止めるわけではないことには注意が必要だと思う。</p>
@@ -189,7 +189,7 @@
           <p>
             <a href="https://jsfiddle.net/fu9n9k8p/">Test: <code>pointer-events: none</code> to select element</a>
           </p>
-          <script async src="//jsfiddle.net/fu9n9k8p/embed/html,result/"></script>
+          <script async src="//jsfiddle.net/fu9n9k8p/embed/result,html/"></script>
           <p>3については、<code>overflow: scroll</code>などとしたスクロール可能な要素に<code>pointer-events: none</code>を指定すると、その要素上でのスクロール（スクロールバーのクリック、およびマウスホイールでのスクロール）ができなくなるはずだが、ChromeとIE11はできてしまうというもの。らしいのだが、これも現在は状況が異なるようだった。</p>
           <p>手元では
             <strong>Safari 10.0.1(El Capitan/Sierra)でスクロールバーのクリックでスクロールできてしまうが、ChromeとIE11(Win 8.1/10)はちゃんとクリックできなくなっているのでスクロールもできない</strong>。FirefoxとEdgeは期待通りスクロールバーのクリックも<code>pointer-events: none</code>によって無効化されていた。Macでは環境設定 &gt; 一般 &gt; スクロールバーの表示のところで「常に表示」を選択すれば確認できる。</p>
@@ -199,12 +199,12 @@
           <p>
             <a href="https://jsfiddle.net/k4tr6cf5/1/">Test: <code>pointer-evenst: none</code> to scrollable element</a>
           </p>
-          <script async src="//jsfiddle.net/k4tr6cf5/1/embed/html,css,result/"></script>
+          <script async src="//jsfiddle.net/k4tr6cf5/1/embed/result,html,css/"></script>
           <p>4については、<code>a</code>要素に<code>pointer-events: none</code>を指定する時に<code>display: inline</code>のままだとIE11とEdgeでポインターイベントが無効にならないというもの。Can I use…では<code>inline-block</code>か<code>block</code>以外だとだめみたいな書き方だったが、実際のところは<code>inline</code>以外ならなんでも良いようだった。</p>
           <p>
             <a href="https://jsfiddle.net/4gtzvwby/">Test: <code>pointer-events: none</code> and <code>display: *</code> to <code>a</code> element</a>
           </p>
-          <script async src="//jsfiddle.net/4gtzvwby/embed/html,css,result/"></script>
+          <script async src="//jsfiddle.net/4gtzvwby/embed/result,html,css/"></script>
           <p>今回はデスクトップブラウザでしか見ていない。モバイル版のChromeやSafariだとさらに状況が複雑かもしれない。</p>
           <h2 id="-">アクセシビリティーの視点</h2>
           <p>DISTで発表しておいて申し訳ないのだけど、個人的にはインタラクティブ要素（リンクやフォームパーツ、デベロッパーがカスタムイベントを定義した要素）を<code>pointer-events: none</code>するのはよろしくないと思っている。制御できるのはポインターデバイスのイベントだけで、キーボードは関係ない。要素のroleも変わらないので、特定の<code>a</code>要素に対して<code>pointer-events: none</code>を指定してもスクリーンリーダーでは通常のリンクとして読み上げられるし、フォーカス後のキーエンターでページ移動することもできる。<code>tabindex</code>属性がついている要素であればインタラクティブ要素でなくてもフォーカスできるので、キー操作の対象になりうる。前述した
@@ -214,7 +214,7 @@
           <h2 id="-">ではどこで役に立つのか？</h2>
           <p>この世の中には、IE11で<code>form label img</code>なHTMLの時に画像をクリックしても<code>label</code>へイベントがバブリングしないという現実がある。<code>label</code>にバブリングしないと<code>for</code>属性で紐づけた<code>input</code>要素にフォーカスしないし、
             <a href="https://jsfiddle.net/togx7db4/">ラジオボタンやチェックボックスがトグルできない</a>。</p>
-          <script async src="//jsfiddle.net/togx7db4/embed/html,result/"></script>
+          <script async src="//jsfiddle.net/togx7db4/embed/result,html/"></script>
           <p>IE11では、ブラウザUIのパーツをクリックすれば選択できるが、画像の上をクリックしても選択が反映されない。</p>
           <aside>このバグはIE6,7,8にあった有名なもので、IE9,10で治ったと思っていたけどIE11で再発した。
             <a href="http://stackoverflow.com/questions/20198137/image-label-for-input-in-a-form-not-clickable-in-ie11">IE11が愉快なのは、<code>form</code>要素の中に入れなければ期待通り動作する</a>ところだ。マジでなんなんだお前は。</aside>
