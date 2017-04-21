@@ -5,14 +5,21 @@
     <link>http://dskd.jp/</link>
     <description>&lt;![CDATA[dskd.jp is a memorandum of simple front-end technology.]]&gt;</description>
     <language>ja-JP</language>
-    <pubdate>Fri Jan 06 2017 21:50:19 GMT+0900 (JST)</pubdate>
-    <lastbuilddate>Fri Jan 06 2017 21:50:19 GMT+0900 (JST)</lastbuilddate>
+    <pubdate>Fri Apr 21 2017 20:52:43 GMT+0900 (JST)</pubdate>
+    <lastbuilddate>Fri Apr 21 2017 20:52:43 GMT+0900 (JST)</lastbuilddate>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <generator>Node.js v4.2.2</generator>
     <managingeditor>otiext@gmail.com (oti)</managingeditor>
     <webmaster>otiext@gmail.com (oti)</webmaster>
     <atom:link href="http://dskd.jp/feed" rel="self" type="application/rss+xml" />
     <creativeCommons:license>http://creativecommons.org/licenses/by-nc/4.0/</creativeCommons:license>
+    <item>
+      <title>バグは出る</title>
+      <link>http://dskd.jp/archives/88.html</link>
+      <description>仕事とは問題を解決すること</description>
+      <pubdate>Sat Apr 22 2017 05:51:34 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/88.html</guid>
+    </item>
     <item>
       <title>CSSで行頭の約物を半角にする</title>
       <link>http://dskd.jp/archives/87.html</link>
