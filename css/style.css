@@ -21,10 +21,6 @@
 	src: local("Vegur Bold"), local("Vegur Bold"), url("/font/Vegur-Bold.woff") format("woff");
 }
 
-:root {
-	font-size: 10px;
-}
-
 * {
 	margin: 0;
 	padding: 0;
@@ -36,8 +32,13 @@
 	box-sizing: border-box;
 }
 
+:root {
+	font-size: 10px;
+}
+
 html {
-	font-feature-settings: "kern" 1,"liga" 1,"lnum" 1,"pnum" 1;
+	-webkit-font-feature-settings: "kern", "liga", "lnum", "pnum";
+	font-feature-settings: "kern", "liga", "lnum", "pnum";
 }
 
 body {
@@ -45,7 +46,7 @@ body {
 	padding: 0;
 	border-top: 5px solid rgba(0, 0, 0, 0.15);
 	color: #263540;
-	font-size: 1.6em;
+	font-size: 1.6rem;
 	font-family: "Vegur-Regular", sans-serif;
 	line-height: 1;
 	background: url(/img/bg.png) repeat fixed #d0d8dd;
@@ -87,6 +88,7 @@ a:active {
 
 a:focus {
 	color: #629a00;
+	text-decoration: underline;
 }
 
 .global-header {
@@ -458,16 +460,16 @@ a:hover .post__footer .post-tag {
 	text-align: right;
 }
 
-.post .post__contribute {
+.post__contribute {
 	display: block;
 	float: left;
 }
 
-.post .post__social {
+.post__social {
 	display: block;
 }
 
-.post .post__social:after {
+.post__social:after {
 	content: "";
 	display: table;
 	clear: both;
