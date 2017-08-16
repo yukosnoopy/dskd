@@ -5,14 +5,21 @@
     <link>http://dskd.jp/</link>
     <description>&lt;![CDATA[dskd.jp is a weblog about website coding.]]&gt;</description>
     <language>ja-JP</language>
-    <pubdate>Wed May 24 2017 19:53:43 GMT+0900 (JST)</pubdate>
-    <lastbuilddate>Wed May 24 2017 19:53:43 GMT+0900 (JST)</lastbuilddate>
+    <pubdate>Wed Aug 16 2017 18:57:16 GMT+0900 (JST)</pubdate>
+    <lastbuilddate>Wed Aug 16 2017 18:57:16 GMT+0900 (JST)</lastbuilddate>
     <docs>http://blogs.law.harvard.edu/tech/rss</docs>
     <generator>Node.js v4.2.2</generator>
     <managingeditor>otiext@gmail.com (oti)</managingeditor>
     <webmaster>otiext@gmail.com (oti)</webmaster>
     <atom:link href="http://dskd.jp/feed" rel="self" type="application/rss+xml" />
     <creativeCommons:license>http://creativecommons.org/licenses/by-nc/4.0/</creativeCommons:license>
+    <item>
+      <title>夢</title>
+      <link>http://dskd.jp/archives/89.html</link>
+      <description>2017年8月14日の夢</description>
+      <pubdate>Thu Aug 17 2017 03:58:17 GMT+0900 (JST)</pubdate>
+      <guid isPermaLink="true">http://dskd.jp/archives/89.html</guid>
+    </item>
     <item>
       <title>バグは出る</title>
       <link>http://dskd.jp/archives/88.html</link>
