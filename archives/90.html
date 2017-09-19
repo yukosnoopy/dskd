@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width" name="viewport">
+    <title>Sass/SCSSコンパイルできるエディタ - dskd</title>
+    <meta content="/img/blog-cover.png" itemprop="image">
+    <meta content="gulpの話はしていません。" name="description">
+    <meta content="http://dskd.jp/archives/90.html" property="og:url">
+    <meta content="Sass/SCSSコンパイルできるエディタ" property="og:title">
+    <meta content="gulpの話はしていません。" property="og:description">
+    <meta content="/img/blog-cover.png" property="og:image">
+    <meta content="article" property="og:type">
+    <meta content="ja_JP" property="og:locale">
+    <meta content="dskd" property="og:site_name">
+    <link href="http://dskd.jp/archives/90.html" rel="canonical" itemprop="url">
+    <link href="/img/blog-icon.png" rel="apple-touch-icon-precomposed">
+    <link href="/feed" rel="alternate" type="application/rss+xml">
+    <link href="/css/style.css" rel="stylesheet" media="only screen">
+  </head>
+  <body>
+    <header role="banner" class="global-header">
+      <h1 class="logo">
+        <a href="/" class="logo-link">
+          <img alt="dskd" src="/img/logo.svg" width="100" height="60" class="logo__img">
+        </a>
+      </h1>
+      <nav role="navigation" class="site-nav">
+        <ul class="site-nav-list">
+          <li class="site-nav-list__item">
+            <a href="/archives/" class="site-nav-list-link">all posts</a>
+          </li>
+          <li class="site-nav-list__item">
+            <a href="/about.html" class="site-nav-list-link">what's dskd?</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="contents">
+      <article class="post">
+        <footer class="post__footer">
+          <time datetime="2017-09-19T19:16:47+09:00" class="post-timestamp">2017-09-19</time>
+          <p class="post-tag">
+            <a href="/archives/css.html" class="tag-link">CSS</a>
+          </p>
+        </footer>
+        <h1 itemprop="name" class="post__title">Sass/SCSSコンパイルできるエディタ</h1>
+        <div itemprop="articleBody" class="post__body">
+          <p>ここで言う「エディタ」とは主にウェブ制作に従事する人が使うソフトウェアを指している。コーダー白書2016の
+            <a href="http://wd-flat.com/coder/enquete2016.pdf">使用エディタのアンケート結果PDF（p.28）</a>を参考にし、彼らがよく使うと思われるエディタと気まぐれで思いついたエディタを中心に調査した。</p>
+          <h2 id="sublime-text">Sublime Text</h2>
+          <p>Sass BuildというST用のプラグインがあり、<code>Install Package</code>から利用可能。<code>gem install sass</code>が必要。そしてすなわちコンパイラはRuby Sass。
+            <a href="http://ozpa-h4.com/2013/03/05/compass-sass-scss-sublime-text/">おかげでCompassも利用できる</a>が、2017年も後半の後半に差しかかろうというイマドキにあえてCompassを選ぶ理由はない。</p>
+          <p>
+            <a href="https://github.com/jaumefontal/SASS-Build-SublimeText2">Sass Build</a>
+          </p>
+          <h2 id="atom">Atom</h2>
+          <p>sass-autocompileというAtom用のプラグインがあり、<code>.sass</code>/<code>.scss</code>ファイルの保存時に自動的にコンパイルしてくれる。あらかじめNode.jsとnode-sassをグバールにイストールしておく必要があるのがひっかかるかもしれない。コンパイラはLibSassなので高速ではある。</p>
+          <p>
+            <a href="https://atom.io/packages/sass-autocompile">sass-autocompile</a>
+          </p>
+          <p>Compassを使いたい人はAtomでターミナル実行するプラグインの
+            <a href="https://atom.io/packages/atom-terminal-panel">atom-terminal-panel</a>を使い、自前でコンパイルコマンドを叩く。まぁやりたい人はいないだろう。</p>
+          <aside>LibSassはRuby Sassと互換性が完全でないと思っている人もいるかもしれないが、
+            <a href="http://sass-compatibility.github.io/#stats">LibSass 3.3はRuby Sass 3.4と100%対応したと謳っている</a>。</aside>
+          <h2 id="coda-2">Coda 2</h2>
+          <p>Coda Sass Pluginがある。Rubyと<code>gem install sass</code>が必要。つまりRuby Sass。
+            <strong>Coda 2が手元にないのでこれから言うことは憶測だが、
+              <a href="http://programmerbox.com/2013-06-17_css_sass_in_coda2/">出力ファイル名を変更するオプションはないっぽい</a>
+            </strong>。</p>
+          <p>
+            <a href="https://github.com/secca/Coda-Sass-Plug-in">Coda Sass Plugin</a>
+          </p>
+          <h2 id="vim">Vim</h2>
+          <p>sass-compile.vimというのがあった、中身を見るに<code>gem install sass</code>が必要そう。</p>
+          <p>
+            <a href="https://github.com/AtsushiM/sass-compile.vim">sass-compile.vim</a>
+          </p>
+          <h2 id="visual-studio-code">Visual Studio Code</h2>
+          <p>Configure Task Runnerでtasks.jsonにコンパイルコマンドを記述する。こちらもあらかじめNode.jsとnode-sassをグローバルインストールしておかなくてはならない。</p>
+          <p>
+            <a href="https://vscode-doc-jp.github.io/docs/languages/css.html#Sass%E3%81%A8Less-Less%E3%82%92CSS%E3%81%AB%E5%A4%89%E6%8F%9B">CSS, Sass and Less | Visual Studio Code Docs - #SassとLessをCSSに変換</a>
+          </p>
+          <h2 id="webstorm">WebStorm</h2>
+          <p>特にプラグインは必要なく、File Watcherを利用する。しかしコンパイラを自分でインストールしなければならない。メニューからTools -&gt; File Watchersを新規に作成し、ProgramやらArgumentsやらを入力していく。</p>
+          <p>初期セットにSassとSCSSがあるが、これらの設定はコンパイラにRuby Sassのパスが指定されている。Ruby Sassがない場合は何らかのエラー文が表示されていると思われる。その時は<code>gem install sass</code>が必要だ。</p>
+          <p>LibSassを使うこともできる。
+            <a href="https://github.com/sass/libsass/blob/master/docs/build-on-darwin.md">自分でインストールしてビルドし</a>、そのパスを入力すればいいはずだ。軽くやってみたけどできなかった。お前たちは先に行け。おれは行けたら行く。</p>
+          <p>
+            <a href="https://www.jetbrains.com/help/webstorm/compiling-sass-less-and-scss-to-css.html">Compiling Sass, Less, and SCSS to CSS - Help | WebStorm</a>
+          </p>
+          <h2 id="brackets">Brackets</h2>
+          <p>brackets-sassと言うプラグインがある。BracketsはNode.jsを同梱しているし、このプラグインにnode-sassが含まれてる（厳密にはプラグインをインストール後のビルド時に<code>npm install node-sass</code>が実行される）ので、プラグインをインストールしただけでSassコンパイルが可能になる。
+            <a href="https://github.com/jasonsanjose/brackets-sass#sample-bracketsjson-file">ソースファイルや出力先の設定は<code>.brackets.json</code>で指定する</a>。</p>
+          <p>
+            <a href="https://github.com/jasonsanjose/brackets-sass">brackets-sass</a>
+          </p>
+          <p>注意点がひとつ。brackets-sassのstableがコンパイルに利用する
+            <a href="https://github.com/jasonsanjose/brackets-sass#compiler-compatibility">LibSassのバージョンは3.1</a>となっており、
+            <a href="http://sass-compatibility.github.io/#stats">このバージョンのRuby Sassとの互換性は50%を切っている</a>。</p>
+          <p>CLIでプラグインのディレクトリに移動して、node-sassをアップデートし、中のLibSassを3.3.6（v3系の最終バージョン）にすればRuby Sassとの互換性も100％になると思われる。しかしその場合のBrackets-sassの動作保証はできない。</p>
+          <p>この説明でわからない場合はBrackets-sassでのコンパイルをやめ、gulpなどを利用する方が良いだろう。その方が新しいLibSassが期待できる。</p>
+          <h2 id="dreamweaver">Dreamweaver</h2>
+          <p>
+            <a href="http://www.adobe.com/jp/products/dreamweaver/features.html">CC(2017)からCSSプリプロセッサーのサポートが入った</a>ので、Creative Cloud版を使って入れば他は何もしなくてもプロジェクトルートをサイト管理しておけばSass/SCSSコンパイルが可能。</p>
+          <p>コンパイラが何なのか気になって調べたけど確たる記述はすぐには見つからなかった。ただ
+            <a href="https://helpx.adobe.com/jp/dreamweaver/using/css-preprocessors.html">CompassやBurbonをサポートしていることから、おそらくRuby Sassだろう</a>。</p>
+          <h2 id="-">一覧</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>エディター</th>
+                <th>プラグイン</th>
+                <th>コンパイラ</th>
+                <th>あらかじめ必要なこと</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sublime Text</td>
+                <td>
+                  <a href="https://github.com/jaumefontal/SASS-Build-SublimeText2">Sass Build</a>
+                </td>
+                <td>Ruby Sass</td>
+                <td><code>gem install sass</code></td>
+              </tr>
+              <tr>
+                <td>Atom</td>
+                <td>
+                  <a href="https://atom.io/packages/sass-autocompile">sass-autocompile</a>
+                </td>
+                <td>LibSass</td>
+                <td><code>npm install node-sass -g</code></td>
+              </tr>
+              <tr>
+                <td>Coda 2</td>
+                <td>
+                  <a href="https://github.com/secca/Coda-Sass-Plug-in">Coda Sass Plugin</a>
+                </td>
+                <td>Ruby Sass</td>
+                <td><code>gem install sass</code></td>
+              </tr>
+              <tr>
+                <td>Vim</td>
+                <td>
+                  <a href="https://github.com/AtsushiM/sass-compile.vim">sass-compile.vim</a>
+                </td>
+                <td>Ruby Sass</td>
+                <td><code>gem install sass</code></td>
+              </tr>
+              <tr>
+                <td>VSCode</td>
+                <td>なし（taks.jsonに記述）</td>
+                <td>LibSass</td>
+                <td><code>npm install node-sass -g</code></td>
+              </tr>
+              <tr>
+                <td>WebStorm</td>
+                <td>なし（File Watcherで実行）</td>
+                <td>Ruby Sass／LibSass</td>
+                <td>初期テンプレートの場合は<code>gem install sass</code>／LibSassを利用する場合はLibSassのインストールとビルド</td>
+              </tr>
+              <tr>
+                <td>Brackets</td>
+                <td>
+                  <a href="https://github.com/jasonsanjose/brackets-sass">brackets-sass</a>
+                </td>
+                <td>LibSass</td>
+                <td>なし。ただし現時点のプラグインが利用してるLibSassが3.1で古いので対処が必要</td>
+              </tr>
+              <tr>
+                <td>Dreamweaver</td>
+                <td>なし</td>
+                <td>おそらくRuby Sass</td>
+                <td>CC(2017)以上。プロジェクトルートのサイト管理</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>gulp使えやと言う話はここではしていない。</p>
+          <p>「とりあえずエディタだけ入れてSassコンパイルしたい！」と思ったら、Dreamweaver CC(2017)しかなさそう。次点でBracketsだがデフォルトのLibSassが古いのはちょっと気になる。それを更新しようとするとNode.jsの環境がいる。他のエディタも全て黒い画面の干渉が必要になる。</p>
+          <p>他人のよくわからないマシンでとりあえず作業しなければならなくなった時、CLIは本当に障壁になる。人の環境がどうなっているかなんてわからないし、かといって壊すこともできない。</p>
+          <p>資料に載せる数行のエビデンスのために調べたけど、意外と面白い状況だった。</p>
+          <hr>
+          <p>Ruby Sassはもうないでしょうという場合、エディタだけでSass/SCSSコンパイルするのは諦めるしかない。
+            <a href="https://www.sassmeister.com/">Sass Meister</a>を使おう。でもファイル分割していたら全てを諦めよう。今日は空は青い。</p>
+        </div>
+        <aside class="post__contribute">
+          <a href="https://github.com/oti/dskd/blob/master/src/md/post/90.md" class="contribute">Patches welcome!</a>
+        </aside>
+        <aside role="complementary" class="post__social">
+          <ul class="social-list">
+            <li class="social-list__item social-list__item--twitter">
+              <a href="https://twitter.com/intent/tweet?text=Sass%2FSCSS%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F90.html&amp;via=dskd_jp&amp;related=o_ti"
+                class="social-link">Tweet</a>
+            </li>
+            <li class="social-list__item social-list__item--facebook">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdskd.jp%2Farchives%2F90.html" class="social-link">Share on Facebook</a>
+            </li>
+            <li class="social-list__item social-list__item--hatebu">
+              <a href="http://b.hatena.ne.jp/my/add.confirm?title=Sass%2FSCSS%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%A8%E3%83%87%E3%82%A3%E3%82%BF&amp;url=http%3A%2F%2Fdskd.jp%2Farchives%2F90.html" class="social-link">Bookmark on Hatena</a>
+            </li>
+          </ul>
+        </aside>
+      </article>
+      <nav class="neighbor">
+        <ul class="neighbor-list">
+          <li class="neighbor-list__item neighbor-list__item--older">
+            <a href="/archives/89.html" class="neighbor-link">夢</a>
+          </li>
+        </ul>
+      </nav>
+    </main>
+    <footer class="global-footer">
+      <p class="author">Made by
+        <adress class="author__address">
+          <a href="mailto:otiext@gmail.com">oti</a>
+        </adress>.</p>
+      <ul class="subinfo">
+        <li class="subinfo__item">
+          <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license" class="subinfo-link">
+            <small class="subinfo-license">CC BY-NC</small>
+          </a>
+        </li>
+        <li class="subinfo__item">
+          <a href="/feed" alternate="application/rss+xml" class="subinfo-link">RSS</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
